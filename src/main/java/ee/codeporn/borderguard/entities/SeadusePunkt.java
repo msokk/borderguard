@@ -7,6 +7,11 @@ import java.util.Calendar;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.ManyToOne;
+import java.util.Set;
+import java.util.HashSet;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 @RooJavaBean
 @RooToString
@@ -28,4 +33,10 @@ public class SeadusePunkt extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar kehtiv_kuni;
+
+    @ManyToOne
+    private SeadusePunkt seadusePunkt;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadusePunkt")
+    private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
 }

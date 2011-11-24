@@ -9,6 +9,11 @@ import java.util.Calendar;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Set;
+import ee.codeporn.borderguard.entities.SeadusePunkt;
+import java.util.HashSet;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 @RooJavaBean
 @RooToString
@@ -32,4 +37,7 @@ public class Seadus extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar kehtiv_kuni;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadusePunkt")
+    private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
 }

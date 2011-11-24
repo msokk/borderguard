@@ -3,6 +3,8 @@
 
 package ee.codeporn.borderguard.entities;
 
+import ee.codeporn.borderguard.entities.Piiririkkuja;
+import ee.codeporn.borderguard.entities.Riik;
 import java.lang.String;
 import java.util.Calendar;
 
@@ -38,6 +40,22 @@ privileged aspect Kodakondsus_Roo_JavaBean {
     
     public void Kodakondsus.setIsikukood(String isikukood) {
         this.isikukood = isikukood;
+    }
+    
+    public Piiririkkuja Kodakondsus.getPiiririkkuja() {
+        return this.piiririkkuja;
+    }
+    
+    public void Kodakondsus.setPiiririkkuja(Piiririkkuja piiririkkuja) {
+        this.piiririkkuja = piiririkkuja;
+    }
+    
+    public Riik Kodakondsus.getRiik() {
+        return this.riik;
+    }
+    
+    public void Kodakondsus.setRiik(Riik riik) {
+        this.riik = riik;
     }
     
 }

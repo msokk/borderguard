@@ -19,6 +19,7 @@ privileged aspect Seadus_Roo_ToString {
         sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
         sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Version: ").append(getVersion());

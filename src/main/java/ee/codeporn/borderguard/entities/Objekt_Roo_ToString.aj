@@ -5,21 +5,18 @@ package ee.codeporn.borderguard.entities;
 
 import java.lang.String;
 
-privileged aspect Kodakondsus_Roo_ToString {
+privileged aspect Objekt_Roo_ToString {
     
-    public String Kodakondsus.toString() {
+    public String Objekt.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Alates: ").append(getAlates() == null ? "null" : getAlates().getTime()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Kuni: ").append(getKuni() == null ? "null" : getKuni().getTime()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Piiririkkuja: ").append(getPiiririkkuja()).append(", ");
-        sb.append("Riik: ").append(getRiik()).append(", ");
+        sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("ObjektiLiik: ").append(getObjektiLiik()).append(", ");
         sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Version: ").append(getVersion());

@@ -3,7 +3,9 @@
 
 package ee.codeporn.borderguard.entities;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
 import java.lang.String;
+import java.util.Set;
 
 privileged aspect Riik_Roo_JavaBean {
     
@@ -29,6 +31,14 @@ privileged aspect Riik_Roo_JavaBean {
     
     public void Riik.setAnsiKood(String ansiKood) {
         this.ansiKood = ansiKood;
+    }
+    
+    public Set<Kodakondsus> Riik.getKodakonsused() {
+        return this.kodakonsused;
+    }
+    
+    public void Riik.setKodakonsused(Set<Kodakondsus> kodakonsused) {
+        this.kodakonsused = kodakonsused;
     }
     
 }

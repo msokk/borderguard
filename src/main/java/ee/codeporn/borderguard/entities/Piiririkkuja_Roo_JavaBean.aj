@@ -3,8 +3,10 @@
 
 package ee.codeporn.borderguard.entities;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
 import java.lang.String;
 import java.util.Calendar;
+import java.util.Set;
 
 privileged aspect Piiririkkuja_Roo_JavaBean {
     
@@ -32,12 +34,12 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.eesnimi = eesnimi;
     }
     
-    public String Piiririkkuja.getPereNimi() {
-        return this.pereNimi;
+    public String Piiririkkuja.getPerenimi() {
+        return this.perenimi;
     }
     
-    public void Piiririkkuja.setPereNimi(String pereNimi) {
-        this.pereNimi = pereNimi;
+    public void Piiririkkuja.setPerenimi(String perenimi) {
+        this.perenimi = perenimi;
     }
     
     public String Piiririkkuja.getSugu() {
@@ -54,6 +56,14 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
     
     public void Piiririkkuja.setSynniaeg(Calendar synniaeg) {
         this.synniaeg = synniaeg;
+    }
+    
+    public Set<Kodakondsus> Piiririkkuja.getKodakonsused() {
+        return this.kodakonsused;
+    }
+    
+    public void Piiririkkuja.setKodakonsused(Set<Kodakondsus> kodakonsused) {
+        this.kodakonsused = kodakonsused;
     }
     
 }

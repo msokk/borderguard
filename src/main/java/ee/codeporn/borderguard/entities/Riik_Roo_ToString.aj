@@ -14,6 +14,7 @@ privileged aspect Riik_Roo_ToString {
         sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("IsoKood: ").append(getIsoKood()).append(", ");
+        sb.append("Kodakonsused: ").append(getKodakonsused() == null ? "null" : getKodakonsused().size()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");

@@ -19,6 +19,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Pais: ").append(getPais()).append(", ");
         sb.append("Paragrahv: ").append(getParagrahv()).append(", ");
+        sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
         sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Tekst: ").append(getTekst()).append(", ");

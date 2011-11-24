@@ -8,6 +8,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Size;
+import ee.codeporn.borderguard.entities.Piiririkkuja;
+import javax.persistence.ManyToOne;
+import ee.codeporn.borderguard.entities.Riik;
 
 @RooJavaBean
 @RooToString
@@ -26,4 +29,10 @@ public class Kodakondsus extends Base {
 
     @Size(max = 20)
     private String isikukood;
+
+    @ManyToOne
+    private Piiririkkuja piiririkkuja;
+
+    @ManyToOne
+    private Riik riik;
 }

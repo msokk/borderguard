@@ -6,7 +6,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Set;
-import ee.codeporn.borderguard.entities.Kodakondsus;
+import ee.codeporn.borderguard.entities.Objekt;
 import java.util.HashSet;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
@@ -14,18 +14,17 @@ import javax.persistence.CascadeType;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Riik extends Base {
+public class ObjektiLiik extends Base {
 
     @NotNull
     @Size(max = 20)
-    private String isoKood;
+    private String kood;
 
     private String kommentaar;
-    
-    @NotNull
-    @Size(max = 20)
-    private String ansiKood;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "riik")
-    private Set<Kodakondsus> kodakonsused = new HashSet<Kodakondsus>();
+    @Size(max = 100)
+    private String nimetus;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "objekt")
+    private Set<Objekt> objektid = new HashSet<Objekt>();
 }

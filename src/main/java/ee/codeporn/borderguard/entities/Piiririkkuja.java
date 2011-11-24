@@ -8,6 +8,11 @@ import java.util.Calendar;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Set;
+import ee.codeporn.borderguard.entities.Kodakondsus;
+import java.util.HashSet;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 @RooJavaBean
 @RooToString
@@ -23,7 +28,7 @@ public class Piiririkkuja extends Base {
     private String eesnimi;
 
     @Size(max = 35)
-    private String pereNimi;
+    private String perenimi;
 
     @Size(max = 1)
     private String sugu;
@@ -31,4 +36,7 @@ public class Piiririkkuja extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar synniaeg;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "piiririkkuja")
+    private Set<Kodakondsus> kodakonsused = new HashSet<Kodakondsus>();
 }

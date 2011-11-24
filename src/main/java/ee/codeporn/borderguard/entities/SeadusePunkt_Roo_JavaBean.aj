@@ -3,8 +3,10 @@
 
 package ee.codeporn.borderguard.entities;
 
+import ee.codeporn.borderguard.entities.SeadusePunkt;
 import java.lang.String;
 import java.util.Calendar;
+import java.util.Set;
 
 privileged aspect SeadusePunkt_Roo_JavaBean {
     
@@ -54,6 +56,22 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
     
     public void SeadusePunkt.setKehtiv_kuni(Calendar kehtiv_kuni) {
         this.kehtiv_kuni = kehtiv_kuni;
+    }
+    
+    public SeadusePunkt SeadusePunkt.getSeadusePunkt() {
+        return this.seadusePunkt;
+    }
+    
+    public void SeadusePunkt.setSeadusePunkt(SeadusePunkt seadusePunkt) {
+        this.seadusePunkt = seadusePunkt;
+    }
+    
+    public Set<SeadusePunkt> SeadusePunkt.getSeadusePunktid() {
+        return this.seadusePunktid;
+    }
+    
+    public void SeadusePunkt.setSeadusePunktid(Set<SeadusePunkt> seadusePunktid) {
+        this.seadusePunktid = seadusePunktid;
     }
     
 }
