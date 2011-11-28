@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_seadusepunkt" z="DcjKOgFZ4/uaYmTrUW9Y720qQaQ=">
+            <menu:item id="i_seadusepunkt_new" messageCode="global_menu_new" url="/seadusepunkts?form" z="WpGmYxK6qd1W2LiyFGVtIcC8a8U="/>
+            <menu:item id="i_seadusepunkt_list" messageCode="global_menu_list" url="/seadusepunkts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="RLAivtY6urnl0wTY0X+G3MGi/kI="/>
+        </menu:category>
+        <menu:category id="c_seadus" z="td/xdGFVi/EMFr8vSwBGLSs2A3E=">
+            <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seaduses?form" z="4Jdd5BARV+OT8Uj2TLUOFslVvcM="/>
+            <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seaduses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bMv8uFCmOcQ1zI32wJeLWi5W6bc="/>
+        </menu:category>
+        <menu:category id="c_objekt" z="rjkh6O+TVNXzCjedLp6PFqZolxI=">
+            <menu:item id="i_objekt_new" messageCode="global_menu_new" url="/objekts?form" z="eBl8qE0jAB9Ygiu3upBZTum4iDs="/>
+            <menu:item id="i_objekt_list" messageCode="global_menu_list" url="/objekts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yMhHoW41esUSFoV8U0HE/swwewU="/>
+        </menu:category>
+        <menu:category id="c_piiririkkuja" z="JMlBoa5Zk33SRu+AsyTwMO+66T0=">
+            <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujas?form" z="SCaVFfGzCq9PMaYCiefQM+0Hir8="/>
+            <menu:item id="i_piiririkkuja_list" messageCode="global_menu_list" url="/piiririkkujas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ZtbTlYCoTxzaDW+jM5SusvFZgK8="/>
+        </menu:category>
+        <menu:category id="c_riik" z="82KnxXQ8F1G/xroEWq4JxRs9sbA=">
+            <menu:item id="i_riik_new" messageCode="global_menu_new" url="/riiks?form" z="Osrc4MHDGnzI9KsezJA/j2RcsM4="/>
+            <menu:item id="i_riik_list" messageCode="global_menu_list" url="/riiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dnLLIm4aMreomSiFZOHLQa12gFE="/>
+        </menu:category>
+        <menu:category id="c_kodakondsus" z="4JGd7QfPC57dvBfG3D1b8l5qNx0=">
+            <menu:item id="i_kodakondsus_new" messageCode="global_menu_new" url="/kodakondsuses?form" z="fGezh5OwAiaWWweASKGTxIT+7mw="/>
+            <menu:item id="i_kodakondsus_list" messageCode="global_menu_list" url="/kodakondsuses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="czyfxlTBzOUiH5MaOthZMPH8mHM="/>
+        </menu:category>
+    </menu:menu>
+</div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_codeporn_borderguard_entities_Riik" modelAttribute="riik" path="/riiks" versionField="Version" z="9jImGLufNvA0HppDFSfHwbF0Kac=">
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Riik_avaja" required="true" z="ghXH11KF/TlRnCnZDdmIONYkeUo="/>
+        <field:datetime dateTimePattern="${riik_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Riik_avatud" required="true" z="MvdJ/ciIRjZ54GnOv4FbFOHEQX8="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Riik_muutja" required="true" z="GZZxdjWAFsTho1BKTgm2hc3kFLM="/>
+        <field:datetime dateTimePattern="${riik_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Riik_muudetud" required="true" z="iaSFrnDCZrxgr57sVfWMEkoXoMI="/>
+        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Riik_sulgeja" z="bwU63b3CEdxvUnHQsKm6MJ5mXYc="/>
+        <field:datetime dateTimePattern="${riik_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Riik_suletud" required="true" z="O93VVW7VZRlhGn2m7FNE8YR4iUQ="/>
+        <field:input field="isoKood" id="c_ee_codeporn_borderguard_entities_Riik_isoKood" max="20" required="true" z="5wC7qNBqkvyJQzDzo7cG1064EkI="/>
+        <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Riik_kommentaar" z="yO5Ku+sHZggpvPzIjZH0g43VMjE="/>
+        <field:input field="ansiKood" id="c_ee_codeporn_borderguard_entities_Riik_ansiKood" max="20" required="true" z="jIJ80NlF0WwF0fFYErHtoINYgbg="/>
+        <field:simple field="kodakonsused" id="c_ee_codeporn_borderguard_entities_Riik_kodakonsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="MtU+/g4gKJCLb2XPo+fH/ZcdfyE="/>
+    </form:update>
+</div>

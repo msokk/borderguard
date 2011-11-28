@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_ee_codeporn_borderguard_entities_Kodakondsus" modelAttribute="kodakondsus" path="/kodakondsuses" render="${empty dependencies}" z="Gqza8RCX0irVknXwmZjFfnWxosU=">
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_avaja" required="true" z="7fzjm6x6zR0qScHRPxVb/6DWGbo="/>
+        <field:datetime dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_avatud" required="true" z="Jo8y50c/5LZtb7kBKXm56R1Fif8="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_muutja" required="true" z="ptN5Wg4KZIGnKdq/NDJkwSgr3pY="/>
+        <field:datetime dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" required="true" z="kMcQVVHZDLuqXlfAs8ed5BkGnyI="/>
+        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" z="2k0cQ7Fq+AaW3UXpX8E6Cjrqks4="/>
+        <field:datetime dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_suletud" required="true" z="82h9T2WK/iD4ikcVYdMiSx8pIFM="/>
+        <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" z="TFx9ZZedIsP4XILTUxYo1RxPH50="/>
+        <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Kodakondsus_alates" z="/oYI9/qpznrp7nJ2f8gYvlLKIfg="/>
+        <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kuni" z="Dv5Ot+usrDRT40UE1oblBUcM5d0="/>
+        <field:input field="isikukood" id="c_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" max="20" z="abe7QWsoZ6tfzx1hslRIpWv/qTw="/>
+        <field:select field="piiririkkuja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" itemValue="id" items="${piiririkkujas}" path="/piiririkkujas" z="kWezfaL0aWG6VHMmRG2JsGwNQFo="/>
+        <field:select field="riik" id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" itemValue="id" items="${riiks}" path="/riiks" z="mNhFO0nxbdFXJihKrJ31cR2w+ZQ="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Kodakondsus" render="${not empty dependencies}" z="TbhtDuVMqiBj5H4YnCqjUAWEqUA="/>
+</div>
