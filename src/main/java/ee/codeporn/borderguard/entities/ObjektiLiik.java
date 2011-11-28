@@ -25,6 +25,6 @@ public class ObjektiLiik extends Base {
     @Size(max = 100)
     private String nimetus;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "objekt")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Objekt> objektid = new HashSet<Objekt>();
 }

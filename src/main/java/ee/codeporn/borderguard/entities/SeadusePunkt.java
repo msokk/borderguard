@@ -37,6 +37,6 @@ public class SeadusePunkt extends Base {
     @ManyToOne
     private SeadusePunkt seadusePunkt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadusePunkt")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
 }

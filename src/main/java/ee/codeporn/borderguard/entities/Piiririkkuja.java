@@ -37,6 +37,6 @@ public class Piiririkkuja extends Base {
     @DateTimeFormat(style = "M-")
     private Calendar synniaeg;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "piiririkkuja")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Kodakondsus> kodakonsused = new HashSet<Kodakondsus>();
 }

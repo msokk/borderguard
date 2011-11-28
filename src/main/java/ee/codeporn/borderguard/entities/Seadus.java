@@ -38,6 +38,6 @@ public class Seadus extends Base {
     @DateTimeFormat(style = "M-")
     private Calendar kehtiv_kuni;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadusePunkt")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
 }
