@@ -22,8 +22,8 @@
         <div style="float: right;">
         	<table>
         		<tr>
-        			<td>Riik</td>
-        			<td>Isikukood</td>
+        			<td><spring:message code="country"/></td>
+        			<td><spring:message code="identity_code"/></td>
         		</tr>
         	</table>
         </div>
