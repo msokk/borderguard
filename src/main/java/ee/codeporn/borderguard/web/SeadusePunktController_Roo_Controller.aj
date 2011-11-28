@@ -30,18 +30,18 @@ privileged aspect SeadusePunktController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("seadusePunkt", seadusePunkt);
             addDateTimeFormatPatterns(uiModel);
-            return "seadusepunkts/create";
+            return "seadusepunktid/create";
         }
         uiModel.asMap().clear();
         seadusePunkt.persist();
-        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
+        return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String SeadusePunktController.createForm(Model uiModel) {
         uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
         addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/create";
+        return "seadusepunktid/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -49,7 +49,7 @@ privileged aspect SeadusePunktController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("seadusepunkt", SeadusePunkt.findSeadusePunkt(id));
         uiModel.addAttribute("itemId", id);
-        return "seadusepunkts/show";
+        return "seadusepunktid/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
@@ -63,7 +63,7 @@ privileged aspect SeadusePunktController_Roo_Controller {
             uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts());
         }
         addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/list";
+        return "seadusepunktid/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -71,18 +71,18 @@ privileged aspect SeadusePunktController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("seadusePunkt", seadusePunkt);
             addDateTimeFormatPatterns(uiModel);
-            return "seadusepunkts/update";
+            return "seadusepunktid/update";
         }
         uiModel.asMap().clear();
         seadusePunkt.merge();
-        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
+        return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String SeadusePunktController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(id));
         addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/update";
+        return "seadusepunktid/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -91,7 +91,7 @@ privileged aspect SeadusePunktController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/seadusepunkts";
+        return "redirect:/seadusepunktid";
     }
     
     @ModelAttribute("seadusepunkts")

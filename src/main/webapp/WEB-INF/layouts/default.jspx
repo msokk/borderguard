@@ -6,11 +6,8 @@
 	<jsp:directive.page pageEncoding="UTF-8" /> 
 			
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=8" />	
-			
-		<util:load-scripts />
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />			
+		<util:load-scripts />	
 		<spring:message code="application_name" var="app_name" htmlEscape="false"/>
 		<title><spring:message code="welcome_h3" arguments="${app_name}" /></title>
 	</head>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_codeporn_borderguard_entities_SeadusePunkt" object="${seadusepunkt}" path="/seadusepunktid" z="TDYO/XDLp2ropizsQ8IfRK9cTww=">
+        <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" object="${seadusepunkt}" z="2V5XAVB2eHalpa8Oc1orOemhWbU="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" object="${seadusepunkt}" z="UGzgYOb90vLRMjnZ7KpBffGxm9o="/>
+        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" object="${seadusepunkt}" z="tbm6kCOg9xlh0Y1kXt3J/CLZEA8="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" object="${seadusepunkt}" z="1sDJHXCTtmytQay1SsQ1IOC1QwE="/>
+        <field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_sulgeja" object="${seadusepunkt}" z="sCazdwKuNTAYF3ZrZmtXvRjPqto="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" object="${seadusepunkt}" z="banR/0m8HmlOaa+R678mJ084zRk="/>
+        <field:display field="paragrahv" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" object="${seadusepunkt}" z="qeeUgHkbohnFGBaP3HOvZFEzN7Q="/>
+        <field:display field="pais" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_pais" object="${seadusepunkt}" z="ntsyQEzPPCb4CV2tgA7/DFQx4yo="/>
+        <field:display field="tekst" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" object="${seadusepunkt}" z="zbOjVhlqNTArC8fa0GIWrTUmJoY="/>
+        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" object="${seadusepunkt}" z="aNczBkqL3drwG1aqb5tqSlTvthg="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_alates" object="${seadusepunkt}" z="zSejLx9jlSaR3FUXBsiC+yPgJy8="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_kuni" object="${seadusepunkt}" z="K5tl7c/lr/x/f7ugmr/f5KXoEzU="/>
+        <field:display field="seadusePunkt" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" object="${seadusepunkt}" z="pD2P8LCEMRHsk10MgWeRtpdbMjg="/>
+    </page:show>
+</div>

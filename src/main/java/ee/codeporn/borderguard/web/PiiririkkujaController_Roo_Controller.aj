@@ -32,18 +32,18 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
             addDateTimeFormatPatterns(uiModel);
-            return "piiririkkujas/create";
+            return "piiririkkujad/create";
         }
         uiModel.asMap().clear();
         piiririkkuja.persist();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiiririkkujaController.createForm(Model uiModel) {
         uiModel.addAttribute("piiririkkuja", new Piiririkkuja());
         addDateTimeFormatPatterns(uiModel);
-        return "piiririkkujas/create";
+        return "piiririkkujad/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -51,7 +51,7 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(id));
         uiModel.addAttribute("itemId", id);
-        return "piiririkkujas/show";
+        return "piiririkkujad/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
@@ -65,7 +65,7 @@ privileged aspect PiiririkkujaController_Roo_Controller {
             uiModel.addAttribute("piiririkkujas", Piiririkkuja.findAllPiiririkkujas());
         }
         addDateTimeFormatPatterns(uiModel);
-        return "piiririkkujas/list";
+        return "piiririkkujad/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -73,18 +73,18 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
             addDateTimeFormatPatterns(uiModel);
-            return "piiririkkujas/update";
+            return "piiririkkujad/update";
         }
         uiModel.asMap().clear();
         piiririkkuja.merge();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String PiiririkkujaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(id));
         addDateTimeFormatPatterns(uiModel);
-        return "piiririkkujas/update";
+        return "piiririkkujad/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -93,7 +93,7 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/piiririkkujas";
+        return "redirect:/piiririkkujad";
     }
     
     @ModelAttribute("kodakondsuses")

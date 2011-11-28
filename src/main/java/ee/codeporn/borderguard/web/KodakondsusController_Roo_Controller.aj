@@ -32,18 +32,18 @@ privileged aspect KodakondsusController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("kodakondsus", kodakondsus);
             addDateTimeFormatPatterns(uiModel);
-            return "kodakondsuses/create";
+            return "kodakondsused/create";
         }
         uiModel.asMap().clear();
         kodakondsus.persist();
-        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
+        return "redirect:/kodakondsused/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String KodakondsusController.createForm(Model uiModel) {
         uiModel.addAttribute("kodakondsus", new Kodakondsus());
         addDateTimeFormatPatterns(uiModel);
-        return "kodakondsuses/create";
+        return "kodakondsused/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -51,7 +51,7 @@ privileged aspect KodakondsusController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
         uiModel.addAttribute("itemId", id);
-        return "kodakondsuses/show";
+        return "kodakondsused/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
@@ -65,7 +65,7 @@ privileged aspect KodakondsusController_Roo_Controller {
             uiModel.addAttribute("kodakondsuses", Kodakondsus.findAllKodakondsuses());
         }
         addDateTimeFormatPatterns(uiModel);
-        return "kodakondsuses/list";
+        return "kodakondsused/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -73,18 +73,18 @@ privileged aspect KodakondsusController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("kodakondsus", kodakondsus);
             addDateTimeFormatPatterns(uiModel);
-            return "kodakondsuses/update";
+            return "kodakondsused/update";
         }
         uiModel.asMap().clear();
         kodakondsus.merge();
-        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
+        return "redirect:/kodakondsused/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String KodakondsusController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
         addDateTimeFormatPatterns(uiModel);
-        return "kodakondsuses/update";
+        return "kodakondsused/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -93,7 +93,7 @@ privileged aspect KodakondsusController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/kodakondsuses";
+        return "redirect:/kodakondsused";
     }
     
     @ModelAttribute("kodakondsuses")

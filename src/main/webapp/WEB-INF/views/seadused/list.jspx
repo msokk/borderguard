@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_codeporn_borderguard_entities_Seadus" items="${seadused}" z="OTOOfB2BV9ylVFqtV7uoAEtVUm4=">
+        <table:table data="${seadused}" id="l_ee_codeporn_borderguard_entities_Seadus" path="/seadused" z="xnMXRyvFtIeTZebndfeV3u9qV6A=">
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_avaja" property="avaja" z="9gM9Lt0uC7ch9rIWhE4cp4HJSL8="/>
+            <table:column calendar="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_avatud" property="avatud" z="YeMudUXVpjWKYRElwOl/UmBP+gU="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_muutja" property="muutja" z="Xxaxvy6iV5yFOW0PcdGf7f5lcdk="/>
+            <table:column calendar="true" dateTimePattern="${seadus_muudetud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_muudetud" property="muudetud" z="4NFeA/4y8OwL017rfKaenc0CSGs="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_sulgeja" property="sulgeja" z="iUNw+pXZwL5NWWqpxyxTTEULNzI="/>
+            <table:column calendar="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_suletud" property="suletud" z="ZaTfsTpdykd6zrGEVTRl7B7xbXk="/>
+        </table:table>
+    </page:list>
+</div>

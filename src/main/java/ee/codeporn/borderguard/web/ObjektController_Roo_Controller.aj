@@ -31,18 +31,18 @@ privileged aspect ObjektController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("objekt", objekt);
             addDateTimeFormatPatterns(uiModel);
-            return "objekts/create";
+            return "objektid/create";
         }
         uiModel.asMap().clear();
         objekt.persist();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
+        return "redirect:/objektid/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String ObjektController.createForm(Model uiModel) {
         uiModel.addAttribute("objekt", new Objekt());
         addDateTimeFormatPatterns(uiModel);
-        return "objekts/create";
+        return "objektid/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ privileged aspect ObjektController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("objekt", Objekt.findObjekt(id));
         uiModel.addAttribute("itemId", id);
-        return "objekts/show";
+        return "objektid/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
@@ -64,7 +64,7 @@ privileged aspect ObjektController_Roo_Controller {
             uiModel.addAttribute("objekts", Objekt.findAllObjekts());
         }
         addDateTimeFormatPatterns(uiModel);
-        return "objekts/list";
+        return "objektid/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -72,18 +72,18 @@ privileged aspect ObjektController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("objekt", objekt);
             addDateTimeFormatPatterns(uiModel);
-            return "objekts/update";
+            return "objektid/update";
         }
         uiModel.asMap().clear();
         objekt.merge();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
+        return "redirect:/objektid/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String ObjektController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("objekt", Objekt.findObjekt(id));
         addDateTimeFormatPatterns(uiModel);
-        return "objekts/update";
+        return "objektid/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -92,7 +92,7 @@ privileged aspect ObjektController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/objekts";
+        return "redirect:/objektid";
     }
     
     @ModelAttribute("objekts")

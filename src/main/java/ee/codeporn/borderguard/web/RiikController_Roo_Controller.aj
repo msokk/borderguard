@@ -31,18 +31,18 @@ privileged aspect RiikController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("riik", riik);
             addDateTimeFormatPatterns(uiModel);
-            return "riiks/create";
+            return "riigid/create";
         }
         uiModel.asMap().clear();
         riik.persist();
-        return "redirect:/riiks/" + encodeUrlPathSegment(riik.getId().toString(), httpServletRequest);
+        return "redirect:/riigid/" + encodeUrlPathSegment(riik.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String RiikController.createForm(Model uiModel) {
         uiModel.addAttribute("riik", new Riik());
         addDateTimeFormatPatterns(uiModel);
-        return "riiks/create";
+        return "riigid/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ privileged aspect RiikController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("riik", Riik.findRiik(id));
         uiModel.addAttribute("itemId", id);
-        return "riiks/show";
+        return "riigid/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
@@ -64,7 +64,7 @@ privileged aspect RiikController_Roo_Controller {
             uiModel.addAttribute("riiks", Riik.findAllRiiks());
         }
         addDateTimeFormatPatterns(uiModel);
-        return "riiks/list";
+        return "riigid/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -72,18 +72,18 @@ privileged aspect RiikController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("riik", riik);
             addDateTimeFormatPatterns(uiModel);
-            return "riiks/update";
+            return "riigid/update";
         }
         uiModel.asMap().clear();
         riik.merge();
-        return "redirect:/riiks/" + encodeUrlPathSegment(riik.getId().toString(), httpServletRequest);
+        return "redirect:/riigid/" + encodeUrlPathSegment(riik.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String RiikController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("riik", Riik.findRiik(id));
         addDateTimeFormatPatterns(uiModel);
-        return "riiks/update";
+        return "riigid/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -92,7 +92,7 @@ privileged aspect RiikController_Roo_Controller {
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/riiks";
+        return "redirect:/riigid";
     }
     
     @ModelAttribute("kodakondsuses")
