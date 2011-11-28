@@ -2,7 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_ee_codeporn_borderguard_entities_Riik" object="${riik}" path="/riigid" z="izz2oLoN8l9cvyhH9QLju4//WQo=">
+    <page:show id="ps_ee_codeporn_borderguard_entities_Riik" object="${riik}" path="/riigid" z="user-managed">
         <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Riik_avaja" object="${riik}" z="PbBB7dVreIPwdWNINbBQ40kLMyQ="/>
         <field:display calendar="true" dateTimePattern="${riik_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Riik_avatud" object="${riik}" z="UT/iQxB9/69kDgLKuOjFxjakfHg="/>
         <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Riik_muutja" object="${riik}" z="F1j8EH4xgvTSFM4NvDUVaKYBRYk="/>

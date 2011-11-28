@@ -2,7 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_codeporn_borderguard_entities_Seadus" modelAttribute="seadus" path="/seadused" versionField="Version" z="RL06+EYRtUpJ0x5x1cYM2U77Lgo=">
+    <form:update id="fu_ee_codeporn_borderguard_entities_Seadus" modelAttribute="seadus" path="/seadused" versionField="Version" z="user-managed">
         <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Seadus_avaja" required="true" z="J4GQZ9Bv5Xp/8tqUUQvnHfraU2U="/>
         <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Seadus_avatud" required="true" z="4lQ1fTIf5oWh81pRppQ5wTEfx9g="/>
         <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Seadus_muutja" required="true" z="96bVGaq3pzClL9R70Z0/zZGIm2Q="/>

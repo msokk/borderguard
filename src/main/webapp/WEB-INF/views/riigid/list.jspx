@@ -2,8 +2,8 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_ee_codeporn_borderguard_entities_Riik" items="${riigid}" z="/cUtZGl2C4ZRFQLWhry6KBPHtIE=">
-        <table:table data="${riigid}" id="l_ee_codeporn_borderguard_entities_Riik" path="/riigid" z="y9r0rR1a/tn+ydilU3kSqD13r8Y=">
+    <page:list id="pl_ee_codeporn_borderguard_entities_Riik" items="${riigid}" z="user-managed">
+        <table:table data="${riigid}" id="l_ee_codeporn_borderguard_entities_Riik" path="/riigid" z="user-managed">
             <table:column id="c_ee_codeporn_borderguard_entities_Riik_avaja" property="avaja" z="tRN/8ZI4ls9SSmzfBXsgfNnH5mk="/>
             <table:column calendar="true" dateTimePattern="${riik_avatud_date_format}" id="c_ee_codeporn_borderguard_entities_Riik_avatud" property="avatud" z="y+/VObNjHx3pcpCh4u7UuYbq2Xo="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Riik_muutja" property="muutja" z="Kd5m5W8DODUzeUe+nCZkFAkbMRg="/>

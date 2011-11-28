@@ -371,3 +371,16 @@ fieldset th {
 	height: 11px;
 	width: 16px;
 }
+
+/* Custom CSS */
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}

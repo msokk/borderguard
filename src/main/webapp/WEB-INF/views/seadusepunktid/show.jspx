@@ -2,7 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_ee_codeporn_borderguard_entities_SeadusePunkt" object="${seadusepunkt}" path="/seadusepunktid" z="TDYO/XDLp2ropizsQ8IfRK9cTww=">
+    <page:show id="ps_ee_codeporn_borderguard_entities_SeadusePunkt" object="${seadusepunkt}" path="/seadusepunktid" z="user-managed">
         <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" object="${seadusepunkt}" z="2V5XAVB2eHalpa8Oc1orOemhWbU="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" object="${seadusepunkt}" z="UGzgYOb90vLRMjnZ7KpBffGxm9o="/>
         <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" object="${seadusepunkt}" z="tbm6kCOg9xlh0Y1kXt3J/CLZEA8="/>

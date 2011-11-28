@@ -2,8 +2,8 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_ee_codeporn_borderguard_entities_Kodakondsus" items="${kodakondsused}" z="vmK/zZ4+ZlaRPuQZm5gcQOrKfKc=">
-        <table:table data="${kodakondsused}" id="l_ee_codeporn_borderguard_entities_Kodakondsus" path="/kodakondsused" z="CQu6O9Tum2rHhDAyUuI09/EBvoM=">
+    <page:list id="pl_ee_codeporn_borderguard_entities_Kodakondsus" items="${kodakondsused}" z="user-managed">
+        <table:table data="${kodakondsused}" id="l_ee_codeporn_borderguard_entities_Kodakondsus" path="/kodakondsused" z="user-managed">
             <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_avaja" property="avaja" z="9RXGKhoI2nr03rneggKf88srsk0="/>
             <table:column calendar="true" dateTimePattern="${kodakondsus_avatud_date_format}" id="c_ee_codeporn_borderguard_entities_Kodakondsus_avatud" property="avatud" z="m92beeY0m2dKwA/sPjcxqamVe3o="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_muutja" property="muutja" z="Py946abLjNHfKndvX/1BcIiMl7I="/>

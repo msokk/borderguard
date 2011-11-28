@@ -2,7 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_codeporn_borderguard_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujad" versionField="Version" z="vgzQdzUgWTqmhyg06mdnnkTyJWg=">
+    <form:update id="fu_ee_codeporn_borderguard_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujad" versionField="Version" z="user-managed">
         <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avaja" required="true" z="R0tAnA2N8lVpYMGxmZFRsA3JKiA="/>
         <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avatud" required="true" z="lU8UXD8wvSWDDaHjMOFglFHypc0="/>
         <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muutja" required="true" z="liWvFrv7Z79ZEf5mOJbvUxBTxBo="/>
@@ -16,6 +16,6 @@
         <field:input field="sugu" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" max="1" z="sxGbQhIhycVNXuYdi7MUOCNfhg8="/>
         <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
         <field:simple field="kodakonsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakonsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="SO97VT9C1Z1HVy1s3xhrHMiKyi8="/>
-        <field:select field="objekt" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_objekt" itemValue="id" items="${objektid}" path="/objektid" z="sRNbQ7h4jeJPSTYnLo8wDy7D8Lc="/>
+        <field:select field="objekt" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_objekt" itemValue="id" items="${objektid}" path="/objektid" z="user-managed"/>
     </form:update>
 </div>
