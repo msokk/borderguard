@@ -5,8 +5,11 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import ee.codeporn.borderguard.entities.ObjektiLiik;
-import javax.persistence.ManyToOne;
+import java.util.Set;
+import ee.codeporn.borderguard.entities.Piiririkkuja;
+import java.util.HashSet;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 @RooJavaBean
 @RooToString
@@ -19,6 +22,6 @@ public class Objekt extends Base {
 
     private String kommentaar;
 
-    @ManyToOne
-    private ObjektiLiik objektiLiik;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Piiririkkuja> piiririkkujad = new HashSet<Piiririkkuja>();
 }

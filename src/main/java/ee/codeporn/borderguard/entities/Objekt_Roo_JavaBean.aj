@@ -3,8 +3,9 @@
 
 package ee.codeporn.borderguard.entities;
 
-import ee.codeporn.borderguard.entities.ObjektiLiik;
+import ee.codeporn.borderguard.entities.Piiririkkuja;
 import java.lang.String;
+import java.util.Set;
 
 privileged aspect Objekt_Roo_JavaBean {
     
@@ -24,12 +25,12 @@ privileged aspect Objekt_Roo_JavaBean {
         this.kommentaar = kommentaar;
     }
     
-    public ObjektiLiik Objekt.getObjektiLiik() {
-        return this.objektiLiik;
+    public Set<Piiririkkuja> Objekt.getPiiririkkujad() {
+        return this.piiririkkujad;
     }
     
-    public void Objekt.setObjektiLiik(ObjektiLiik objektiLiik) {
-        this.objektiLiik = objektiLiik;
+    public void Objekt.setPiiririkkujad(Set<Piiririkkuja> piiririkkujad) {
+        this.piiririkkujad = piiririkkujad;
     }
     
 }
