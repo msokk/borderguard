@@ -12,7 +12,6 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Calendar;
 
-@MappedSuperclass
 @RooJavaBean
 @RooToString
 @RooEntity
