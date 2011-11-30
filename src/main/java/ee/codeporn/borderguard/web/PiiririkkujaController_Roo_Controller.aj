@@ -4,7 +4,6 @@
 package ee.codeporn.borderguard.web;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
-import ee.codeporn.borderguard.entities.Objekt;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -99,11 +98,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
     @ModelAttribute("kodakondsuses")
     public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsuses() {
         return Kodakondsus.findAllKodakondsuses();
-    }
-    
-    @ModelAttribute("objekts")
-    public Collection<Objekt> PiiririkkujaController.populateObjekts() {
-        return Objekt.findAllObjekts();
     }
     
     @ModelAttribute("piiririkkujas")

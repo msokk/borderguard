@@ -15,6 +15,5 @@
         <field:display field="perenimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" object="${piiririkkuja}" z="KOgCvHrSTt/QlQE9E9qKEbwvgpo="/>
         <field:display field="sugu" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" object="${piiririkkuja}" z="RMHUI86borHhVXMtPE6w6DBVxoc="/>
         <field:display calendar="true" dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" object="${piiririkkuja}" z="t4cEUsM8voVE0fyEFjbltj3meVM="/>
-        <field:display field="objekt" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_objekt" object="${piiririkkuja}" z="U11HP5Er2Wp2hcdBLWSdN51WwYg="/>
     </page:show>
 </div>

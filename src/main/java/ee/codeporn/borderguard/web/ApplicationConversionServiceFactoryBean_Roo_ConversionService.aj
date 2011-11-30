@@ -4,7 +4,6 @@
 package ee.codeporn.borderguard.web;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
-import ee.codeporn.borderguard.entities.Objekt;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import ee.codeporn.borderguard.entities.Riik;
 import ee.codeporn.borderguard.entities.Seadus;
@@ -17,7 +16,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new KodakondsusConverter());
-        registry.addConverter(new ObjektConverter());
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new RiikConverter());
         registry.addConverter(new SeadusConverter());
@@ -32,13 +30,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.KodakondsusConverter implements Converter<Kodakondsus, String> {
         public String convert(Kodakondsus kodakondsus) {
             return new StringBuilder().append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).append(" ").append(kodakondsus.getMuudetud()).toString();
-        }
-        
-    }
-    
-    static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {
-        public String convert(Objekt objekt) {
-            return new StringBuilder().append(objekt.getAvaja()).append(" ").append(objekt.getAvatud()).append(" ").append(objekt.getMuutja()).append(" ").append(objekt.getMuudetud()).toString();
         }
         
     }

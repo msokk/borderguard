@@ -4,7 +4,6 @@
 package ee.codeporn.borderguard.entities;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
-import ee.codeporn.borderguard.entities.Objekt;
 import java.lang.String;
 import java.util.Calendar;
 import java.util.Set;
@@ -65,14 +64,6 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
     
     public void Piiririkkuja.setKodakonsused(Set<Kodakondsus> kodakonsused) {
         this.kodakonsused = kodakonsused;
-    }
-    
-    public Objekt Piiririkkuja.getObjekt() {
-        return this.objekt;
-    }
-    
-    public void Piiririkkuja.setObjekt(Objekt objekt) {
-        this.objekt = objekt;
     }
     
 }

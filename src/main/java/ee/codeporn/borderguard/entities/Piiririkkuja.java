@@ -13,8 +13,6 @@ import ee.codeporn.borderguard.entities.Kodakondsus;
 import java.util.HashSet;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
-import ee.codeporn.borderguard.entities.Objekt;
-import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -41,7 +39,4 @@ public class Piiririkkuja extends Base {
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Kodakondsus> kodakonsused = new HashSet<Kodakondsus>();
-
-    @ManyToOne
-    private Objekt objekt;
 }
