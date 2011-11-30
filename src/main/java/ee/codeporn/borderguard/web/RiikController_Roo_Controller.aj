@@ -57,11 +57,11 @@ privileged aspect RiikController_Roo_Controller {
     public String RiikController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("riiks", Riik.findRiikEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) Riik.countRiiks() / sizeNo;
+            uiModel.addAttribute("riigid", Riik.findRiikEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            float nrOfPages = (float) Riik.countRiigid() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("riiks", Riik.findAllRiiks());
+            uiModel.addAttribute("riigid", Riik.findAllRiigid());
         }
         addDateTimeFormatPatterns(uiModel);
         return "riigid/list";
@@ -95,14 +95,14 @@ privileged aspect RiikController_Roo_Controller {
         return "redirect:/riigid";
     }
     
-    @ModelAttribute("kodakondsuses")
-    public Collection<Kodakondsus> RiikController.populateKodakondsuses() {
-        return Kodakondsus.findAllKodakondsuses();
+    @ModelAttribute("kodakondsused")
+    public Collection<Kodakondsus> RiikController.populateKodakondsused() {
+        return Kodakondsus.findAllKodakondsused();
     }
     
-    @ModelAttribute("riiks")
-    public Collection<Riik> RiikController.populateRiiks() {
-        return Riik.findAllRiiks();
+    @ModelAttribute("riigid")
+    public Collection<Riik> RiikController.populateRiigid() {
+        return Riik.findAllRiigid();
     }
     
     void RiikController.addDateTimeFormatPatterns(Model uiModel) {

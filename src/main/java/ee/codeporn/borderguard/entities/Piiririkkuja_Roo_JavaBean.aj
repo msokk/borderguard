@@ -58,12 +58,12 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.synniaeg = synniaeg;
     }
     
-    public Set<Kodakondsus> Piiririkkuja.getKodakonsused() {
-        return this.kodakonsused;
+    public Set<Kodakondsus> Piiririkkuja.getKodakondsused() {
+        return this.kodakondsused;
     }
     
-    public void Piiririkkuja.setKodakonsused(Set<Kodakondsus> kodakonsused) {
-        this.kodakonsused = kodakonsused;
+    public void Piiririkkuja.setKodakonsused(Set<Kodakondsus> kodakondsused) {
+        this.kodakondsused = kodakondsused;
     }
     
 }

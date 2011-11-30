@@ -56,11 +56,11 @@ privileged aspect SeadusePunktController_Roo_Controller {
     public String SeadusePunktController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("seadusepunkts", SeadusePunkt.findSeadusePunktEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) SeadusePunkt.countSeadusePunkts() / sizeNo;
+            uiModel.addAttribute("seadusepunktid", SeadusePunkt.findSeadusePunktEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            float nrOfPages = (float) SeadusePunkt.countSeadusePunktid() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts());
+            uiModel.addAttribute("seadusepunktid", SeadusePunkt.findAllSeadusePunktid());
         }
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunktid/list";
@@ -94,9 +94,9 @@ privileged aspect SeadusePunktController_Roo_Controller {
         return "redirect:/seadusepunktid";
     }
     
-    @ModelAttribute("seadusepunkts")
-    public Collection<SeadusePunkt> SeadusePunktController.populateSeadusePunkts() {
-        return SeadusePunkt.findAllSeadusePunkts();
+    @ModelAttribute("seadusepunktid")
+    public Collection<SeadusePunkt> SeadusePunktController.populateSeadusePunktid() {
+        return SeadusePunkt.findAllSeadusePunktid();
     }
     
     void SeadusePunktController.addDateTimeFormatPatterns(Model uiModel) {

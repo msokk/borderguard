@@ -12,11 +12,11 @@ privileged aspect Riik_Roo_Entity {
     
     declare @type: Riik: @Entity;
     
-    public static long Riik.countRiiks() {
+    public static long Riik.countRiigid() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Riik o", Long.class).getSingleResult();
     }
     
-    public static List<Riik> Riik.findAllRiiks() {
+    public static List<Riik> Riik.findAllRiigid() {
         return entityManager().createQuery("SELECT o FROM Riik o", Riik.class).getResultList();
     }
     

@@ -58,11 +58,11 @@ privileged aspect KodakondsusController_Roo_Controller {
     public String KodakondsusController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("kodakondsuses", Kodakondsus.findKodakondsusEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) Kodakondsus.countKodakondsuses() / sizeNo;
+            uiModel.addAttribute("kodakondsused", Kodakondsus.findKodakondsusEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            float nrOfPages = (float) Kodakondsus.countKodakondsused() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("kodakondsuses", Kodakondsus.findAllKodakondsuses());
+            uiModel.addAttribute("kodakondsused", Kodakondsus.findAllKodakondsused());
         }
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsused/list";
@@ -96,19 +96,19 @@ privileged aspect KodakondsusController_Roo_Controller {
         return "redirect:/kodakondsused";
     }
     
-    @ModelAttribute("kodakondsuses")
-    public Collection<Kodakondsus> KodakondsusController.populateKodakondsuses() {
-        return Kodakondsus.findAllKodakondsuses();
+    @ModelAttribute("kodakondsused")
+    public Collection<Kodakondsus> KodakondsusController.populateKodakondsused() {
+        return Kodakondsus.findAllKodakondsused();
     }
     
-    @ModelAttribute("piiririkkujas")
-    public Collection<Piiririkkuja> KodakondsusController.populatePiiririkkujas() {
-        return Piiririkkuja.findAllPiiririkkujas();
+    @ModelAttribute("piiririkkujad")
+    public Collection<Piiririkkuja> KodakondsusController.populatePiiririkkujad() {
+        return Piiririkkuja.findAllPiiririkkujad();
     }
     
-    @ModelAttribute("riiks")
-    public Collection<Riik> KodakondsusController.populateRiiks() {
-        return Riik.findAllRiiks();
+    @ModelAttribute("riigid")
+    public Collection<Riik> KodakondsusController.populateRiigid() {
+        return Riik.findAllRiigid();
     }
     
     void KodakondsusController.addDateTimeFormatPatterns(Model uiModel) {

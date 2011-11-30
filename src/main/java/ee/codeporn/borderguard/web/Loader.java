@@ -16,14 +16,14 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         @Transactional
         public void onApplicationEvent(ContextRefreshedEvent event) {
         	if (event.getApplicationContext().getParent() == null) {
-        		if(Riik.countRiiks() == 0) {
+        		if(Riik.countRiigid() == 0) {
         			Riik eesti = new Riik();
         			eesti.setIsoKood("EST");
         			eesti.setAnsiKood("233");
         			eesti.setKommentaar("Eesti");
         			eesti.persist();
         			
-        			List<Riik> k = Riik.findAllRiiks();
+        			List<Riik> k = Riik.findAllRiigid();
         			System.out.println(k.size());
         			System.out.println("Seeding data!");
         		}

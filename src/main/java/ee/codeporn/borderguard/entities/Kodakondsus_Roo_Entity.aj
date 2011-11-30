@@ -12,11 +12,11 @@ privileged aspect Kodakondsus_Roo_Entity {
     
     declare @type: Kodakondsus: @Entity;
     
-    public static long Kodakondsus.countKodakondsuses() {
+    public static long Kodakondsus.countKodakondsused() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Kodakondsus o", Long.class).getSingleResult();
     }
     
-    public static List<Kodakondsus> Kodakondsus.findAllKodakondsuses() {
+    public static List<Kodakondsus> Kodakondsus.findAllKodakondsused() {
         return entityManager().createQuery("SELECT o FROM Kodakondsus o", Kodakondsus.class).getResultList();
     }
     
