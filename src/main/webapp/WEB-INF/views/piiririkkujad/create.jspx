@@ -44,6 +44,9 @@
                     </td>
                 </tr>
             </table>
+            <button class="btn small-padding primary" style="float: right;">
+            	<spring:message code="add"/>
+            </button>
         </div>
         <div class="clear"/>
     </form:create>
