@@ -1,12 +1,7 @@
 package ee.codeporn.borderguard.entities;
 
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
@@ -15,9 +10,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Calendar;
 
-@RooJavaBean
-@RooToString
-@RooEntity
+@MappedSuperclass
 public abstract class Base {
     @Size(max = 32)
     private String avaja;
@@ -40,10 +33,14 @@ public abstract class Base {
     @DateTimeFormat(style = "M-")
     private Calendar suletud;
     
-    @PrePersist
+    @SuppressWarnings("unused")
+	@PrePersist
     private void logSavingData(){
     	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    	String username = authentication.getName();
+    	String username = "system";
+    	if(authentication != null) {
+    		username = authentication.getName();
+    	}
     	Calendar now = Calendar.getInstance();
     	
     	this.avaja = username;
