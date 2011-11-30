@@ -27,7 +27,7 @@ body {
 }
 
 #banner h1 {
-	padding: 7px 0 0 10px;
+	padding: 7px 0 0 10px !important;
 	color: white;
 	text-shadow: 1px 1px 1px darkgray;
 }
@@ -81,30 +81,37 @@ body {
 }
 
 #menu h2 {
-	color: #fff;
-	background: #648C1D;
+	color: #ffffff;
+	background-color: #0064cd;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+	background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+	background-image: linear-gradient(top, #049cdb, #0064cd);
+	border-color: #0064cd #0064cd #003f81;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	text-transform: uppercase;
-	font-weight:bold;
-	font-size: 12px;
+	font-size: 14px;
+	line-height: 24px;
+	border-radius: 5px;
 }
 
 #menu a {
-	color: #666666;
-	background: #efefef;
+	color: #0069d6;
+	background: #EEE;
 	text-decoration: none;
 	padding: 2px 12px;
 }
 
 #menu a:hover {
-	color: #648C1D;
-	background: #fff;
+	color: #00438a;
+	background: #FFF;
 }
 
 #footer {
-	background:#fff;
-	border:none;
-	margin-top:15px;
-	border-top:1px solid #999999;
+	margin: 7px 0 7px 0;
+	border-top: 1px dotted #AAA;
 }
 
 #footer .new {
@@ -126,9 +133,8 @@ table.navigation {
 
 label {
 	width:100px;
-	float:left;
-	margin-left: 5px;
-	margin-top: 0px;
+	padding-top: 4px !important;
+	padding-right: 4px;
 }
 
 
@@ -179,48 +185,6 @@ ul li {
 	margin:0 0 0.25em 0;
 	padding:0;
 }
-/* table elements */
-
-table {
-	background: #EEEEEE;
-	margin: 2px 0 0 0;
-	border: 1px solid #BBBBBB;
-	border-collapse: collapse;
-	width: 100%
-}
-
-table table {
-	margin: -5px 0;
-	border: 0px solid #e0e7d3;
-	width: 100%;
-}
-
-table td,table th {
-	padding: 2px;
-	border: 1px solid #CCCCCC;
-}
-
-table td form {
-	text-align:center;
-	vertical-align: middle;
-	margin: 0px;
-}
-
-table th {
-	font-size: 0.9em;
-	text-align: left;
-	font-weight: bold;
-	color: #FFF;
-	background: #999;
-}
-
-table thead {
-	font-weight: bold;
-	font-style: italic;
-	background-color: #BBBBBB;
-}
-
-table a:link {color: #303030;}
 
 .utilbox {width: 18px;}
 
