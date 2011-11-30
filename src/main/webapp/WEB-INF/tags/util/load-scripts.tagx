@@ -4,6 +4,8 @@
 
   <spring:theme code="styleSheet" var="roo_css" />
   <spring:url value="/${roo_css}" var="roo_css_url" />
+  <spring:url value="/resources/javascripts/jquery-1.7.1.js" var="jquery_url" />
+  <spring:url value="/resources/javascripts/global.js" var="globalJS_url" />
   <spring:url value="/resources/dojo/dojo.js" var="dojo_url" />
   <spring:url value="/resources/styles/bootstrap.min.css" var="bootstrap_url" />
   <spring:url value="/resources/dijit/themes/claro/claro.css" var="claro_url" />
@@ -19,12 +21,14 @@
   <c:set var="userLocale">
     <c:out value="${fn:replace(pageContext.response.locale, '_', '-')}" default="en" />
   </c:set>
-
+  <script src="${jquery_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+  <script src="${globalJS_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script type="text/javascript">var djConfig = {parseOnLoad: false, isDebug: false, locale: '${fn:toLowerCase(userLocale)}'};</script>
 
   <script src="${dojo_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${spring_url}" type="text/javascript"><!-- /required for FF3 and Opera --></script>
   <script src="${spring_dojo_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script language="JavaScript" type="text/javascript">dojo.require("dojo.parser");</script>
+  
 
 </jsp:root>
