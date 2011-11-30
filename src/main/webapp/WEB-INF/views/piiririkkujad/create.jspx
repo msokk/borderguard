@@ -9,13 +9,16 @@
             <field:input field="perenimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" max="25" z="user-managed"/>
             <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
-            <select id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu">
-            	<option value="M">M</option>
-            	<option value="N">N</option>
-            </select>
+            <div id="_c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu_id">
+            	<label for="_sugu_id"><spring:message code="gender"/>:</label>
+	            <select id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu" class="right" style="width: 182px;">
+	            	<option value="M">M</option>
+	            	<option value="N">N</option>
+	            </select>
+            </div>
         </div>
-        <div class="right">
-            <table>
+        <div class="right" style="width: 245px;">
+            <table class="small-padding">
                 <tr>
                     <td>
                         <spring:message code="country"/>
@@ -23,17 +26,19 @@
                     <td>
                         <spring:message code="identity_code"/>
                     </td>
+                    <td colspan="2">
+                    </td>
                 </tr>
                 <tr>
                     <td>EST</td>
-                    <td>123</td>
+                    <td>39008292728</td>
                     <td>
-                        <button class="btn success">
+                        <button class="btn small-padding success">
                             <spring:message code="edit"/>
                         </button>
                     </td>
                     <td>
-                        <button class="btn danger">
+                        <button class="btn small-padding danger">
                             <spring:message code="delete"/>
                         </button>
                     </td>

@@ -296,3 +296,11 @@ fieldset th {
 .clear {
 	clear: both;
 }
+
+.small-padding {
+	padding: 5px;
+}
+
+.small-padding td{
+	padding: 5px;
+}
