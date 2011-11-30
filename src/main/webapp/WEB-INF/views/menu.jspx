@@ -11,10 +11,6 @@
             <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seadused?form" z="user-managed"/>
             <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seadused?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
         </menu:category>
-        <menu:category id="c_objekt" z="rjkh6O+TVNXzCjedLp6PFqZolxI=">
-            <menu:item id="i_objekt_new" messageCode="global_menu_new" url="/objektid?form" z="user-managed"/>
-            <menu:item id="i_objekt_list" messageCode="global_menu_list" url="/objektid?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
-        </menu:category>
         <menu:category id="c_piiririkkuja" z="JMlBoa5Zk33SRu+AsyTwMO+66T0=">
             <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujad?form" z="user-managed"/>
             <menu:item id="i_piiririkkuja_list" messageCode="global_menu_list" url="/piiririkkujad?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>

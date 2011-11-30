@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="${claro_url}" /><!-- required for FF3 and Opera -->
   <link rel="stylesheet" type="text/css" href="${bootstrap_url}" />
   <link rel="stylesheet" type="text/css" media="screen" href="${roo_css_url}" /><!-- required for FF3 and Opera -->
-  <link rel="SHORTCUT ICON" href="${favicon}" />
+  <link rel="shortcut icon" href="${favicon}" />
 
   <!-- Get the user local from the page context (it was set by Spring MVC's locale resolver) -->
   <c:set var="userLocale">
