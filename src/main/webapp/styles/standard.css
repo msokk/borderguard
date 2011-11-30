@@ -12,7 +12,28 @@ body {
 }
 
 #header {
+	margin-top: 1em;
 	margin-bottom: 1em;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+#banner {
+	width: 800px; 
+	height: 50px; 
+	background-image: url(../images/banner-graphic.png);
+}
+
+#banner h1 {
+	padding: 7px 0 0 10px;
+	color: white;
+	text-shadow: 1px 1px 1px darkgray;
+}
+
+.submit input {
+	margin-left: 5px;
 }
 
 #wrapper {
@@ -21,10 +42,6 @@ body {
 	max-width: 800px;
 	margin-right: auto;
 	margin-left: auto;
-
-	/* fix max-width incompatibility in IE6 */
-	width:expression(document.body.clientWidth > 800? "800px": "auto" );
-	
 	overflow:hidden;
 	display:block;
 }
@@ -94,7 +111,6 @@ body {
 	float:left;
 }
 
-#footer a:link {color: #7db223;}
 
 .quicklinks {
 	clear:both; 
@@ -115,13 +131,6 @@ label {
 	margin-top: 0px;
 }
 
-input {
-	height:20px;
-}
-
-input, textarea, select {
-	border:1px solid #B3B3B3;
-}
 
 input.image {
 	border: none;
@@ -129,9 +138,6 @@ input.image {
 	vertical-align: middle;
 }
 
-submit {
-	height:25px;
-}
 
 div {
 	text-align: left;
@@ -148,47 +154,11 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 	
 /* text styles */
 
-h1,h2,h3 {
-	font-family: Helvetica, sans-serif;
-	color: #7db223;
-}
-
-h1 {
-	font-size: 20px;
-	line-height: 26px;
-}
-
-h2 {
-	font-size: 18px;
-	line-height: 20px;
-}
-
-h3 {
-	font-size: 15px;
-	line-height: 21px;
-	color:#555;
-}
-
-h4 {
-	font-size: 14px;
-	line-height: 20px;
-}
-
 .errors {
 	color: red;
 	font-weight: bold;
 	display: block;
 	margin-left: 105px;
-}
-
-a {
-	text-decoration: underline;
-	font-size: 12px;
-}
-
-a img {
-	border: 0 none;
-	vertical-align: middle;
 }
 
 tr:nth-child(odd) {
@@ -199,21 +169,6 @@ tr:nth-child(even) {
 	background-color: #EFEFEF;
 }
 
-a:link {
-	color: #7db223;
-}
-
-a:hover {
-	color: #456314;
-}
-
-a:active {
-	color: #7db223;
-}
-
-a:visited {
-	color: #7db223;
-}
 
 li {
 	padding-top: 5px;
@@ -305,12 +260,6 @@ fieldset textarea {
 	background: #e0e7d3;
 }
 
-fieldset input {
-	margin: 3px;
-	height: 20px;
-	background: #e0e7d3;
-}
-
 fieldset table {
 	width: 100%;
 }
@@ -328,15 +277,6 @@ fieldset th {
 	border:none;
 }
 
-.submit input {
-	border: 1px solid #BBBBBB;
-	color:#777777;
-	padding:2px 7px;
-	font-size:11px;
-	text-transform:uppercase;
-	font-weight:bold;
-	height:24px;
-}
 
 .updated {
 	background:#ecf1e5;
