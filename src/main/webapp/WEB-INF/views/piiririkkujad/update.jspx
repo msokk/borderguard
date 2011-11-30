@@ -3,12 +3,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_codeporn_borderguard_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujad" versionField="Version" z="user-managed">
-        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avaja" required="true" z="R0tAnA2N8lVpYMGxmZFRsA3JKiA="/>
-        <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avatud" required="true" z="lU8UXD8wvSWDDaHjMOFglFHypc0="/>
-        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muutja" required="true" z="liWvFrv7Z79ZEf5mOJbvUxBTxBo="/>
-        <field:datetime dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muudetud" required="true" z="XtREeF5OWNQucVFbgLSxcAiMiV0="/>
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avaja" z="2s/ti4iFoNABPHyaTDN8yYrtJtQ="/>
+        <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avatud" z="PLJ8GjCalMVlRDwZ52DqVFLM0f8="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muutja" z="foHq+awTA0wOkTnp1AAoY7lDIUM="/>
+        <field:datetime dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muudetud" z="KTSD2zlEXqF+m//0e8RBdt/HlTM="/>
         <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sulgeja" z="wc7QXCii16U2NlJjwiRyE34eqOU="/>
-        <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_suletud" required="true" z="qKG0fpl3k1hW7MM8xOXvm0Liojw="/>
+        <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_suletud" z="SeDeE0T/f/q3Kxu2a9FrLLTZHh8="/>
         <field:input field="isikukood" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" max="20" z="jD5+xmuO6zqn8zkph/J1wdYl4x4="/>
         <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="EFXqVUVskyRpuLXdh2r9bkAJMG8="/>
         <field:input field="eesnimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" max="25" z="yuRhlYyV6PNzSru7e2dq0D1ZNsc="/>

@@ -3,6 +3,9 @@ package ee.codeporn.borderguard.entities;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.MappedSuperclass;
@@ -16,20 +19,16 @@ import java.util.Calendar;
 @RooToString
 @RooEntity
 public abstract class Base {
-    @NotNull
     @Size(max = 32)
     private String avaja;
 
-    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar avatud;
 
-    @NotNull
     @Size(max = 32)
     private String muutja;
 
-    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar muudetud;
@@ -37,17 +36,19 @@ public abstract class Base {
     @Size(max = 32)
     private String sulgeja;
 
-    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar suletud;
     
     @PrePersist
     private void logSavingData(){
+    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    	String username = authentication.getName();
     	Calendar now = Calendar.getInstance();
-    	this.avaja = "avaja";
+    	
+    	this.avaja = username;
     	this.avatud = now;
-    	this.muutja = "avaja";
+    	this.muutja = username;
     	this.muudetud = now;
     	Calendar closedTime = Calendar.getInstance();
     	closedTime.add(Calendar.YEAR, +200);
