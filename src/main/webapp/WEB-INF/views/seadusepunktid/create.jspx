@@ -15,7 +15,7 @@
         <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
         <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_alates" z="OXX8tepfl6JUAP1Ut2wGpwEpV1g="/>
         <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_kuni" z="U6ePq8N3FfBPxaXvwC10K1nXarw="/>
-        <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
+        <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemValue="id" itemLabel="SeadusePunkt" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
         <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_SeadusePunkt" render="${not empty dependencies}" z="q+z3e//IZ1kj7X6oUvE1yEN7cDY="/>
