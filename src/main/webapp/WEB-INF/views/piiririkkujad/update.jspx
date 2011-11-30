@@ -15,7 +15,7 @@
         <field:textarea field="perenimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" z="hdkTf2iypp3O2P6a/yw2uirwMe8="/>
         <field:input field="sugu" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" max="1" z="sxGbQhIhycVNXuYdi7MUOCNfhg8="/>
         <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
-        <field:simple field="kodakonsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakonsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="SO97VT9C1Z1HVy1s3xhrHMiKyi8="/>
         <field:select field="objekt" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_objekt" itemValue="id" items="${objektid}" path="/objektid" z="user-managed"/>
+        <field:simple field="kodakonsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakonsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="SO97VT9C1Z1HVy1s3xhrHMiKyi8="/>
     </form:update>
 </div>
