@@ -8,8 +8,11 @@
             <field:input field="eesnimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" max="25" z="yuRhlYyV6PNzSru7e2dq0D1ZNsc="/>
             <field:input field="perenimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" max="25" z="user-managed"/>
             <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
-            <field:input field="sugu" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" max="1" z="sxGbQhIhycVNXuYdi7MUOCNfhg8="/>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
+            <select id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu">
+            	<option value="M">M</option>
+            	<option value="N">N</option>
+            </select>
         </div>
         <div class="right">
             <table>
