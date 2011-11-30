@@ -21,7 +21,7 @@
     <form name="f" action="${fn:escapeXml(form_url)}" method="POST">
       <div>
         <label for="j_username">
-          <spring:message code="security_login_form_name" />
+          <spring:message code="security_login_form_name" />:
         </label>
         <input id="j_username" type='text' name='j_username' style="width:150px" />
         <spring:message code="security_login_form_name_message" var="name_msg" htmlEscape="false" />
@@ -35,7 +35,7 @@
       <br />
       <div>
         <label for="j_password">
-          <spring:message code="security_login_form_password" />
+          <spring:message code="security_login_form_password" />:
         </label>
         <input id="j_password" type='password' name='j_password' style="width:150px" />
         <spring:message code="security_login_form_password_message" var="pwd_msg" htmlEscape="false" />
