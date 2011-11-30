@@ -29,11 +29,15 @@ body {
 #banner h1 {
 	padding: 7px 0 0 10px !important;
 	color: white;
-	text-shadow: 1px 1px 1px darkgray;
+	text-shadow: 1px 1px 1px #0064CD;
 }
 
 .submit input {
 	margin-left: 5px;
+}
+
+.dijitFocused {
+	outline: none;
 }
 
 #wrapper {
@@ -116,6 +120,10 @@ body {
 
 #footer .new {
 	float:left;
+}
+
+.dijitTitlePaneTitleFocus {
+	outline: none;
 }
 
 
