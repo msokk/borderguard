@@ -3,12 +3,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_codeporn_borderguard_entities_SeadusePunkt" modelAttribute="seadusePunkt" path="/seadusepunktid" render="${empty dependencies}" z="user-managed">
-        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" required="true" z="RD9SVmeFtg/ws5eTWw1l5m4IDys="/>
-        <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" required="true" z="EUVnqNLC6iwSj+pRD0LiN2D7WXc="/>
-        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" required="true" z="0AnKTxk9KQTuDCIQ6nvOKJgzDuU="/>
-        <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" required="true" z="j5vCqtp8EbYvzS0iGT4cBrGei3A="/>
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" z="smHyGrdemXJn+nOVjIoYgqRg9ho="/>
+        <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" z="oFwEgvdfkHgFJUHNAXAEx8twX3k="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" z="HYDKhD3MwP6MqIOjWEqy9l6OK68="/>
+        <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" z="TYFase10JT2v945/sNVLxYOVuok="/>
         <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_sulgeja" z="5XQqo5SCPyqlFu2JjIA0g2ZwkjU="/>
-        <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" required="true" z="dRnlp3ckJTw23+exuoZXECIQrhk="/>
+        <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" z="Vbdxyt+bT8J0js0VDFReO5BOINs="/>
         <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
         <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
         <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
