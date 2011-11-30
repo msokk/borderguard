@@ -150,6 +150,9 @@ input.image {
 	border: none;
 	height: auto;
 	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	padding: 0;
 }
 
 
