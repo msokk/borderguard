@@ -15,10 +15,6 @@
             <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujad?form" z="user-managed"/>
             <menu:item id="i_piiririkkuja_list" messageCode="global_menu_list" url="/piiririkkujad?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
         </menu:category>
-        <menu:category id="c_riik" z="82KnxXQ8F1G/xroEWq4JxRs9sbA=">
-            <menu:item id="i_riik_new" messageCode="global_menu_new" url="/riigid?form" z="user-managed"/>
-            <menu:item id="i_riik_list" messageCode="global_menu_list" url="/riigid?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
-        </menu:category>
         <menu:category id="c_kodakondsus" z="4JGd7QfPC57dvBfG3D1b8l5qNx0=">
             <menu:item id="i_kodakondsus_new" messageCode="global_menu_new" url="/kodakondsused?form" z="user-managed"/>
             <menu:item id="i_kodakondsus_list" messageCode="global_menu_list" url="/kodakondsused?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>

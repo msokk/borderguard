@@ -15,6 +15,14 @@ import javax.persistence.CascadeType;
 @RooToString
 @RooEntity
 public class Riik extends Base {
+	
+	public static Riik build(String iso, String ansi, String comment) {
+		Riik tmp = new Riik();
+		tmp.isoKood = iso;
+		tmp.ansiKood = ansi;
+		tmp.kommentaar = comment;
+		return tmp;
+	}
 
     @NotNull
     @Size(max = 20)
