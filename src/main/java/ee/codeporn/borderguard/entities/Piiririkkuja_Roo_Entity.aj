@@ -12,11 +12,11 @@ privileged aspect Piiririkkuja_Roo_Entity {
     
     declare @type: Piiririkkuja: @Entity;
     
-    public static long Piiririkkuja.countPiiririkkujas() {
+    public static long Piiririkkuja.countPiiririkkujad() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o", Long.class).getSingleResult();
     }
     
-    public static List<Piiririkkuja> Piiririkkuja.findAllPiiririkkujas() {
+    public static List<Piiririkkuja> Piiririkkuja.findAllPiiririkkujad() {
         return entityManager().createQuery("SELECT o FROM Piiririkkuja o", Piiririkkuja.class).getResultList();
     }
     

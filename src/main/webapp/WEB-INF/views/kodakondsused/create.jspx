@@ -3,18 +3,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_codeporn_borderguard_entities_Kodakondsus" modelAttribute="kodakondsus" path="/kodakondsused" render="${empty dependencies}" z="user-managed">
-        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_avaja" z="pvDSAIRZXJFhBIazqEBylJ9Nmsc="/>
-        <field:datetime dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_avatud" z="37ijJCyz+iLtwNNu3jNOiYWpyjw="/>
-        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_muutja" z="UdKongZIVT9Gf+QcixtV7c1odEM="/>
-        <field:datetime dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" z="+rZLowXhFRoMSiWp1uZ4pmYEZ1M="/>
-        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" z="2k0cQ7Fq+AaW3UXpX8E6Cjrqks4="/>
-        <field:datetime dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Kodakondsus_suletud" z="EsMA3VOiIw+qJ5YpjbjxIL2vbo4="/>
         <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" z="TFx9ZZedIsP4XILTUxYo1RxPH50="/>
         <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Kodakondsus_alates" z="/oYI9/qpznrp7nJ2f8gYvlLKIfg="/>
         <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kuni" z="Dv5Ot+usrDRT40UE1oblBUcM5d0="/>
         <field:input field="isikukood" id="c_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" max="20" z="abe7QWsoZ6tfzx1hslRIpWv/qTw="/>
-        <field:select field="piiririkkuja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" itemValue="id" items="${piiririkkujad}" path="/piiririkkujad" z="user-managed"/>
-        <field:select field="riik" id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" itemValue="id" items="${riigid}" path="/riigid" z="user-managed"/>
+        <field:select field="piiririkkuja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" itemValue="id" itemLabel="isikukood" items="${piiririkkujad}" path="/piiririkkujad" z="user-managed"/>
+        <field:select field="riik" id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" itemValue="id" items="${riigid}" itemLabel="kommentaar" path="/riigid" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Kodakondsus" render="${not empty dependencies}" z="TbhtDuVMqiBj5H4YnCqjUAWEqUA="/>
 </div>

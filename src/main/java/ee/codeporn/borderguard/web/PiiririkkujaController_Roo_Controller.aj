@@ -57,11 +57,11 @@ privileged aspect PiiririkkujaController_Roo_Controller {
     public String PiiririkkujaController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("piiririkkujas", Piiririkkuja.findPiiririkkujaEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) Piiririkkuja.countPiiririkkujas() / sizeNo;
+            uiModel.addAttribute("piiririkkujad", Piiririkkuja.findPiiririkkujaEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            float nrOfPages = (float) Piiririkkuja.countPiiririkkujad() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("piiririkkujas", Piiririkkuja.findAllPiiririkkujas());
+            uiModel.addAttribute("piiririkkujad", Piiririkkuja.findAllPiiririkkujad());
         }
         addDateTimeFormatPatterns(uiModel);
         return "piiririkkujad/list";
@@ -95,14 +95,14 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "redirect:/piiririkkujad";
     }
     
-    @ModelAttribute("kodakondsuses")
-    public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsuses() {
-        return Kodakondsus.findAllKodakondsuses();
+    @ModelAttribute("kodakondsused")
+    public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsused() {
+        return Kodakondsus.findAllKodakondsused();
     }
     
-    @ModelAttribute("piiririkkujas")
-    public Collection<Piiririkkuja> PiiririkkujaController.populatePiiririkkujas() {
-        return Piiririkkuja.findAllPiiririkkujas();
+    @ModelAttribute("piiririkkujad")
+    public Collection<Piiririkkuja> PiiririkkujaController.populatePiiririkkujad() {
+        return Piiririkkuja.findAllPiiririkkujad();
     }
     
     void PiiririkkujaController.addDateTimeFormatPatterns(Model uiModel) {
