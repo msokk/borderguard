@@ -1,7 +1,5 @@
 package ee.codeporn.borderguard.web;
 
-import java.util.List;
-
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -17,15 +15,12 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         public void onApplicationEvent(ContextRefreshedEvent event) {
         	if (event.getApplicationContext().getParent() == null) {
         		if(Riik.countRiigid() == 0) {
-        			Riik eesti = new Riik();
-        			eesti.setIsoKood("EST");
-        			eesti.setAnsiKood("233");
-        			eesti.setKommentaar("Eesti");
-        			eesti.persist();
-        			
-        			List<Riik> k = Riik.findAllRiigid();
-        			System.out.println(k.size());
         			System.out.println("Seeding data!");
+        			Riik.build("EST", "233", "Eesti").persist();
+        			Riik.build("LVA", "428", "Läti").persist();
+        			Riik.build("RUS", "643", "Venemaa").persist();
+        			Riik.build("FIN", "246", "Soome").persist();
+        			Riik.build("SWE", "752", "Rootsi").persist();
         		}
         	}
         }
