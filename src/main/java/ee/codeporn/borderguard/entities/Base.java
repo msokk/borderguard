@@ -1,16 +1,26 @@
 package ee.codeporn.borderguard.entities;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.validation.constraints.Size;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PostRemove;
 import javax.persistence.PrePersist;
+import javax.persistence.PreRemove;
+import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Calendar;
 
 @MappedSuperclass
+@RooToString
+@Transactional
+@RooEntity(mappedSuperclass = true)
 public abstract class Base {
     @Size(max = 32)
     private String avaja;
@@ -35,7 +45,7 @@ public abstract class Base {
     
     @SuppressWarnings("unused")
 	@PrePersist
-    private void logSavingData(){
+    private void recordSaved(){
     	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     	String username = "system";
     	if(authentication != null) {
@@ -51,5 +61,27 @@ public abstract class Base {
     	closedTime.add(Calendar.YEAR, +200);
     	this.suletud = closedTime;
     }
+    
+    @PreUpdate
+    public void recordModified() {
+    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    	String username = authentication.getName();
+    	this.muutja = username;
+    	this.muudetud = Calendar.getInstance();
+    }
+
+    @PreRemove
+    public void recordDeleted() {
+    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    	String username = authentication.getName();
+    	this.sulgeja = username;
+    	this.suletud = Calendar.getInstance();
+    	this.persist();
+    }
+    
+    @PostRemove
+    public void recordDeletionDone() {
+    }
+    
     
 }
