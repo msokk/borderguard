@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,4 +30,5 @@ public class PiiririkkujaController {
 		referenceData.put("genders", gender);
 	    return "piiririkkujad/create";
 	}
+	
 }
