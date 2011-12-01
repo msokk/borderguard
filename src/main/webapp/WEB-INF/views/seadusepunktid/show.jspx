@@ -15,6 +15,6 @@
         <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" object="${seadusepunkt}" z="aNczBkqL3drwG1aqb5tqSlTvthg="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_alates" object="${seadusepunkt}" z="zSejLx9jlSaR3FUXBsiC+yPgJy8="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_kuni" object="${seadusepunkt}" z="K5tl7c/lr/x/f7ugmr/f5KXoEzU="/>
-        <field:display field="seadusePunkt" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" object="${seadusepunkt}" z="pD2P8LCEMRHsk10MgWeRtpdbMjg="/>
+        
     </page:show>
 </div>
