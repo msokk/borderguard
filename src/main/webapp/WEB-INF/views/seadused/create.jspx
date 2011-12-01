@@ -8,7 +8,7 @@
         <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" z="w4D1PAhXvGOOxxKN3b80UDjkrWE="/>
         <field:datetime dateTimePattern="${seadus_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtiv_alates" z="TqxmzPeVdjpH3PAXONrvPDfvyrE="/>
         <field:datetime dateTimePattern="${seadus_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtiv_kuni" z="JJZVJpuDO+dkmx+Jwf07kyA/WoM="/>
-        <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_Seadus_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="tw3v9Gj8nxrz0jDeb4xru/P1V5I="/>
+       
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Seadus" render="${not empty dependencies}" z="oJy3C/F1FSsw39t775+uKxZyJKU="/>
 </div>
