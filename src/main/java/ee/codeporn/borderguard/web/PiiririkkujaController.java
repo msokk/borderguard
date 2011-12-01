@@ -38,6 +38,7 @@ public class PiiririkkujaController {
 		Piiririkkuja rikkuja = Piiririkkuja.findPiiririkkuja(id);
         uiModel.addAttribute("piiririkkuja", rikkuja);
         uiModel.addAttribute("kodakondsused", rikkuja.getKodakondsused());
+        System.out.println(rikkuja.getKodakondsused().toString());
         addDateTimeFormatPatterns(uiModel);
         return "piiririkkujad/update";
     }

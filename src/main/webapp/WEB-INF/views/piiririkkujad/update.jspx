@@ -20,10 +20,10 @@
          </div>
 	     
         <div class="right" style="width: 245px;">
-            <table class="small-padding">
-            	<c:forEach items="${kodakondsused}">
+        <c:forEach items="${kodakondsused}">
             		test
             	</c:forEach>
+            <table class="small-padding">
                 <tr>
                     <td>
                         <spring:message code="country"/>
