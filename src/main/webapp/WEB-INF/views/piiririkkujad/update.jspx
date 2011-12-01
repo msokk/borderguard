@@ -20,6 +20,9 @@
          </div>
 	     
         <div class="right" style="width: 245px;">
+        <c:forEach items="${kodakondsused}">
+            		test
+            	</c:forEach>
             <table class="small-padding">
                 <tr>
                     <td>
