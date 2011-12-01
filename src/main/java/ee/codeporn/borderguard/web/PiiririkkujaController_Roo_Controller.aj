@@ -57,11 +57,11 @@ privileged aspect PiiririkkujaController_Roo_Controller {
     public String PiiririkkujaController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("piiririkkujad", Piiririkkuja.findPiiririkkujaEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            uiModel.addAttribute("piiririkkujas", Piiririkkuja.findPiiririkkujaEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
             float nrOfPages = (float) Piiririkkuja.countPiiririkkujad() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("piiririkkujad", Piiririkkuja.findAllPiiririkkujad());
+            uiModel.addAttribute("piiririkkujas", Piiririkkuja.findAllPiiririkkujad());
         }
         addDateTimeFormatPatterns(uiModel);
         return "piiririkkujad/list";
@@ -79,13 +79,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PiiririkkujaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(id));
-        addDateTimeFormatPatterns(uiModel);
-        return "piiririkkujad/update";
-    }
-    
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String PiiririkkujaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Piiririkkuja.findPiiririkkuja(id).remove();
@@ -95,13 +88,13 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "redirect:/piiririkkujad";
     }
     
-    @ModelAttribute("kodakondsused")
-    public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsused() {
+    @ModelAttribute("kodakondsuses")
+    public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsuses() {
         return Kodakondsus.findAllKodakondsused();
     }
     
-    @ModelAttribute("piiririkkujad")
-    public Collection<Piiririkkuja> PiiririkkujaController.populatePiiririkkujad() {
+    @ModelAttribute("piiririkkujas")
+    public Collection<Piiririkkuja> PiiririkkujaController.populatePiiririkkujas() {
         return Piiririkkuja.findAllPiiririkkujad();
     }
     

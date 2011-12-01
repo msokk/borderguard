@@ -21,6 +21,9 @@
 	     
         <div class="right" style="width: 245px;">
             <table class="small-padding">
+            	<c:forEach items="${kodakondsused}">
+            		test
+            	</c:forEach>
                 <tr>
                     <td>
                         <spring:message code="country"/>

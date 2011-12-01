@@ -4,14 +4,19 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @RooWebScaffold(path = "piiririkkujad", formBackingObject = Piiririkkuja.class)
 @RequestMapping("/piiririkkujad")
@@ -27,5 +32,13 @@ public class PiiririkkujaController {
 		referenceData.put("genders", gender);
 	    return "piiririkkujad/create";
 	}
-	
+
+	@RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("id") Long id, Model uiModel) {
+		Piiririkkuja rikkuja = Piiririkkuja.findPiiririkkuja(id);
+        uiModel.addAttribute("piiririkkuja", rikkuja);
+        uiModel.addAttribute("kodakondsused", rikkuja.getKodakondsused());
+        addDateTimeFormatPatterns(uiModel);
+        return "piiririkkujad/update";
+    }
 }
