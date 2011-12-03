@@ -4,6 +4,7 @@
   <jsp:directive.attribute name="id" type="java.lang.String" required="true" rtexprvalue="true" description="The identifier for this tag (do not change!)" />
   <jsp:directive.attribute name="object" type="java.lang.Object" required="true" rtexprvalue="true" description="The form backing object" />
   <jsp:directive.attribute name="field" type="java.lang.String" required="true" rtexprvalue="true" description="The field name" />
+  <jsp:directive.attribute name="subProperty" type="java.lang.String" required="false" rtexprvalue="true" description="Fetch subproperty" />
   <jsp:directive.attribute name="label" type="java.lang.String" required="false" rtexprvalue="true" description="The label used for this field, will default to a message bundle if not supplied" />
   <jsp:directive.attribute name="date" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate that this field is of type java.util.Date" />
   <jsp:directive.attribute name="calendar" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate that this field is of type java.util.Calendar" />
@@ -38,6 +39,12 @@
           <c:when test="${calendar}">
             <spring:escapeBody>
               <fmt:formatDate value="${object[field].time}" pattern="${fn:escapeXml(dateTimePattern)}" />
+            </spring:escapeBody>
+          </c:when>
+          <c:when test="${subProperty}">
+            <spring:escapeBody>
+              <c:out value="tere" />
+              <spring:eval expression="${object[field][itemValue]}"  />
             </spring:escapeBody>
           </c:when>
           <c:otherwise>

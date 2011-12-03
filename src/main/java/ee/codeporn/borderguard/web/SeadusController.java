@@ -1,8 +1,11 @@
 package ee.codeporn.borderguard.web;
 
+import java.util.Calendar;
+
 import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Seadus;
+import ee.codeporn.borderguard.entities.SeadusePunkt;
 import ee.codeporn.borderguard.generic.SeadusePunktFilter;
 
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
@@ -24,7 +27,29 @@ public class SeadusController {
 	
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model uiModel, @Valid SeadusePunktFilter filter) {
-    	//uiModel.addAttribute("seadused", Seadus.findAllSeadused());
+    	uiModel.addAttribute("seadused", Seadus.findAllSeadused());
+    	
+    	if(filter.getAlates() == null) {
+    		Calendar cal = Calendar.getInstance();
+    		cal.add(Calendar.YEAR, -2);
+    		filter.setAlates(cal);
+    	}
+    	
+    	if(filter.getKuni() == null) {
+    		Calendar cal = Calendar.getInstance();
+    		cal.add(Calendar.YEAR, +2);
+    		filter.setKuni(cal);
+    	}
+    	
+    	if(filter.getValitudSeadus() != null) {
+    		uiModel.addAttribute("seadusepunktid", filter.getValitudSeadus().getPunktid(filter.getAlates(), filter.getKuni()));
+    	} else {
+    		uiModel.addAttribute("seadusepunktid", SeadusePunkt.getAllPunktid(filter.getAlates(), filter.getKuni()));
+    	}
+    	
+    	uiModel.addAttribute("SeadusePunktFilter", filter);
+
+    	
         addDateTimeFormatPatterns(uiModel);
         return "seadused/list";
     }
