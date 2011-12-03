@@ -1,6 +1,5 @@
 package ee.codeporn.borderguard.entities;
 
-import org.hibernate.annotations.Where;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.plural.RooPlural;
@@ -18,7 +17,6 @@ import ee.codeporn.borderguard.entities.Riik;
 @RooToString
 @RooEntity
 @RooPlural(value="Kodakondsused")
-@Where(clause = "sulgeja = NULL")
 public class Kodakondsus extends Base {
 
     private String kommentaar;

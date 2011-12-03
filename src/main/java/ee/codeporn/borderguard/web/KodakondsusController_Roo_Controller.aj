@@ -12,11 +12,9 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +24,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect KodakondsusController_Roo_Controller {
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String KodakondsusController.createForm(Model uiModel) {
-        uiModel.addAttribute("kodakondsus", new Kodakondsus());
-        addDateTimeFormatPatterns(uiModel);
-        return "kodakondsused/create";
-    }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String KodakondsusController.show(@PathVariable("id") Long id, Model uiModel) {
@@ -54,18 +45,6 @@ privileged aspect KodakondsusController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsused/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String KodakondsusController.update(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("kodakondsus", kodakondsus);
-            addDateTimeFormatPatterns(uiModel);
-            return "kodakondsused/update";
-        }
-        uiModel.asMap().clear();
-        kodakondsus.merge();
-        return "redirect:/kodakondsused/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
     }
     
     @ModelAttribute("kodakondsused")

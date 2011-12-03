@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
+import ee.codeporn.borderguard.entities.Piiririkkuja;
 
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,33 @@ public class KodakondsusController {
         return "1";
     }
 	
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String updateForm(@PathVariable("id") Long id, Model uiModel) {
+    @RequestMapping(value = "/{id}/{piiririkkujaId}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("id") Long id, @PathVariable("piiririkkujaId") Long piiririkkujaId, Model uiModel) {
         uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
+        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkujaId));
+
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsused/update";
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("kodakondsus", kodakondsus);
+            addDateTimeFormatPatterns(uiModel);
+            return "kodakondsused/update";
+        }
+        uiModel.asMap().clear();
+        kodakondsus.merge();
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest) + "?form";
+    }
+    
+    @RequestMapping(value = "/{piiririkkujaId}", params = "form", method = RequestMethod.GET)
+    public String createForm(@PathVariable("piiririkkujaId") Long piiririkkujaId, Model uiModel) {
+        uiModel.addAttribute("kodakondsus", new Kodakondsus());
+        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkujaId));
+        addDateTimeFormatPatterns(uiModel);
+        return "kodakondsused/create";
     }
 	
 	@RequestMapping(method = RequestMethod.POST)

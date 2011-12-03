@@ -7,7 +7,7 @@
         <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Kodakondsus_alates" z="/oYI9/qpznrp7nJ2f8gYvlLKIfg="/>
         <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kuni" z="Dv5Ot+usrDRT40UE1oblBUcM5d0="/>
         <field:input field="isikukood" id="c_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" max="20" z="abe7QWsoZ6tfzx1hslRIpWv/qTw="/>
-        <field:select field="piiririkkuja" id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" itemValue="id" itemLabel="isikukood" items="${piiririkkujad}" path="/piiririkkujad" z="user-managed"/>
-        <field:select field="riik" id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" itemValue="id" itemLabel="kommentaar" items="${riigid}" path="/riigid" z="user-managed"/>
+        <field:select field="riik" id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" itemValue="id" items="${riigid}" itemLabel="kommentaar" path="/riigid" z="user-managed"/>
+        <input type="hidden" id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" value="${piiririkkuja.id}" name="piiririkkuja" z="user-managed"/>
     </form:update>
 </div>

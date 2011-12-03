@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form2="http://www.springframework.org/tags/form" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <spring:message code="list_law_points" var="title_msg" htmlEscape="false" />
     <util:panel id="pl_ee_codeporn_borderguard_entities_Seadus" title="${title_msg}" openPane="true">
-		<form2:form method="GET" commandName="SeadusePunktFilter">
-			 <div>
-			 <table>
-			 <tr>
-				 <td><field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/></td>
-				 <td><field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/></td>
-				 <td>
-					 <!-- <form2:select path="piiriloikSelectedId" cssClass="topSelect">
-						 <form2:option value="0" label="Kõik" />
-						 <form2:options items="${piiriloikList}" itemLabel="nimetus" itemValue="piiriloik_ID" />
-					 </form2:select>-->
-				 </td>
-				 <td><input id="varskenda" type="submit" value="Värskenda" /></td>
-			 </tr>
-			 </table>
-			</div>
-		</form2:form>
+    	Needs more cowbell
     </util:panel>
 </div>
