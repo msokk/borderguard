@@ -26,11 +26,10 @@ public class KodakondsusController {
         return "1";
     }
 	
-	@RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
         addDateTimeFormatPatterns(uiModel);
-        
         return "kodakondsused/update";
     }
 	
