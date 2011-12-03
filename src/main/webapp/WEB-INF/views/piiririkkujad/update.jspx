@@ -19,7 +19,7 @@
             </div>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
         </div>
-        <div class="right" style="width: 245px;">
+        <div class="right" style="width: 280px;">
             <table class="small-padding" id="borderViolatorNationalities">
 	            <tr>
 	                <th>

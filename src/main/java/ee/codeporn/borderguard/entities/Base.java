@@ -7,19 +7,24 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.Size;
+import javax.persistence.EntityManager;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PersistenceContext;
 import javax.persistence.PostRemove;
 import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Calendar;
 
 @MappedSuperclass
 @RooToString
 @Transactional
+@Configurable
 @RooEntity(mappedSuperclass = true)
 public abstract class Base {
     @Size(max = 32)
@@ -42,6 +47,7 @@ public abstract class Base {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
     private Calendar suletud;
+    
     
     @SuppressWarnings("unused")
 	@PrePersist
