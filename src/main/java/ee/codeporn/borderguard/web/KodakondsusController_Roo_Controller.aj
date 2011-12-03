@@ -27,18 +27,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect KodakondsusController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String KodakondsusController.create(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("kodakondsus", kodakondsus);
-            addDateTimeFormatPatterns(uiModel);
-            return "kodakondsused/create";
-        }
-        uiModel.asMap().clear();
-        kodakondsus.persist();
-        return "redirect:/kodakondsused/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String KodakondsusController.createForm(Model uiModel) {
         uiModel.addAttribute("kodakondsus", new Kodakondsus());
@@ -85,15 +73,6 @@ privileged aspect KodakondsusController_Roo_Controller {
         uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsused/update";
-    }
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String KodakondsusController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Kodakondsus.findKodakondsus(id).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/kodakondsused";
     }
     
     @ModelAttribute("kodakondsused")
