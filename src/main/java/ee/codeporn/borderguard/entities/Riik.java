@@ -36,6 +36,6 @@ public class Riik extends Base {
     @Size(max = 20)
     private String ansiKood;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "riik")
     private Set<Kodakondsus> kodakondsused = new HashSet<Kodakondsus>();
 }
