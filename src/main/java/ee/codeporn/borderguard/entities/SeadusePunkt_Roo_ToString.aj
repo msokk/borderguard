@@ -15,6 +15,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Pais: ").append(getPais()).append(", ");
         sb.append("Paragrahv: ").append(getParagrahv()).append(", ");
+        sb.append("Seadus: ").append(getSeadus()).append(", ");
         sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
         sb.append("Tekst: ").append(getTekst()).append(", ");
         sb.append("Version: ").append(getVersion());

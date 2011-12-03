@@ -31,8 +31,7 @@
                     <td>
                         <spring:message code="identity_code"/>
                     </td>
-                    <td colspan="2">
-                    </td>
+                    <td colspan="2"/>
                 </tr>
                 <tr>
                     <td>EST</td>
@@ -49,10 +48,11 @@
                     </td>
                 </tr>
             </table>
-            <a href="../kodakondsused?form" class="btn small-padding primary" style="float: right;">
-            	<spring:message code="add"/>
+            <a class="btn small-padding primary" href="../kodakondsused?form" style="float: right;">
+                <spring:message code="add"/>
             </a>
         </div>
         <div class="clear"/>
-        </form:update>
+        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
+    </form:update>
 </div>
