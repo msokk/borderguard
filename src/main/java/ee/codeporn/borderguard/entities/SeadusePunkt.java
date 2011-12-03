@@ -49,11 +49,11 @@ public class SeadusePunkt extends Base {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadusePunkt")
     private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
     
-    @SuppressWarnings({ "unchecked", "unused" })
+    @SuppressWarnings({ "unchecked" })
     public static List<SeadusePunkt> getAllPunktid(Calendar alates, Calendar kuni) {
-    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2");
+    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2", SeadusePunkt.class);
     	query.setParameter(1, alates);
         query.setParameter(2, kuni);
-		return (List<SeadusePunkt>)query.getResultList();
+		return query.getResultList();
     }
 }

@@ -76,6 +76,10 @@ body {
 	height: 25px;
 }
 
+#SeadusePunktFilter table:nth-child(2) td:first-child {
+	width: 250px;
+}
+
 #filterBar td {
 	padding: 0;
 	border-top: 0;

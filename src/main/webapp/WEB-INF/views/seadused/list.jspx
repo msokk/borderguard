@@ -3,12 +3,14 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <spring:message code="list_law_points" var="title_msg" htmlEscape="false" />
+	<spring:message code="from" var="from" htmlEscape="false" />
+	<spring:message code="to" var="to" htmlEscape="false" />
     <util:panel id="pl_ee_codeporn_borderguard_entities_Seadus" title="${title_msg}" openPane="true">
 		<form2:form method="GET" commandName="SeadusePunktFilter">
 			<table id="filterBar">
 				<tr>
-		    		<td><field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/></td>
-					<td><field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/></td>
+		    		<td><field:datetime label="${from}" dateTimePattern="${seadus_kehtivalates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/></td>
+					<td><field:datetime label="${to}" dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/></td>
 					<td>
 						<spring:message code="label_ee_codeporn_borderguard_entities_seadus" var="law_label" htmlEscape="false" />
 						<label for="valitudSeadus"><c:out value="${law_label}" />:</label>
@@ -21,10 +23,9 @@
 	       			<td><input id="filterBtn" type="submit" class="btn primary" value="${fn:escapeXml(refresh_label)}" /></td>
 				</tr>
 			</table>
-			<spring:message code="from" var="from" htmlEscape="false" />
-			<spring:message code="to" var="to" htmlEscape="false" />
+			<spring:message code="point" var="point" htmlEscape="false" />
 	        <table:table buttons="true" create="false" update="false" delete="false" data="${seadusepunktid}" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" z="user-managed">
-	            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
+	            <table:column label="${point}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
 	            <table:column label="${from}" calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
 	            <table:column label="${to}" calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
 	        </table:table>
