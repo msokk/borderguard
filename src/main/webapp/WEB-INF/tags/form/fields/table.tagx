@@ -6,6 +6,7 @@
   <jsp:directive.attribute name="data" type="java.util.Collection" required="true" rtexprvalue="true" description="The collection to be displayed in the table" />
   <jsp:directive.attribute name="path" type="java.lang.String" required="true" rtexprvalue="true" description="Specify the URL path" />
   <jsp:directive.attribute name="typeIdFieldName" type="java.lang.String" required="false" rtexprvalue="true" description="The identifier field name for the type (defaults to 'id')" />
+  <jsp:directive.attribute name="buttons" type="java.lang.Boolean" required="false" rtexprvalue="false" description="Replace bootstrap buttons" />
   <jsp:directive.attribute name="create" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Include 'create' link into table (default true)" />
   <jsp:directive.attribute name="update" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Include 'update' link into table (default true)" />
   <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Include 'delete' link into table (default true)" />
@@ -96,9 +97,19 @@
             <spring:url value="${path}/${itemId}" var="show_form_url" />
             <spring:url value="/resources/images/show.png" var="show_image_url" />
             <spring:message arguments="${typeName}" code="entity_show" var="show_label" htmlEscape="false" />
-            <a href="${fn:escapeXml(show_form_url)}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}">
-              <img alt="${fn:escapeXml(show_label)}" class="image" src="${fn:escapeXml(show_image_url)}" title="${fn:escapeXml(show_label)}" />
-            </a>
+            <c:choose>
+	            <c:when test="${buttons}">
+	            	<a href="${fn:escapeXml(show_form_url)}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}" class="btn primary mini">
+	            	  <spring:message arguments="${typeName}" code="show" var="show_text" htmlEscape="false" />
+		              <c:out value="${fn:escapeXml(show_text)}" />
+		            </a>
+				</c:when>
+	            <c:otherwise>
+		            <a href="${fn:escapeXml(show_form_url)}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}">
+		              <img alt="${fn:escapeXml(show_label)}" class="image" src="${fn:escapeXml(show_image_url)}" title="${fn:escapeXml(show_label)}" />
+		            </a>
+	            </c:otherwise>
+            </c:choose>
           </td>
           <c:if test="${update}">
             <td class="utilbox">
@@ -107,9 +118,19 @@
               </spring:url>
               <spring:url value="/resources/images/update.png" var="update_image_url" />
               <spring:message arguments="${typeName}" code="entity_update" var="update_label" htmlEscape="false" />
-              <a href="${fn:escapeXml(update_form_url)}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
-                <img alt="${fn:escapeXml(update_label)}" class="image" src="${fn:escapeXml(update_image_url)}" title="${fn:escapeXml(update_label)}" />
-              </a>
+		      <c:choose>
+			      <c:when test="${buttons}">
+		     		<a href="${fn:escapeXml(update_form_url)}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}" class="btn info mini">
+			     	  <spring:message arguments="${typeName}" code="update" var="update_text" htmlEscape="false" />
+			          <c:out value="${fn:escapeXml(update_text)}" />
+			      	</a>
+				  </c:when>
+			      <c:otherwise>
+			       <a href="${fn:escapeXml(update_form_url)}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
+			         <img alt="${fn:escapeXml(update_label)}" class="image" src="${fn:escapeXml(update_image_url)}" title="${fn:escapeXml(update_label)}" />
+			       </a>
+			      </c:otherwise>
+		     </c:choose>
             </td>
           </c:if>
           <c:if test="${delete}">
@@ -123,7 +144,17 @@
                     <spring:message code="entity_delete_confirm" />
                   </spring:escapeBody>
                 </c:set>
-                <input alt="${fn:escapeXml(delete_label)}" class="image" src="${fn:escapeXml(delete_image_url)}" title="${fn:escapeXml(delete_label)}" type="image" value="${fn:escapeXml(delete_label)}" onclick="return confirm('${delete_confirm_msg}');" />
+     		    <c:choose>
+				      <c:when test="${buttons}">
+			     		<a href="#" alt="${fn:escapeXml(delete_label)}" title="${fn:escapeXml(delete_label)}" class="btn danger mini" onclick="return confirm('${delete_confirm_msg}');">
+				     	  <spring:message arguments="${typeName}" code="delete" var="delete_text" htmlEscape="false" />
+				          <c:out value="${fn:escapeXml(delete_text)}" />
+				      	</a>
+					  </c:when>
+				      <c:otherwise>
+				       <input alt="${fn:escapeXml(delete_label)}" class="image" src="${fn:escapeXml(delete_image_url)}" title="${fn:escapeXml(delete_label)}" type="image" value="${fn:escapeXml(delete_label)}" onclick="return confirm('${delete_confirm_msg}');" />
+				      </c:otherwise>
+			    </c:choose>
                 <c:if test="${not empty param.page}">
                   <input name="page" type="hidden" value="1" />
                 </c:if>

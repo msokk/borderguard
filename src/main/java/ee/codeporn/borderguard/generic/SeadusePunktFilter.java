@@ -2,7 +2,6 @@ package ee.codeporn.borderguard.generic;
 
 import java.util.Calendar;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import ee.codeporn.borderguard.entities.Seadus;
 
 public class SeadusePunktFilter {
@@ -37,5 +36,4 @@ public class SeadusePunktFilter {
 	public void setValitudSeadus(Seadus valitudSeadus) {
 		this.valitudSeadus = valitudSeadus;
 	}
-	
 }

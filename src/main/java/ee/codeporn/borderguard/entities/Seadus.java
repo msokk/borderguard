@@ -7,6 +7,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.Query;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -42,4 +45,14 @@ public class Seadus extends Base {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "seadus")
     private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
+    
+
+    @SuppressWarnings({ "unchecked", "unused" })
+    public List<SeadusePunkt> getPunktid(Calendar alates, Calendar kuni) {
+    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2");
+    	//query.setParameter(1, this.getId());
+    	query.setParameter(1, alates);
+        query.setParameter(2, kuni);
+		return (List<SeadusePunkt>)query.getResultList();
+    }
 }
