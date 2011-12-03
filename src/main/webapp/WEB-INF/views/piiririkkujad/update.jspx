@@ -49,9 +49,9 @@
                     </td>
                 </tr>
             </table>
-            <button class="btn small-padding primary" style="float: right;" id="borderViolatorAddNationality">
+            <a href="../kodakondsused?form" class="btn small-padding primary" style="float: right;">
             	<spring:message code="add"/>
-            </button>
+            </a>
         </div>
         <div class="clear"/>
         </form:update>
