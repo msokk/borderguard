@@ -70,18 +70,13 @@ public abstract class Base {
     	this.muudetud = Calendar.getInstance();
     }
 
-    @PreRemove
-    public void recordDeleted() {
+    
+    public void close() {
     	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     	String username = authentication.getName();
     	this.sulgeja = username;
     	this.suletud = Calendar.getInstance();
     	this.persist();
     }
-    
-    @PostRemove
-    public void recordDeletionDone() {
-    }
-    
     
 }
