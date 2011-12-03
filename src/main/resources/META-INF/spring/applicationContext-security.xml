@@ -29,6 +29,7 @@
 	            <user name="admin" password="d17bd0792f499b6f1f22645c3b700c8da240ea1ee58f13800160626ce35c4c82" authorities="ROLE_ADMIN"/>
 		        <user name="valvur" password="573a56297fee36b0087a5562e445c193c3d3c6f7f3e7204d8b4807e4d8feac0f" authorities="ROLE_USER"/>
 		        <user name="ylem" password="360945ee2f6f85323042dcc49051916ce36f17074a37fb25306d6fe2c6a94327" authorities="ROLE_USER"/>
+		    	<user name="vadim" password="90e61fd0c8a40f52cba6a0a010314537c8b59f25d9356ebd838cf49be5f3168f" authorities="ROLE_ADMIN"/>
 		    </user-service>
     	</authentication-provider>
 	</authentication-manager>

@@ -4,46 +4,21 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_codeporn_borderguard_entities_SeadusePunkt" modelAttribute="seadusePunkt" path="/seadusepunktid" render="${empty dependencies}" z="user-managed">
         <div class="left">
-            <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
-            <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
-            <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
-            <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
-            <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemLabel="pais" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
-        </div>
-        <div class="right" style="width: 245px;">
-            <table class="small-padding">
-                <tr>
-                    <td>
-                        <spring:message code="paragraph"/>
-                    </td>
-                    <td>
-                        <spring:message code="header"/>
-                    </td>
-                    <td colspan="2"/>
-                </tr>
-                <tr>
-                    <td>85</td>
-                    <td>Proov</td>
-                    <td>
-                        <button class="btn small-padding success">
-                            <spring:message code="edit"/>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn small-padding danger">
-                            <spring:message code="delete"/>
-                        </button>
-                    </td>
-                </tr>
-            </table>
-            <button class="btn small-padding primary" style="float: right;">
-                <spring:message code="add"/>
-            </button>
+        <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
+        <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
+        <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
+        <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_alates" z="OXX8tepfl6JUAP1Ut2wGpwEpV1g="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_kuni" z="U6ePq8N3FfBPxaXvwC10K1nXarw="/>
+        <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemValue="id" itemLabel="pais" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
+        
+    </div>
+         <div class="right" style="width: 245px;">
+        	<spring:message code="subpoint"/>
+        	<hr style="margin: 5px 0 5px 0;"/>
+        	<spring:message code="can_add_subpoint_when_law_point_saved"/>
         </div>
         <div class="clear"/>
-        <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_SeadusePunkt" render="${not empty dependencies}" z="q+z3e//IZ1kj7X6oUvE1yEN7cDY="/>
 </div>
