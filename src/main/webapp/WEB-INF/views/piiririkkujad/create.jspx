@@ -10,19 +10,21 @@
             <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
             <div id="_c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu_id">
-            	<label for="_sugu_id"><spring:message code="gender"/>:</label>
-	            <select id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu" class="right" style="width: 182px;">
-	            	<option value="M">M</option>
-	            	<option value="N">N</option>
-	            </select>
+                <label for="_sugu_id">
+                    <spring:message code="gender"/>:</label>
+                <select class="right" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu" style="width: 182px;">
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                </select>
             </div>
         </div>
         <div class="right" style="width: 245px;">
-        	<spring:message code="nationalities"/>
-        	<hr style="margin: 5px 0 5px 0;"/>
-        	<spring:message code="can_add_nationality_when_border_violator_saved"/>
+            <spring:message code="nationalities"/>
+            <hr style="margin: 5px 0 5px 0;"/>
+            <spring:message code="can_add_nationality_when_border_violator_saved"/>
         </div>
         <div class="clear"/>
+        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Piiririkkuja" render="${not empty dependencies}" z="7XR2AnOFAwsKEL9tVcmqGDE0UMA="/>
 </div>

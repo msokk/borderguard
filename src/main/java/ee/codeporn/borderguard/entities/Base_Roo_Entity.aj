@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Base_Roo_Entity {
     
-    
     @PersistenceContext
     transient EntityManager Base.entityManager;
     

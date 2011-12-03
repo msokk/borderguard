@@ -42,20 +42,20 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
         this.kommentaar = kommentaar;
     }
     
-    public Calendar SeadusePunkt.getKehtiv_alates() {
-        return this.kehtiv_alates;
+    public Calendar SeadusePunkt.getKehtivAlates() {
+        return this.kehtivAlates;
     }
     
-    public void SeadusePunkt.setKehtiv_alates(Calendar kehtiv_alates) {
-        this.kehtiv_alates = kehtiv_alates;
+    public void SeadusePunkt.setKehtivAlates(Calendar kehtivAlates) {
+        this.kehtivAlates = kehtivAlates;
     }
     
-    public Calendar SeadusePunkt.getKehtiv_kuni() {
-        return this.kehtiv_kuni;
+    public Calendar SeadusePunkt.getKehtivKuni() {
+        return this.kehtivKuni;
     }
     
-    public void SeadusePunkt.setKehtiv_kuni(Calendar kehtiv_kuni) {
-        this.kehtiv_kuni = kehtiv_kuni;
+    public void SeadusePunkt.setKehtivKuni(Calendar kehtivKuni) {
+        this.kehtivKuni = kehtivKuni;
     }
     
     public SeadusePunkt SeadusePunkt.getSeadusePunkt() {

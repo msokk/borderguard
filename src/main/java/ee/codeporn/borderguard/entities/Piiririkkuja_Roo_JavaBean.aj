@@ -62,7 +62,7 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         return this.kodakondsused;
     }
     
-    public void Piiririkkuja.setKodakonsused(Set<Kodakondsus> kodakondsused) {
+    public void Piiririkkuja.setKodakondsused(Set<Kodakondsus> kodakondsused) {
         this.kodakondsused = kodakondsused;
     }
     

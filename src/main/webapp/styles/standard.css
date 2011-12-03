@@ -30,6 +30,16 @@ body {
 	padding: 7px 0 0 10px !important;
 	color: white;
 	text-shadow: 1px 1px 1px #0064CD;
+	-webkit-transition: color 1s linear;
+}
+
+#banner h1:hover {
+	color: #EEE;
+}
+
+#banner h1:active {
+	position: relative;
+	top: 2px;
 }
 
 .submit input {

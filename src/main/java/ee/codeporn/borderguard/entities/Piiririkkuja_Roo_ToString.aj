@@ -9,19 +9,13 @@ privileged aspect Piiririkkuja_Roo_ToString {
     
     public String Piiririkkuja.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Avaja: ").append(getAvaja()).append(", ");
-        sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");
         sb.append("Eesnimi: ").append(getEesnimi()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kodakondsused: ").append(getKodakondsused() == null ? "null" : getKodakondsused().size()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
-        sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Perenimi: ").append(getPerenimi()).append(", ");
         sb.append("Sugu: ").append(getSugu()).append(", ");
-        sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Synniaeg: ").append(getSynniaeg() == null ? "null" : getSynniaeg().getTime()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

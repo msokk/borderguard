@@ -2,6 +2,7 @@ package ee.codeporn.borderguard.entities;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.plural.RooPlural;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.Size;
 import java.util.Calendar;
@@ -17,6 +18,7 @@ import javax.persistence.CascadeType;
 @RooJavaBean
 @RooToString
 @RooEntity
+@RooPlural(value="Piiririkkujad")
 public class Piiririkkuja extends Base {
 
     @Size(max = 20)

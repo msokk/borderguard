@@ -100,11 +100,8 @@ privileged aspect SeadusePunktController_Roo_Controller {
     }
     
     void SeadusePunktController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("seadusePunkt_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_kehtiv_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_kehtiv_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("seadusePunkt_kehtivalates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("seadusePunkt_kehtivkuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String SeadusePunktController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -2,6 +2,7 @@ package ee.codeporn.borderguard.entities;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.plural.RooPlural;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,6 +19,7 @@ import javax.persistence.CascadeType;
 @RooJavaBean
 @RooToString
 @RooEntity
+@RooPlural(value="Seadused")
 public class Seadus extends Base {
 
     @NotNull
@@ -32,11 +34,11 @@ public class Seadus extends Base {
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
-    private Calendar kehtiv_alates;
+    private Calendar kehtivAlates;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
-    private Calendar kehtiv_kuni;
+    private Calendar kehtivKuni;
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<SeadusePunkt> seadusePunktid = new HashSet<SeadusePunkt>();
