@@ -33,12 +33,12 @@ privileged aspect Riik_Roo_JavaBean {
         this.ansiKood = ansiKood;
     }
     
-    public Set<Kodakondsus> Riik.getKodakonsused() {
-        return this.kodakonsused;
+    public Set<Kodakondsus> Riik.getKodakondsused() {
+        return this.kodakondsused;
     }
     
-    public void Riik.setKodakonsused(Set<Kodakondsus> kodakonsused) {
-        this.kodakonsused = kodakonsused;
+    public void Riik.setKodakondsused(Set<Kodakondsus> kodakondsused) {
+        this.kodakondsused = kodakondsused;
     }
     
 }

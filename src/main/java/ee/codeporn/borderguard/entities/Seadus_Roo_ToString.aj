@@ -9,19 +9,13 @@ privileged aspect Seadus_Roo_ToString {
     
     public String Seadus.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Avaja: ").append(getAvaja()).append(", ");
-        sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Kehtiv_alates: ").append(getKehtiv_alates() == null ? "null" : getKehtiv_alates().getTime()).append(", ");
-        sb.append("Kehtiv_kuni: ").append(getKehtiv_kuni() == null ? "null" : getKehtiv_kuni().getTime()).append(", ");
+        sb.append("KehtivAlates: ").append(getKehtivAlates() == null ? "null" : getKehtivAlates().getTime()).append(", ");
+        sb.append("KehtivKuni: ").append(getKehtivKuni() == null ? "null" : getKehtivKuni().getTime()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
-        sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
-        sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
-        sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

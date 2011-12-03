@@ -5,7 +5,6 @@ package ee.codeporn.borderguard.web;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
-import ee.codeporn.borderguard.entities.Riik;
 import ee.codeporn.borderguard.entities.Seadus;
 import ee.codeporn.borderguard.entities.SeadusePunkt;
 import java.lang.String;
@@ -17,7 +16,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new KodakondsusConverter());
         registry.addConverter(new PiiririkkujaConverter());
-        registry.addConverter(new RiikConverter());
         registry.addConverter(new SeadusConverter());
         registry.addConverter(new SeadusePunktConverter());
     }
@@ -29,35 +27,28 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.KodakondsusConverter implements Converter<Kodakondsus, String> {
         public String convert(Kodakondsus kodakondsus) {
-            return new StringBuilder().append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).append(" ").append(kodakondsus.getMuudetud()).toString();
+            return new StringBuilder().append(kodakondsus.getKommentaar()).append(" ").append(kodakondsus.getAlates()).append(" ").append(kodakondsus.getKuni()).append(" ").append(kodakondsus.getIsikukood()).toString();
         }
         
     }
     
     static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).append(" ").append(piiririkkuja.getMuudetud()).toString();
-        }
-        
-    }
-    
-    static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
-        public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getAvaja()).append(" ").append(riik.getAvatud()).append(" ").append(riik.getMuutja()).append(" ").append(riik.getMuudetud()).toString();
+            return new StringBuilder().append(piiririkkuja.getIsikukood()).append(" ").append(piiririkkuja.getKommentaar()).append(" ").append(piiririkkuja.getEesnimi()).append(" ").append(piiririkkuja.getPerenimi()).toString();
         }
         
     }
     
     static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
-            return new StringBuilder().append(seadus.getAvaja()).append(" ").append(seadus.getAvatud()).append(" ").append(seadus.getMuutja()).append(" ").append(seadus.getMuudetud()).toString();
+            return new StringBuilder().append(seadus.getKood()).append(" ").append(seadus.getNimetus()).append(" ").append(seadus.getKommentaar()).append(" ").append(seadus.getKehtivAlates()).toString();
         }
         
     }
     
     static class ee.codeporn.borderguard.web.ApplicationConversionServiceFactoryBean.SeadusePunktConverter implements Converter<SeadusePunkt, String> {
         public String convert(SeadusePunkt seadusePunkt) {
-            return new StringBuilder().append(seadusePunkt.getAvaja()).append(" ").append(seadusePunkt.getAvatud()).append(" ").append(seadusePunkt.getMuutja()).append(" ").append(seadusePunkt.getMuudetud()).toString();
+            return new StringBuilder().append(seadusePunkt.getParagrahv()).append(" ").append(seadusePunkt.getPais()).append(" ").append(seadusePunkt.getTekst()).append(" ").append(seadusePunkt.getKommentaar()).toString();
         }
         
     }

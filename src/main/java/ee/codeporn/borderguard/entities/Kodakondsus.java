@@ -2,6 +2,7 @@ package ee.codeporn.borderguard.entities;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.plural.RooPlural;
 import org.springframework.roo.addon.tostring.RooToString;
 import java.util.Calendar;
 import javax.persistence.Temporal;
@@ -15,6 +16,7 @@ import ee.codeporn.borderguard.entities.Riik;
 @RooJavaBean
 @RooToString
 @RooEntity
+@RooPlural(value="Kodakondsused")
 public class Kodakondsus extends Base {
 
     private String kommentaar;
