@@ -10,5 +10,6 @@
         <field:display field="seadusePunkt" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" object="${seadusepunkt}" z="pD2P8LCEMRHsk10MgWeRtpdbMjg="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" object="${seadusepunkt}" z="SAG4Za+F/F303dwW6Kr7EkgtrVI="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" object="${seadusepunkt}" z="KuBFXMqTzFmMWroB3x8MVw8tHp4="/>
+        <field:display field="seadus" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" object="${seadusepunkt}" z="cXJS6G4csOKojLvXKVPNd7VaYog="/>
     </page:show>
 </div>

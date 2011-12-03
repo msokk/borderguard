@@ -3,6 +3,7 @@
 
 package ee.codeporn.borderguard.web;
 
+import ee.codeporn.borderguard.entities.Seadus;
 import ee.codeporn.borderguard.entities.SeadusePunkt;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -92,6 +93,11 @@ privileged aspect SeadusePunktController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/seadusepunktid";
+    }
+    
+    @ModelAttribute("seadused")
+    public Collection<Seadus> SeadusePunktController.populateSeadused() {
+        return Seadus.findAllSeadused();
     }
     
     @ModelAttribute("seadusepunktid")
