@@ -38,4 +38,5 @@ public class Riik extends Base {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "riik")
     private Set<Kodakondsus> kodakondsused = new HashSet<Kodakondsus>();
+
 }
