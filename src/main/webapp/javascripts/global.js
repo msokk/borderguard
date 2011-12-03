@@ -19,6 +19,7 @@ $(document).ready(function() {
 				var rows = $(e.target).parents('table').find('tr');
 				if(rows.length == 2){
 					$(e.target).parents('table').fadeOut(function(){
+						$(this).before('<hr style="margin: 5px 0 5px 0;" />');
 						$(this).remove();
 					});
 				};

@@ -20,47 +20,52 @@
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
         </div>
         <div class="right" style="width: 245px;">
-            <table class="small-padding" id="borderViolatorNationalities">
-	            <tr>
-	                <th>
-	                    <spring:message code="country"/>
-	                </th>
-	                <th>
-	                    <spring:message code="identity_code"/>
-	                </th>
-	                <th colspan="2">
-	                    <spring:message code="choices"/>
-	                </th>
-	            </tr>
-	            <c:forEach items="${kodakondsused}" var="kodakondsus">
-                    <tr>
-                        <td>
-                            <c:out value="${kodakondsus.riik.kommentaar}"/>
-                        </td>
-                        <td>
-                            <c:out value="${kodakondsus.isikukood}"/>
-                        </td>
-                        <td>
-                            <a class="btn small-padding success" href="../kodakondsused/${kodakondsus.id}?form">
-                                <spring:message code="edit"/>
-                            </a>
-                        </td>
-                        <td>
-                            <script type="text/javascript">
-	                    		var nationality_id = "${kodakondsus.id}";
-	                        </script>
-                            <button class="btn small-padding danger" id="deleteNationality">
-                                <spring:message code="delete"/>
-                            </button>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
+        	<span style="font-weight: bold;"><spring:message code="nationalities"/></span>
+        	<c:if test="${kodakondsused.size() == 0}">
+        		<hr style="margin: 5px 0 5px 0;" />
+        	</c:if>
+        	<c:if test="${kodakondsused.size() > 0}">
+	            <table class="small-padding" id="borderViolatorNationalities" style="margin: 5px 0 5px 0;">
+		            <tr>
+		                <th>
+		                    <spring:message code="country"/>
+		                </th>
+		                <th>
+		                    <spring:message code="identity_code"/>
+		                </th>
+		                <th colspan="2">
+		                    <spring:message code="choices"/>
+		                </th>
+		            </tr>
+		            <c:forEach items="${kodakondsused}" var="kodakondsus">
+	                    <tr>
+	                        <td>
+	                            <c:out value="${kodakondsus.riik.kommentaar}"/>
+	                        </td>
+	                        <td>
+	                            <c:out value="${kodakondsus.isikukood}"/>
+	                        </td>
+	                        <td>
+	                            <a class="btn small-padding success" href="../kodakondsused/${kodakondsus.id}?form">
+	                                <spring:message code="edit"/>
+	                            </a>
+	                        </td>
+	                        <td>
+	                            <script type="text/javascript">
+		                    		var nationality_id = "${kodakondsus.id}";
+		                        </script>
+	                            <button class="btn small-padding danger" id="deleteNationality">
+	                                <spring:message code="delete"/>
+	                            </button>
+	                        </td>
+	                    </tr>
+	                </c:forEach>
+	            </table>
+            </c:if>
             <a class="btn small-padding primary" href="../kodakondsused?form" style="float: right;">
                 <spring:message code="add"/>
             </a>
         </div>
         <div class="clear"/>
-        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:update>
 </div>

@@ -24,7 +24,5 @@
             <spring:message code="can_add_nationality_when_border_violator_saved"/>
         </div>
         <div class="clear"/>
-        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Piiririkkuja" render="${not empty dependencies}" z="7XR2AnOFAwsKEL9tVcmqGDE0UMA="/>
 </div>
