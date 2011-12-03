@@ -4,16 +4,13 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_codeporn_borderguard_entities_SeadusePunkt" modelAttribute="seadusePunkt" path="/seadusepunktid" versionField="Version" z="user-managed">
         <div class="left">
-        <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
-        <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
-        <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
-        <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_alates" z="OXX8tepfl6JUAP1Ut2wGpwEpV1g="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtiv_kuni" z="U6ePq8N3FfBPxaXvwC10K1nXarw="/>
-        <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemValue="id" itemLabel="pais" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
+            <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
+            <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
+            <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
+            <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
+            <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemLabel="pais" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
         </div>
-                <div class="right" style="width: 245px;">
-
+        <div class="right" style="width: 245px;">
             <table class="small-padding">
                 <tr>
                     <td>
@@ -22,8 +19,7 @@
                     <td>
                         <spring:message code="header"/>
                     </td>
-                    <td colspan="2">
-                    </td>
+                    <td colspan="2"/>
                 </tr>
                 <tr>
                     <td>85</td>
@@ -40,11 +36,13 @@
                     </td>
                 </tr>
             </table>
-            <button class="btn small-padding primary" style="float: right;" id="borderViolatorAddNationality">
-            	<spring:message code="add"/>
+            <button class="btn small-padding primary" id="borderViolatorAddNationality" style="float: right;">
+                <spring:message code="add"/>
             </button>
         </div>
         <div class="clear"/>
-        
+        <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
+        <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
     </form:update>
 </div>

@@ -8,8 +8,8 @@
             <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
             <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" property="tekst" z="aE2zZQFaY6EF+hhlHqlz8lFWo0o="/>
             <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" property="kommentaar" z="iU4hRrWkjX5dWA70H77DtIEYaiU="/>
-            <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
             <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
+            <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
         </table:table>
     </page:list>
 </div>
