@@ -1,19 +1,15 @@
 package ee.codeporn.borderguard.web;
 
-import java.io.IOException;
-import java.io.Writer;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
+
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,8 +26,15 @@ public class KodakondsusController {
         return "1";
     }
 	
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
+        addDateTimeFormatPatterns(uiModel);
+        return "kodakondsused/update";
+    }
+	
 	@RequestMapping(method = RequestMethod.POST)
-    public String create(@PathVariable Long piiririkkujaId, @Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String create(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("kodakondsus", kodakondsus);
             addDateTimeFormatPatterns(uiModel);
@@ -39,7 +42,7 @@ public class KodakondsusController {
         }
         uiModel.asMap().clear();
         kodakondsus.persist();
-        return "redirect:/kodakondsused/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest) + "?form";
     }
 	
 }
