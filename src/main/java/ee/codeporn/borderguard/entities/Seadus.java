@@ -49,10 +49,10 @@ public class Seadus extends Base {
 
     @SuppressWarnings("unchecked")
 	public List<SeadusePunkt> getPunktid(Calendar alates, Calendar kuni) {
-    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2", SeadusePunkt.class);
-    	//query.setParameter(1, this.getId());
-    	query.setParameter(1, alates);
-        query.setParameter(2, kuni);
+    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.seadus = ?1 and p.kehtivAlates > ?2 and p.kehtivKuni < ?3", SeadusePunkt.class);
+    	query.setParameter(1, this);
+    	query.setParameter(2, alates);
+        query.setParameter(3, kuni);
 		return query.getResultList();
     }
 }
