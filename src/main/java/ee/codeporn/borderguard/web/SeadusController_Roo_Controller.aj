@@ -53,20 +53,6 @@ privileged aspect SeadusController_Roo_Controller {
         return "seadused/show";
     }
     
-    @RequestMapping(method = RequestMethod.GET)
-    public String SeadusController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("seadused", Seadus.findSeadusEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) Seadus.countSeadused() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("seadused", Seadus.findAllSeadused());
-        }
-        addDateTimeFormatPatterns(uiModel);
-        return "seadused/list";
-    }
-    
     @RequestMapping(method = RequestMethod.PUT)
     public String SeadusController.update(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {

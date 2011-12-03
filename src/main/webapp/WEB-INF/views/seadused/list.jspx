@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_ee_codeporn_borderguard_entities_Seadus" items="${seadused}" z="user-managed">
-        <table:table data="${seadused}" id="l_ee_codeporn_borderguard_entities_Seadus" path="/seadused" z="user-managed">
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kood" property="kood" z="Z7h8P1TC1OeVsKUPB/KzniNqB+M="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" property="nimetus" z="SAomfxAiHSayyubpPybHs7SG30c="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" property="kommentaar" z="V1/DSzPJNM9vKYkFfKLq2RteFyg="/>
-            <table:column calendar="true" dateTimePattern="${seadus_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" property="kehtivAlates" z="d7CKEbRVD26lnQfRQyKG9uuijZo="/>
-            <table:column calendar="true" dateTimePattern="${seadus_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" property="kehtivKuni" z="HhB/VN47mg1FIXasAthcNuxE7j0="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_seadusePunktid" property="seadusePunktid" z="GjasNsYn3UfVQIZM7as+tPl4dOc="/>
-        </table:table>
-    </page:list>
+    <spring:message code="list_law_points" var="title_msg" htmlEscape="false" />
+    <util:panel id="pl_ee_codeporn_borderguard_entities_Seadus" title="${title_msg}" openPane="true">
+    	Needs more cowbell
+    </util:panel>
 </div>
