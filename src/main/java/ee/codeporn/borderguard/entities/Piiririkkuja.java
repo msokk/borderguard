@@ -6,6 +6,9 @@ import org.springframework.roo.addon.plural.RooPlural;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.Size;
 import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.Query;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -41,4 +44,11 @@ public class Piiririkkuja extends Base {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "piiririkkuja")
     private Set<Kodakondsus> kodakondsused = new HashSet<Kodakondsus>();
+    
+    @SuppressWarnings("unchecked")
+	public List<SeadusePunkt> getKodakondsused() {
+    	Query query = entityManager().createQuery("FROM Kodakondsus AS k WHERE k.piiririkkuja = ?1 AND k.sulgeja IS NULL", Kodakondsus.class);
+    	query.setParameter(1, this);
+    	return query.getResultList();
+    }
 }
