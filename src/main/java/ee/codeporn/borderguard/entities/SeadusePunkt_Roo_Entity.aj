@@ -12,21 +12,9 @@ privileged aspect SeadusePunkt_Roo_Entity {
     
     declare @type: SeadusePunkt: @Entity;
     
-    public static long SeadusePunkt.countSeadusePunktid() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM SeadusePunkt o", Long.class).getSingleResult();
-    }
-    
-    public static List<SeadusePunkt> SeadusePunkt.findAllSeadusePunktid() {
-        return entityManager().createQuery("SELECT o FROM SeadusePunkt o", SeadusePunkt.class).getResultList();
-    }
-    
     public static SeadusePunkt SeadusePunkt.findSeadusePunkt(Long id) {
         if (id == null) return null;
         return entityManager().find(SeadusePunkt.class, id);
-    }
-    
-    public static List<SeadusePunkt> SeadusePunkt.findSeadusePunktEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM SeadusePunkt o", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

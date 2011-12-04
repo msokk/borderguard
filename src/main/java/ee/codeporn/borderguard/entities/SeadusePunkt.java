@@ -56,4 +56,16 @@ public class SeadusePunkt extends Base {
         query.setParameter(2, kuni);
 		return query.getResultList();
     }
+    
+    public static long countSeadusePunktid() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM SeadusePunkt o WHERE o.sulgeja IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<SeadusePunkt> findAllSeadusePunktid() {
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE o.sulgeja IS NULL", SeadusePunkt.class).getResultList();
+    }
+    
+    public static List<SeadusePunkt> findSeadusePunktEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE o.sulgeja IS NULL", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }
