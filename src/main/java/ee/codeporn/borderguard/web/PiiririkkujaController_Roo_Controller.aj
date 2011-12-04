@@ -67,18 +67,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "piiririkkujad/list";
     }
     
-    @RequestMapping(method = RequestMethod.PUT)
-    public String PiiririkkujaController.update(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piiririkkuja", piiririkkuja);
-            addDateTimeFormatPatterns(uiModel);
-            return "piiririkkujad/update";
-        }
-        uiModel.asMap().clear();
-        piiririkkuja.merge();
-        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String PiiririkkujaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Piiririkkuja.findPiiririkkuja(id).remove();
