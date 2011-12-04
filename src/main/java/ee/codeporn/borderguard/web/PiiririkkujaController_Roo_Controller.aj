@@ -53,15 +53,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "piiririkkujad/list";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PiiririkkujaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piiririkkuja.findPiiririkkuja(id).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/piiririkkujad";
-    }
-    
     @ModelAttribute("kodakondsused")
     public Collection<Kodakondsus> PiiririkkujaController.populateKodakondsused() {
         return Kodakondsus.findAllKodakondsused();

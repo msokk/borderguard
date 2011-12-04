@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_ee_codeporn_borderguard_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujad" z="user-managed">
-        <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" object="${piiririkkuja}" z="a8ZTAIkrwBV/Ud6kjV4U1yyaUYo="/>
-        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" object="${piiririkkuja}" z="vecfNTb3ZgAegxbIp2jN7cj4Elg="/>
-        <field:display field="eesnimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" object="${piiririkkuja}" z="fbmZIpeIUPD8gpQH8lofVsDZmDw="/>
-        <field:display field="perenimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" object="${piiririkkuja}" z="KOgCvHrSTt/QlQE9E9qKEbwvgpo="/>
-        <field:display field="sugu" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" object="${piiririkkuja}" z="RMHUI86borHhVXMtPE6w6DBVxoc="/>
-        <field:display calendar="true" dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" object="${piiririkkuja}" z="t4cEUsM8voVE0fyEFjbltj3meVM="/>
-    </page:show>
+    <div class="show">
+	    <page:show id="ps_ee_codeporn_borderguard_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujad" z="user-managed">
+	        <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" object="${piiririkkuja}" z="a8ZTAIkrwBV/Ud6kjV4U1yyaUYo="/>
+	        <field:display field="eesnimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" object="${piiririkkuja}" z="fbmZIpeIUPD8gpQH8lofVsDZmDw="/>
+	        <field:display field="perenimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" object="${piiririkkuja}" z="KOgCvHrSTt/QlQE9E9qKEbwvgpo="/>
+	        <field:display calendar="true" dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" object="${piiririkkuja}" z="t4cEUsM8voVE0fyEFjbltj3meVM="/>
+	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" object="${piiririkkuja}" z="vecfNTb3ZgAegxbIp2jN7cj4Elg="/>
+	        
+		    <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_avaja" object="${piiririkkuja}" z="7KwDDmkEqN0pnFZ64t2u3OlDDV4="/>
+	        <field:display calendar="true" dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_avatud" object="${piiririkkuja}" z="3HeuE0wHaJPblCCM26VgQo9D4vk="/>
+	        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_muutja" object="${piiririkkuja}" z="tedMT1UcdYv0u6IzeEg9q0QpA3g="/>
+	        <field:display calendar="true" dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_muudetud" object="${piiririkkuja}" z="nZE1GZj+itFcofPf2Qqu9z0lOZs="/>
+	        <c:if test="${piiririkkuja.sulgeja != NULL}">
+		        <field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_sulgeja" object="${piiririkkuja}" z="pwvW23TzH+SLcqdvT5sp3520/0A="/>
+		        <field:display calendar="true" dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_suletud" object="${piiririkkuja}" z="O7hzwUfxToplNkHct3et86r0hZo="/>
+	        </c:if>
+        
+	        <hr style="margin: -10px 0 10px 0;"/>
+	        <a class="btn left small-padding" onclick="javascript:history.back()"><spring:message code="go_back"/></a>
+	    </page:show>
+    </div>
 </div>

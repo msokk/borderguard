@@ -393,3 +393,8 @@ table td, table th {
 form#command {
 	margin-bottom: 5px;
 }
+
+.show label {
+	padding-top: 0px !important;
+	line-height: 16px;
+}
