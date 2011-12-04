@@ -3,11 +3,20 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_codeporn_borderguard_entities_Seadus" modelAttribute="seadus" path="/seadused" render="${empty dependencies}" z="user-managed">
-        <field:input field="kood" id="c_ee_codeporn_borderguard_entities_Seadus_kood" max="20" required="true" z="RAqmY6/oTsTya1uD6Ot9Y7Yle34="/>
-        <field:input field="nimetus" id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" max="20" required="true" z="IP3SV56RJQ6Suhg8WHUHvyMbTKo="/>
-        <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" z="w4D1PAhXvGOOxxKN3b80UDjkrWE="/>
-        <field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/>
-        <field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/>
+        <div class="left">
+        	<field:input field="kood" id="c_ee_codeporn_borderguard_entities_Seadus_kood" max="20" required="true" z="RAqmY6/oTsTya1uD6Ot9Y7Yle34="/>
+        	<field:input field="nimetus" id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" max="20" required="true" z="IP3SV56RJQ6Suhg8WHUHvyMbTKo="/>
+        	<field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" z="w4D1PAhXvGOOxxKN3b80UDjkrWE="/>
+        	<field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/>
+        	<field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/>
+        </div>
+        <div class="right" style="width: 245px;">
+            <spring:message code="subpoint"/>
+            <hr style="margin: 5px 0 5px 0;"/>
+            <spring:message code="can_add_point_when_law_saved"/>
+        </div>
+        <div class="clear"/>
+        <field:simple field="seadused" id="c_ee_codeporn_borderguard_entities_Seadus" messageCode="entity_reference_not_managed" messageCodeAttribute="Seadus" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
         
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Seadus" render="${not empty dependencies}" z="oJy3C/F1FSsw39t775+uKxZyJKU="/>

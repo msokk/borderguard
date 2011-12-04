@@ -26,6 +26,13 @@ public class SeadusController {
     	return new SeadusePunktFilter();
     }
 	
+    @RequestMapping(params = "form", method = RequestMethod.GET)
+    public String createForm(Model uiModel) {
+        uiModel.addAttribute("seadus", new Seadus());
+        addDateTimeFormatPatterns(uiModel);
+        return "seadused/create";
+    }
+	
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model uiModel, @Valid SeadusePunktFilter filter) {
     	uiModel.addAttribute("seadused", Seadus.findAllSeadused());

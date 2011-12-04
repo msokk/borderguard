@@ -17,13 +17,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect SeadusController_Roo_Controller {
     
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String SeadusController.createForm(Model uiModel) {
-        uiModel.addAttribute("seadus", new Seadus());
-        addDateTimeFormatPatterns(uiModel);
-        return "seadused/create";
-    }
-    
     void SeadusController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("seadus_kehtivalates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("seadus_kehtivkuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
