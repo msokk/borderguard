@@ -17,6 +17,7 @@ import javax.persistence.TemporalType;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 @RooJavaBean
 @MappedSuperclass
@@ -59,8 +60,7 @@ public abstract class Base {
     	this.avatud = now;
     	this.muutja = username;
     	this.muudetud = now;
-    	Calendar closedTime = Calendar.getInstance();
-    	closedTime.set(9999, 12, 31, 0, 0, 0);
+    	Calendar closedTime = new GregorianCalendar(9999,Calendar.DECEMBER,31, 0,0);
     	this.suletud = closedTime;
     }
     

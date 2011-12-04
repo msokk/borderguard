@@ -3,6 +3,7 @@ package ee.codeporn.borderguard.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
@@ -56,7 +57,11 @@ public class PiiririkkujaController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piiririkkuja.findPiiririkkuja(id).close();
+        Piiririkkuja rikkuja = Piiririkkuja.findPiiririkkuja(id);
+        rikkuja.close();
+        for(Kodakondsus x : rikkuja.getKodakondsused()){
+        	x.close();
+        }
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
