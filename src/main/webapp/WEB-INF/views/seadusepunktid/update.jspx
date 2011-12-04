@@ -9,7 +9,6 @@
             <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
             <input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seadusId}" z="user-managed"/>
             <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
-            <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemLabel="pais" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
         </div>
         <div class="right" style="width: 245px;">
             <table class="small-padding">
@@ -46,6 +45,12 @@
         </div>
         <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
         <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
-        <field:select field="seadus" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" itemLabel="nimetus" itemValue="id" items="${seadused}" path="/seadused" z="user-managed"/>
+    	<spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
+            <label for="seadusePunkt">
+               <c:out value="${masterpoint}"/>:</label>
+            <form2:select path="seadusePunkt">
+                <form2:option label="" value="0"/>
+                <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
+            </form2:select>
     </form:update>
 </div>

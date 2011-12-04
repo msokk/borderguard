@@ -12,6 +12,8 @@
             <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
             <spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
+            <label for="seadusePunkt">
+               <c:out value="${masterpoint}"/>:</label>
             <form2:select path="seadusePunkt">
                 <form2:option label="" value="0"/>
                 <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
