@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="right" style="width: 280px;">
-            <spring:message code="nationalities"/>
+            <span style="font-weight: bold;"><spring:message code="nationalities"/></span>
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_nationality_when_border_violator_saved"/>
         </div>

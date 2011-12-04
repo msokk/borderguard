@@ -37,14 +37,7 @@ privileged aspect SeadusePunktController_Roo_Controller {
         seadusePunkt.persist();
         return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
     }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String SeadusePunktController.createForm(Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
-        addDateTimeFormatPatterns(uiModel);
-        return "seadusepunktid/create";
-    }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String SeadusePunktController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
@@ -84,15 +77,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
         uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(id));
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunktid/update";
-    }
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String SeadusePunktController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        SeadusePunkt.findSeadusePunkt(id).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/seadusepunktid";
     }
     
     @ModelAttribute("seadused")

@@ -2,6 +2,7 @@ package ee.codeporn.borderguard.web;
 
 import java.util.Calendar;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Seadus;
@@ -11,10 +12,11 @@ import ee.codeporn.borderguard.generic.SeadusePunktFilter;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RooWebScaffold(path = "seadused", formBackingObject = Seadus.class)
 @RequestMapping("/seadused")
@@ -26,6 +28,15 @@ public class SeadusController {
     	return new SeadusePunktFilter();
     }
 	
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("id") Long id, Model uiModel) {
+    	Seadus seadus = Seadus.findSeadus(id);
+        uiModel.addAttribute("seadus", seadus);
+        uiModel.addAttribute("seadusepunktid", seadus.getSeadusePunktid());
+        addDateTimeFormatPatterns(uiModel);
+        return "seadused/update";
+    }
+    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String createForm(Model uiModel) {
         uiModel.addAttribute("seadus", new Seadus());
@@ -33,6 +44,18 @@ public class SeadusController {
         return "seadused/create";
     }
 	
+    @RequestMapping(method = RequestMethod.POST)
+    public String create(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("seadus", seadus);
+            addDateTimeFormatPatterns(uiModel);
+            return "seadused/create";
+        }
+        uiModel.asMap().clear();
+        seadus.persist();
+        return "redirect:/seadused/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest) + "?form";
+    }
+    
     @RequestMapping(value = "/history", method = RequestMethod.GET)
     public String list(Model uiModel, @Valid SeadusePunktFilter filter) {
     	uiModel.addAttribute("seadused", Seadus.findAllSeadused());

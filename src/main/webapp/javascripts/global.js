@@ -29,4 +29,29 @@ $(document).ready(function() {
 			}
 		});		
 	});
+	
+	$('#deleteSection').live('click', function(e) {
+		e.preventDefault();
+		if(!confirm(uSure))
+			return;
+		$.ajax({
+			url: '../seadusepunktid/' + sectionId,
+			type: 'DELETE',
+			success: function(data) {
+				$(e.target).parents('tr').fadeOut(function(){
+					$(this).remove();
+				});
+				var rows = $(e.target).parents('table').find('tr');
+				if(rows.length == 2){
+					$(e.target).parents('table').fadeOut(function(){
+						$(this).before('<hr style="margin: 5px 0 5px 0;" />');
+						$(this).remove();
+					});
+				};
+			},
+			error: function(){
+				alert(deletingFailed);
+			}
+		});		
+	});
 });

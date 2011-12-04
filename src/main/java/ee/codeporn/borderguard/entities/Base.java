@@ -60,7 +60,7 @@ public abstract class Base {
     	this.muutja = username;
     	this.muudetud = now;
     	Calendar closedTime = Calendar.getInstance();
-    	closedTime.set(9999, 12, 31);
+    	closedTime.set(9999, 12, 31, 0, 0, 0);
     	this.suletud = closedTime;
     }
     
