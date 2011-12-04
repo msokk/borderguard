@@ -26,7 +26,7 @@
             <c:if test="${kodakondsused.size() == 0}">
                 <hr style="margin: 5px 0 5px 0;"/>
             </c:if>
-            <c:if test="${kodakondsused.size() &gt; 0}">
+            <c:if test="${kodakondsused.size() > 0}">
                 <table class="small-padding" id="borderViolatorNationalities" style="margin: 5px 0 5px 0;">
                     <tr>
                         <th>
@@ -48,7 +48,7 @@
                                 <c:out value="${kodakondsus.isikukood}"/>
                             </td>
                             <td>
-                                <a class="btn small-padding success" href="../kodakondsused/${kodakondsus.id}?form">
+                                <a class="btn small-padding success" href="../kodakondsused/${kodakondsus.id}/${piiririkkuja.id}?form">
                                     <spring:message code="edit"/>
                                 </a>
                             </td>
@@ -64,11 +64,10 @@
                     </c:forEach>
                 </table>
             </c:if>
-            <a class="btn small-padding primary" href="../kodakondsused?form" style="float: right;">
+            <a class="btn small-padding primary" href="../kodakondsused/${piiririkkuja.id}?form" style="float: right;">
                 <spring:message code="add"/>
             </a>
         </div>
         <div class="clear"/>
-        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:update>
 </div>
