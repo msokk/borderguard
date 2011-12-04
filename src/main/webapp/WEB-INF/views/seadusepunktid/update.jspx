@@ -15,8 +15,7 @@
             <c:choose>
             	<c:when test="${seaduspunktId != null}">
                 	<input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seaduspunktId}" z="user-managed"/>
-                </c:when>
-				<c:otherwise>
+                
 					<spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
 			        <label for="seadusePunkt">
 			           <c:out value="${masterpoint}"/>:</label>
@@ -24,7 +23,7 @@
 			            <form2:option label="" value="0"/>
 			            <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
 			        </form2:select>
-				</c:otherwise>
+		        </c:when>
             </c:choose>
         </div>
 		<c:if test="${seaduspunktId == null}">
@@ -32,10 +31,10 @@
 	            <span style="font-weight: bold;">
 		        	<spring:message code="subpoints"/>
 				</span>
-	            <c:if test="${seadusepunktid.size() == 0}">
+	            <c:if test="${alamPunktid.size() == 0}">
 	                <hr style="margin: 5px 0 5px 0;"/>
 	            </c:if>
-	            <c:if test="${seadusepunktid.size() > 0}">
+	            <c:if test="${alamPunktid.size() > 0}">
 	            	<table class="small-padding" id="lawSections" style="margin: 5px 0 5px 0;">
 	                    <tr>
 	                        <th>
@@ -48,7 +47,7 @@
 	                            <spring:message code="choices"/>
 	                        </th>
 	                    </tr>
-	                    <c:forEach items="${seadusepunktid}" var="seadusepunkt">
+	                    <c:forEach items="${alamPunktid}" var="seadusepunkt">
 	                        <tr>
 	                            <td>
 	                                <c:out value="${seadusepunkt.paragrahv}"/>
@@ -59,7 +58,7 @@
 	                                </a>
 	                            </td>
 	                            <td style="text-align: center; width: 51px;">
-	                                <a class="btn small-padding success" href="../seadusepunktid/${seadusepunkt.id}/${seadus.id}?form">
+	                                <a class="btn small-padding success" href="../../seadusepunktid/${seadusPunktYlemId}/${seadusepunkt.id}/${seadusId}?form">
 	                                    <spring:message code="edit"/>
 	                                </a>
 	                            </td>
