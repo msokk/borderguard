@@ -19,7 +19,5 @@
         </div>
         <div class="clear"/>
         <field:select field="seadus" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" itemLabel="nimetus" itemValue="id" items="${seadused}" path="/seadused" z="user-managed"/>
-        <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
     </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_SeadusePunkt" render="${not empty dependencies}" z="q+z3e//IZ1kj7X6oUvE1yEN7cDY="/>
 </div>
