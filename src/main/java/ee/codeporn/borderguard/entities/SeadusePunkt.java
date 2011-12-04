@@ -68,4 +68,11 @@ public class SeadusePunkt extends Base {
     public static List<SeadusePunkt> findSeadusePunktEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE o.sulgeja IS NULL", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
+    
+    @SuppressWarnings({ "unchecked" })
+    public List<SeadusePunkt> getSeadusePunktid() {
+    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.seadusePunkt = ?1  AND p.sulgeja IS NULL", SeadusePunkt.class);
+    	query.setParameter(1, this);
+		return query.getResultList();
+    }
 }

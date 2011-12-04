@@ -41,6 +41,8 @@ $(document).ready(function() {
 		var url = '../seadusepunktid/';
 		if(window.location.href.split('/').length == 6){
 			var url = '../seadusepunktid/';
+		}else if(window.location.href.split('/').length == 7){
+			var url = '../../seadusepunktid/';
 		}
 		$.ajax({
 			url: url + sectionId,

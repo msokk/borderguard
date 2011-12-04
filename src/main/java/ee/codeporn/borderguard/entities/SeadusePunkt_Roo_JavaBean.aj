@@ -75,10 +75,6 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
         this.seadusePunkt = seadusePunkt;
     }
     
-    public Set<SeadusePunkt> SeadusePunkt.getSeadusePunktid() {
-        return this.seadusePunktid;
-    }
-    
     public void SeadusePunkt.setSeadusePunktid(Set<SeadusePunkt> seadusePunktid) {
         this.seadusePunktid = seadusePunktid;
     }
