@@ -69,6 +69,15 @@ public class SeadusePunktController {
         return "seadusepunktid/create";
     }
     
+    @RequestMapping(value = "/{id}/{seadusId}/form", method = RequestMethod.GET)
+    public String createFormWithMasterSection(@PathVariable("id") Long id, @PathVariable("seadusId") Long seadusId, Model uiModel) {
+    	uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
+        uiModel.addAttribute("seaduspunktId", id);
+        uiModel.addAttribute("seadusId", seadusId);
+        addDateTimeFormatPatterns(uiModel);
+        return "seadusepunktid/create";
+    }
+    
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {

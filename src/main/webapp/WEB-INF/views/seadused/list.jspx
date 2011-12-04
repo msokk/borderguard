@@ -9,7 +9,6 @@
             <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" property="kommentaar" z="V1/DSzPJNM9vKYkFfKLq2RteFyg="/>
             <table:column calendar="true" dateTimePattern="${seadus_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" property="kehtivAlates" z="d7CKEbRVD26lnQfRQyKG9uuijZo="/>
             <table:column calendar="true" dateTimePattern="${seadus_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" property="kehtivKuni" z="HhB/VN47mg1FIXasAthcNuxE7j0="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_seadusePunktid" property="seadusePunktid" z="GjasNsYn3UfVQIZM7as+tPl4dOc="/>
         </table:table>
     </page:list>
 </div>
