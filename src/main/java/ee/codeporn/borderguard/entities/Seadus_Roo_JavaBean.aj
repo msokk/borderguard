@@ -50,10 +50,6 @@ privileged aspect Seadus_Roo_JavaBean {
         this.kehtivKuni = kehtivKuni;
     }
     
-    public Set<SeadusePunkt> Seadus.getSeadusePunktid() {
-        return this.seadusePunktid;
-    }
-    
     public void Seadus.setSeadusePunktid(Set<SeadusePunkt> seadusePunktid) {
         this.seadusePunktid = seadusePunktid;
     }
