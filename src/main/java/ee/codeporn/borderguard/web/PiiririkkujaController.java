@@ -22,6 +22,7 @@ public class PiiririkkujaController {
 		Piiririkkuja rikkuja = Piiririkkuja.findPiiririkkuja(id);
         uiModel.addAttribute("piiririkkuja", rikkuja);
         uiModel.addAttribute("kodakondsused", rikkuja.getKodakondsused());
+        uiModel.addAttribute("genders", new String[] {"M", "N"});
         addDateTimeFormatPatterns(uiModel);
         return "piiririkkujad/update";
     }
@@ -31,6 +32,7 @@ public class PiiririkkujaController {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
             addDateTimeFormatPatterns(uiModel);
+            System.out.println(bindingResult.getAllErrors().toString());
             return "piiririkkujad/update";
         }
         uiModel.asMap().clear();
