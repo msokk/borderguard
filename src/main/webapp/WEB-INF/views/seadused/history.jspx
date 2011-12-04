@@ -32,11 +32,19 @@
                 </tr>
             </table>
             <spring:message code="point" htmlEscape="false" var="point"/>
-            <table:table buttons="true" create="false" data="${seadusepunktid}" delete="false" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" update="false" z="user-managed">
-                <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" label="${point}" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
-                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" label="${from}" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
-                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" label="${to}" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
-            </table:table>
+            <c:choose>
+		        <c:when test="${empty seadusepunktid}">
+    				<spring:message code="label_ee_codeporn_borderguard_entities_seadusepunkt_plural" var="label" htmlEscape="false" />
+		        	<b><spring:message arguments="${label}" code="entity_not_found" /></b>
+		        </c:when>
+		        <c:otherwise>
+		            <table:table buttons="true" create="false" data="${seadusepunktid}" delete="false" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" update="false" z="user-managed">
+		                <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" label="${point}" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
+		                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" label="${from}" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
+		                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" label="${to}" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
+		            </table:table>
+ 		    	</c:otherwise>
+	        </c:choose>
         </form2:form>
     </util:panel>
 </div>

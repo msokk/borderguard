@@ -39,10 +39,9 @@ $(document).ready(function() {
 			return;
 		
 		var url = '../seadusepunktid/';
-		if(window.location.href.match('seadused') != null){
-			var url = '../seadused/';
+		if(window.location.href.split('/').length == 6){
+			var url = '../seadusepunktid/';
 		}
-		console.log(url);
 		$.ajax({
 			url: url + sectionId,
 			type: 'DELETE',

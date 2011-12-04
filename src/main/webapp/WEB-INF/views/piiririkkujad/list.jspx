@@ -4,12 +4,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_codeporn_borderguard_entities_Piiririkkuja" items="${piiririkkujad}" z="user-managed">
         <table:table data="${piiririkkujad}" id="l_ee_codeporn_borderguard_entities_Piiririkkuja" path="/piiririkkujad" z="user-managed" create="false">
-            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" property="isikukood" z="LkOC1FzuDCGyKIwp7grLN+Dz1AY="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" property="kommentaar" z="V7UBzjf62JMz4SQsxc3otXpacjQ="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" property="eesnimi" z="KJLZqMTmcBSxDFZbyW/0vztyJiI="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" property="perenimi" z="H7yYWbgHgCLP4jkTEQMrDPMMhdQ="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" property="isikukood" z="LkOC1FzuDCGyKIwp7grLN+Dz1AY="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" property="sugu" z="XgCZ1Ad0sWX+u061mIKxKUyxw+c="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" property="kodakondsused" z="c0Z98jG1ZHpeLdRxjOJEzpaQonI="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" property="kommentaar" z="V7UBzjf62JMz4SQsxc3otXpacjQ="/>
         </table:table>
     </page:list>
 </div>
