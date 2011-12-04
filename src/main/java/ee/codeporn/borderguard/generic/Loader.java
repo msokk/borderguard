@@ -1,7 +1,6 @@
 package ee.codeporn.borderguard.generic;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.context.ApplicationListener;
@@ -12,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import ee.codeporn.borderguard.entities.Riik;
+import ee.codeporn.borderguard.entities.Seadus;
 
 @Component
 public class Loader implements ApplicationListener<ContextRefreshedEvent>{
@@ -38,15 +38,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         			rikkuja.setEesnimi("Juku");
         			rikkuja.setPerenimi("Kõikvõimas");
         			rikkuja.setSugu("M");
-        			
-        			Kodakondsus k = Kodakondsus.build("Est - Rus kodakondus", Riik.findRiik((long)1),"39008292728", Piiririkkuja.findPiiririkkuja((long)1));
-        			k.persist();
-        			
-        			
-        			rikkuja.setKodakondsused((Set<Kodakondsus>)k);
         			rikkuja.persist();
-        			
-        			
         		}
         	}
         }
