@@ -18,4 +18,12 @@
       </a>
     </span>
   </c:if>
+  <span id="language">
+	<c:out value=" | " />
+	<spring:message code="global_language"/>
+	<c:out value=": "/>
+	
+	<util:language label="Estonian" locale="et"/>
+	<util:language label="English" locale="en"/>
+  </span>
 </div>
