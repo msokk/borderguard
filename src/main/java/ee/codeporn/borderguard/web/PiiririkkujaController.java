@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Piiririkkuja;
+import ee.codeporn.borderguard.entities.Seadus;
+
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
