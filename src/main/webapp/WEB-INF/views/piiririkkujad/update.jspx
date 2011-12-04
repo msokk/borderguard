@@ -47,7 +47,9 @@
                     <c:forEach items="${kodakondsused}" var="kodakondsus">
                         <tr>
                             <td>
-                                <c:out value="${kodakondsus.riik.kommentaar}"/>
+                            	<a href="../kodakondsused/${kodakondsus.id}">
+                                	<c:out value="${kodakondsus.riik.kommentaar}"/>
+                                </a>
                             </td>
                             <td>
                                 <c:out value="${kodakondsus.isikukood}"/>
@@ -59,7 +61,9 @@
                             </td>
                             <td style="text-align: center; width: 57px;">
                                 <script type="text/javascript">
-		                    		var nationality_id = "${kodakondsus.id}";
+		                    		var nationalityId = '${kodakondsus.id}';
+		                    		var uSure = '<spring:message code="entity_delete_confirm"/>';
+		                    		var deletingFailed = '<spring:message code="deleting_failed"/>';
 		                        </script>
                                 <button class="btn small-padding danger" id="deleteNationality">
                                     <spring:message code="delete"/>

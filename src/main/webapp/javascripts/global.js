@@ -7,10 +7,10 @@ $(document).ready(function() {
 	
 	$('#deleteNationality').live('click', function(e) {
 		e.preventDefault();
-		if(!confirm("Oled kindel?"))
+		if(!confirm(uSure))
 			return;
 		$.ajax({
-			url: '../kodakondsused/' + nationality_id,
+			url: '../kodakondsused/' + nationalityId,
 			type: 'DELETE',
 			success: function(data) {
 				$(e.target).parents('tr').fadeOut(function(){
@@ -23,6 +23,9 @@ $(document).ready(function() {
 						$(this).remove();
 					});
 				};
+			},
+			error: function(){
+				alert(deletingFailed);
 			}
 		});		
 	});
