@@ -9,7 +9,8 @@
         </menu:category>
         <menu:category id="c_seadus" z="td/xdGFVi/EMFr8vSwBGLSs2A3E=">
             <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seadused?form" z="user-managed"/>
-            <menu:item id="i_seadus_list" messageCode="list_law_points" url="/seadused" z="user-managed"/>
+            <menu:item id="i_seadus_history" messageCode="law_points_history" url="/seadused/history" z="user-managed"/>
+            <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seadused" z="user-managed"/>
         </menu:category>
         <menu:category id="c_piiririkkuja" z="JMlBoa5Zk33SRu+AsyTwMO+66T0=">
             <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujad?form" z="user-managed"/>

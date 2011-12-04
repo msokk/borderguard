@@ -11,7 +11,7 @@
             <field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/>
         </div>
         <div class="right" style="width: 245px;">
-            <spring:message code="subpoint"/>
+            <span style="font-weight: bold;"><spring:message code="subpoints"/></span>
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_point_when_law_saved"/>
         </div>

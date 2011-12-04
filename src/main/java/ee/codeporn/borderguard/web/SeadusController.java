@@ -33,7 +33,7 @@ public class SeadusController {
         return "seadused/create";
     }
 	
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/history", method = RequestMethod.GET)
     public String list(Model uiModel, @Valid SeadusePunktFilter filter) {
     	uiModel.addAttribute("seadused", Seadus.findAllSeadused());
     	
@@ -59,6 +59,6 @@ public class SeadusController {
 
     	
         addDateTimeFormatPatterns(uiModel);
-        return "seadused/list";
+        return "seadused/history";
     }
 }

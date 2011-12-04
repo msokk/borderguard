@@ -214,8 +214,12 @@ label {
 	width:100px;
 	padding-top: 4px !important;
 	padding-right: 4px;
+	text-align: left;
 }
 
+h5.small {
+	line-height: 14px;
+}
 
 input.image {
 	border: none;
