@@ -55,4 +55,16 @@ public class Seadus extends Base {
         query.setParameter(3, kuni);
 		return query.getResultList();
     }
+    
+    public static long countSeadused() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE o.sulgeja IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<Seadus> findAllSeadused() {
+        return entityManager().createQuery("SELECT o FROM Seadus o WHERE o.sulgeja IS NULL", Seadus.class).getResultList();
+    }
+    
+    public static List<Seadus> findSeadusEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Seadus o WHERE o.sulgeja IS NULL", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }

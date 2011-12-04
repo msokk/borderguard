@@ -11,5 +11,11 @@
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" object="${seadusepunkt}" z="SAG4Za+F/F303dwW6Kr7EkgtrVI="/>
         <field:display calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" object="${seadusepunkt}" z="KuBFXMqTzFmMWroB3x8MVw8tHp4="/>
         <field:display field="seadus" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" object="${seadusepunkt}" subProperty="nimi" z="user-managed"/>
+        <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" object="${seadusepunkt}" z="2V5XAVB2eHalpa8Oc1orOemhWbU="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" object="${seadusepunkt}" z="UGzgYOb90vLRMjnZ7KpBffGxm9o="/>
+        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" object="${seadusepunkt}" z="tbm6kCOg9xlh0Y1kXt3J/CLZEA8="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" object="${seadusepunkt}" z="1sDJHXCTtmytQay1SsQ1IOC1QwE="/>
+        <field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_sulgeja" object="${seadusepunkt}" z="sCazdwKuNTAYF3ZrZmtXvRjPqto="/>
+        <field:display calendar="true" dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" object="${seadusepunkt}" z="banR/0m8HmlOaa+R678mJ084zRk="/>
     </page:show>
 </div>

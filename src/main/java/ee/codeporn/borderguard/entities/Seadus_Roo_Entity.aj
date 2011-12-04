@@ -12,21 +12,9 @@ privileged aspect Seadus_Roo_Entity {
     
     declare @type: Seadus: @Entity;
     
-    public static long Seadus.countSeadused() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o", Long.class).getSingleResult();
-    }
-    
-    public static List<Seadus> Seadus.findAllSeadused() {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).getResultList();
-    }
-    
     public static Seadus Seadus.findSeadus(Long id) {
         if (id == null) return null;
         return entityManager().find(Seadus.class, id);
-    }
-    
-    public static List<Seadus> Seadus.findSeadusEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }
