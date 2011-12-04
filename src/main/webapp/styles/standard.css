@@ -51,6 +51,11 @@ body {
 	outline: none;
 }
 
+#language a {
+	vertical-align: middle;
+}
+
+
 #wrapper {
 	width:800px;
 	min-width: 800px;

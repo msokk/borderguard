@@ -13,9 +13,10 @@
 					<td><field:datetime label="${to}" dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/></td>
 					<td>
 						<spring:message code="label_ee_codeporn_borderguard_entities_seadus" var="law_label" htmlEscape="false" />
+						<spring:message code="all" var="all" htmlEscape="false" />
 						<label for="valitudSeadus"><c:out value="${law_label}" />:</label>
 						<form2:select path="valitudSeadus">
-							<form2:option value="0" label="Kõik" />
+							<form2:option value="0" label="${all}" />
 							<form2:options items="${seadused}" itemLabel="nimetus" itemValue="id" />
 						</form2:select>
 					</td>
