@@ -381,3 +381,7 @@ fieldset th {
 .small-padding td{
 	padding: 5px;
 }
+
+table td, table th {
+	padding: 10px 2px 9px;
+}
