@@ -1,4 +1,4 @@
-package ee.codeporn.borderguard.web;
+package ee.codeporn.borderguard.generic;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -14,6 +14,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         @Transactional
         public void onApplicationEvent(ContextRefreshedEvent event) {
         	if (event.getApplicationContext().getParent() == null) {
+        		
         		if(Riik.countRiigid() == 0) {
         			System.out.println("Seeding data!");
         			Riik.build("EST", "233", "Eesti").persist();
@@ -21,7 +22,9 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         			Riik.build("RUS", "643", "Venemaa").persist();
         			Riik.build("FIN", "246", "Soome").persist();
         			Riik.build("SWE", "752", "Rootsi").persist();
+        			Riik.build("LTU", "440", "Leedu").persist();
         		}
+        		
         	}
         }
 }

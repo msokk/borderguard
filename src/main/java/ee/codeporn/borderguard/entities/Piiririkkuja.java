@@ -4,6 +4,8 @@ import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.plural.RooPlural;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Calendar;
 import java.util.List;
@@ -29,12 +31,15 @@ public class Piiririkkuja extends Base {
 
     private String kommentaar;
 
+    @NotNull
     @Size(max = 25)
     private String eesnimi;
 
+    @NotNull
     @Size(max = 35)
     private String perenimi;
 
+    @NotNull
     @Size(max = 1)
     private String sugu;
 
