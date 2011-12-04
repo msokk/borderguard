@@ -7,6 +7,7 @@
             <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
             <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
             <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
+            
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="user-managed"/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>

@@ -25,18 +25,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect SeadusePunktController_Roo_Controller {
-    
-    @RequestMapping(method = RequestMethod.POST)
-    public String SeadusePunktController.create(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadusePunkt", seadusePunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadusepunktid/create";
-        }
-        uiModel.asMap().clear();
-        seadusePunkt.persist();
-        return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
-    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String SeadusePunktController.show(@PathVariable("id") Long id, Model uiModel) {
@@ -58,25 +46,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunktid/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String SeadusePunktController.update(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadusePunkt", seadusePunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadusepunktid/update";
-        }
-        uiModel.asMap().clear();
-        seadusePunkt.merge();
-        return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String SeadusePunktController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(id));
-        addDateTimeFormatPatterns(uiModel);
-        return "seadusepunktid/update";
     }
     
     @ModelAttribute("seadused")
