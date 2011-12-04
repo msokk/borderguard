@@ -5,6 +5,9 @@ $(document).ready(function() {
 		$('#editBorderViolatorGender').val(split[0]);
 	}
 	
+	if(typeof deletingFailed != 'undefined')
+		deletingFailed = deletingFailed.replace('&otilde;', 'õ');
+	
 	$('#deleteNationality').live('click', function(e) {
 		e.preventDefault();
 		if(!confirm(uSure))
@@ -34,10 +37,20 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(!confirm(uSure))
 			return;
+		
+		var url = '../seadusepunktid/';
+		if(window.location.href.match('seadused') != null){
+			var url = '../seadused/';
+		}
+		console.log(url);
 		$.ajax({
-			url: '../seadusepunktid/' + sectionId,
+			url: url + sectionId,
 			type: 'DELETE',
 			success: function(data) {
+				if (data != 1){
+					alert(deletingFailed);
+					return;
+				}
 				$(e.target).parents('tr').fadeOut(function(){
 					$(this).remove();
 				});
