@@ -46,25 +46,6 @@ privileged aspect SeadusController_Roo_Controller {
         return "seadused/show";
     }
     
-    @RequestMapping(method = RequestMethod.PUT)
-    public String SeadusController.update(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadus", seadus);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadused/update";
-        }
-        uiModel.asMap().clear();
-        seadus.merge();
-        return "redirect:/seadused/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String SeadusController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("seadus", Seadus.findSeadus(id));
-        addDateTimeFormatPatterns(uiModel);
-        return "seadused/update";
-    }
-    
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String SeadusController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Seadus.findSeadus(id).remove();
