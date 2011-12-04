@@ -5,7 +5,6 @@ import javax.validation.Valid;
 
 import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Piiririkkuja;
-import ee.codeporn.borderguard.entities.Seadus;
 
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;

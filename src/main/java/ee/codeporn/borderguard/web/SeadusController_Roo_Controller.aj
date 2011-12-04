@@ -26,18 +26,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect SeadusController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String SeadusController.create(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadus", seadus);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadused/create";
-        }
-        uiModel.asMap().clear();
-        seadus.persist();
-        return "redirect:/seadused/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String SeadusController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
@@ -70,13 +58,6 @@ privileged aspect SeadusController_Roo_Controller {
         uiModel.asMap().clear();
         seadus.merge();
         return "redirect:/seadused/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String SeadusController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("seadus", Seadus.findSeadus(id));
-        addDateTimeFormatPatterns(uiModel);
-        return "seadused/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
