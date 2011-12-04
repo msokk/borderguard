@@ -8,13 +8,19 @@
             <field:input field="eesnimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" max="25" z="yuRhlYyV6PNzSru7e2dq0D1ZNsc="/>
             <field:input field="perenimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" max="25" z="user-managed"/>
             <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
-            <form2:hidden id="editBorderViolatorGender" path="sugu"/>
             <div style="margin-bottom: 40px;">
                 <label for="_sugu_id">
                     <spring:message code="gender"/>:</label>
                 <select class="right" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu" style="width: 182px;">
-                    <option value="M">M</option>
-                    <option value="N">N</option>
+           			<c:forEach items="${genders}" var="gender">
+           				<c:if test="${gender == piiririkkuja.sugu}">
+           					<option value="${gender}" selected="selected">${gender}</option>
+           				</c:if>
+           				<c:if test="${gender != piiririkkuja.sugu}">
+           					<option value="${gender}">${gender}</option>
+           				</c:if>
+            			
+            		</c:forEach>
                 </select>
             </div>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
