@@ -10,7 +10,4 @@
 <definition extends="default" name="kodakondsused/show">
         <put-attribute name="body" value="/WEB-INF/views/kodakondsused/show.jspx"/>
     </definition>
-<definition extends="default" name="kodakondsused/list">
-        <put-attribute name="body" value="/WEB-INF/views/kodakondsused/list.jspx"/>
-    </definition>
 </tiles-definitions>
