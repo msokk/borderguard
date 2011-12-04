@@ -10,11 +10,9 @@ privileged aspect Riik_Roo_ToString {
     public String Riik.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("AnsiKood: ").append(getAnsiKood()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("IsoKood: ").append(getIsoKood()).append(", ");
         sb.append("Kodakondsused: ").append(getKodakondsused() == null ? "null" : getKodakondsused().size()).append(", ");
-        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("Kommentaar: ").append(getKommentaar());
         return sb.toString();
     }
     
