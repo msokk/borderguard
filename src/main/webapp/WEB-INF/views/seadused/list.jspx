@@ -1,48 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:form2="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form2="http://www.springframework.org/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <spring:message code="list_law_points" htmlEscape="false" var="title_msg"/>
-    <spring:message code="from" htmlEscape="false" var="from"/>
-    <spring:message code="to" htmlEscape="false" var="to"/>
-    <util:panel id="pl_ee_codeporn_borderguard_entities_Seadus" openPane="true" title="${title_msg}">
-        <form2:form commandName="SeadusePunktFilter" method="GET">
-            <table id="filterBar">
-                <tr>
-                    <td>
-                        <field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" label="${from}" z="user-managed"/>
-                    </td>
-                    <td>
-                        <field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" label="${to}" z="user-managed"/>
-                    </td>
-                    <td>
-                        <spring:message code="label_ee_codeporn_borderguard_entities_seadus" htmlEscape="false" var="law_label"/>
-                        <spring:message code="all" htmlEscape="false" var="all"/>
-                        <label for="valitudSeadus">
-                            <c:out value="${law_label}"/>:</label>
-                        <form2:select path="valitudSeadus">
-                            <form2:option label="${all}" value="0"/>
-                            <form2:options itemLabel="nimetus" itemValue="id" items="${seadused}"/>
-                        </form2:select>
-                    </td>
-                    <spring:message code="button_refresh" htmlEscape="false" var="refresh_label"/>
-                    <td>
-                        <input class="btn primary" id="filterBtn" type="submit" value="${fn:escapeXml(refresh_label)}"/>
-                    </td>
-                </tr>
-            </table>
-            <spring:message code="point" htmlEscape="false" var="point"/>
-            <table:table buttons="true" create="false" data="${seadusepunktid}" delete="false" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" update="false" z="user-managed">
-                <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" label="${point}" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
-                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" label="${from}" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
-                <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" label="${to}" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
-            </table:table>
-        </form2:form>
-        <table:table data="${seadused}" id="l_ee_codeporn_borderguard_entities_Seadus" path="/seadused" z="IkOv08k2w+ktfbySMPblGYjuZ9Y=">
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kood" property="kood" z="Z7h8P1TC1OeVsKUPB/KzniNqB+M="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" property="nimetus" z="SAomfxAiHSayyubpPybHs7SG30c="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" property="kommentaar" z="V1/DSzPJNM9vKYkFfKLq2RteFyg="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_seadusePunktid" property="seadusePunktid" z="GjasNsYn3UfVQIZM7as+tPl4dOc="/>
-        </table:table>
+    <spring:message code="list_law_points" var="title_msg" htmlEscape="false" />
+	<spring:message code="from" var="from" htmlEscape="false" />
+	<spring:message code="to" var="to" htmlEscape="false" />
+    <util:panel id="pl_ee_codeporn_borderguard_entities_Seadus" title="${title_msg}" openPane="true">
+		<form2:form method="GET" commandName="SeadusePunktFilter">
+			<table id="filterBar">
+				<tr>
+		    		<td><field:datetime label="${from}" dateTimePattern="${seadus_kehtivalates_date_format}" field="alates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/></td>
+					<td><field:datetime label="${to}" dateTimePattern="${seadus_kehtivkuni_date_format}" field="kuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/></td>
+					<td>
+						<spring:message code="label_ee_codeporn_borderguard_entities_seadus" var="law_label" htmlEscape="false" />
+						<spring:message code="all" var="all" htmlEscape="false" />
+						<label for="valitudSeadus"><c:out value="${law_label}" />:</label>
+						<form2:select path="valitudSeadus">
+							<form2:option value="0" label="${all}" />
+							<form2:options items="${seadused}" itemLabel="nimetus" itemValue="id" />
+						</form2:select>
+					</td>
+	       			<spring:message code="button_refresh" var="refresh_label" htmlEscape="false" />
+	       			<td><input id="filterBtn" type="submit" class="btn primary" value="${fn:escapeXml(refresh_label)}" /></td>
+				</tr>
+			</table>
+			<spring:message code="point" var="point" htmlEscape="false" />
+	        <table:table buttons="true" create="false" update="false" delete="false" data="${seadusepunktid}" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" z="user-managed">
+	            <table:column label="${point}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
+	            <table:column label="${from}" calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
+	            <table:column label="${to}" calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
+	        </table:table>
+		</form2:form>
     </util:panel>
 </div>

@@ -8,9 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.Size;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.PostRemove;
 import javax.persistence.PrePersist;
-import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
