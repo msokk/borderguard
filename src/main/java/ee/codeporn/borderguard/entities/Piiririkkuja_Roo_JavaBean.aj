@@ -57,7 +57,6 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
     public void Piiririkkuja.setSynniaeg(Calendar synniaeg) {
         this.synniaeg = synniaeg;
     }
-   
     
     public void Piiririkkuja.setKodakondsused(Set<Kodakondsus> kodakondsused) {
         this.kodakondsused = kodakondsused;

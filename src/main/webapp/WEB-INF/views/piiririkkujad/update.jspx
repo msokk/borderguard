@@ -12,15 +12,14 @@
                 <label for="_sugu_id">
                     <spring:message code="gender"/>:</label>
                 <select class="right" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" name="sugu" style="width: 182px;">
-           			<c:forEach items="${genders}" var="gender">
-           				<c:if test="${gender == piiririkkuja.sugu}">
-           					<option value="${gender}" selected="selected">${gender}</option>
-           				</c:if>
-           				<c:if test="${gender != piiririkkuja.sugu}">
-           					<option value="${gender}">${gender}</option>
-           				</c:if>
-            			
-            		</c:forEach>
+                    <c:forEach items="${genders}" var="gender">
+                        <c:if test="${gender == piiririkkuja.sugu}">
+                            <option selected="selected" value="${gender}">${gender}</option>
+                        </c:if>
+                        <c:if test="${gender != piiririkkuja.sugu}">
+                            <option value="${gender}">${gender}</option>
+                        </c:if>
+                    </c:forEach>
                 </select>
             </div>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kommentaar" z="user-managed"/>
@@ -32,7 +31,7 @@
             <c:if test="${kodakondsused.size() == 0}">
                 <hr style="margin: 5px 0 5px 0;"/>
             </c:if>
-            <c:if test="${kodakondsused.size() > 0}">
+            <c:if test="${kodakondsused.size() &gt; 0}">
                 <table class="small-padding" id="borderViolatorNationalities" style="margin: 5px 0 5px 0;">
                     <tr>
                         <th>

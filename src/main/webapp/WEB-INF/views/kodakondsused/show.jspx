@@ -8,6 +8,6 @@
         <field:display calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kuni" object="${kodakondsus}" z="GMuTHUnpQIfq9EBRwjA1Ec1mslU="/>
         <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" object="${kodakondsus}" z="tUlMpJbGYSzRJobvEbPsLpf26JA="/>
         <field:display field="piiririkkuja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" object="${kodakondsus}" z="KoAvxvehSHINCmGkpd4ZiioA3Lk="/>
-        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_riik" object="${kodakondsus.riik}" z="gAuxB2fij8EO3jRBc4zAPbmhQtk="/>
+        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_riik" object="${kodakondsus.riik}" z="user-managed"/>
     </page:show>
 </div>

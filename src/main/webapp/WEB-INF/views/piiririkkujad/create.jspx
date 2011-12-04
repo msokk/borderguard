@@ -25,4 +25,5 @@
         </div>
         <div class="clear"/>
     </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Piiririkkuja" render="${not empty dependencies}" z="7XR2AnOFAwsKEL9tVcmqGDE0UMA="/>
 </div>

@@ -10,11 +10,13 @@ privileged aspect Kodakondsus_Roo_ToString {
     public String Kodakondsus.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Alates: ").append(getAlates() == null ? "null" : getAlates().getTime()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kuni: ").append(getKuni() == null ? "null" : getKuni().getTime()).append(", ");
         sb.append("Piiririkkuja: ").append(getPiiririkkuja()).append(", ");
-        sb.append("Riik: ").append(getRiik());
+        sb.append("Riik: ").append(getRiik()).append(", ");
+        sb.append("Version: ").append(getVersion());
         return sb.toString();
     }
     

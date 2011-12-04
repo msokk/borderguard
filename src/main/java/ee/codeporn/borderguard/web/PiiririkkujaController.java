@@ -39,4 +39,16 @@ public class PiiririkkujaController {
         piiririkkuja.merge();
         return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest) + "?form";
     }
+	
+	@RequestMapping(method = RequestMethod.POST)
+    public String create(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("piiririkkuja", piiririkkuja);
+            addDateTimeFormatPatterns(uiModel);
+            return "piiririkkujad/create";
+        }
+        uiModel.asMap().clear();
+        piiririkkuja.persist();
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest) + "?form";
+    }
 }

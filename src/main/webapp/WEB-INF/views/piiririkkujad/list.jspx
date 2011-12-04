@@ -9,7 +9,7 @@
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" property="eesnimi" z="KJLZqMTmcBSxDFZbyW/0vztyJiI="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" property="perenimi" z="H7yYWbgHgCLP4jkTEQMrDPMMhdQ="/>
             <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sugu" property="sugu" z="XgCZ1Ad0sWX+u061mIKxKUyxw+c="/>
-            <table:column calendar="true" dateTimePattern="${piiririkkuja_synniaeg_date_format}" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" property="synniaeg" z="UzHr4bzmIRv5aSqYcd+nWGbyLzk="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" property="kodakondsused" z="c0Z98jG1ZHpeLdRxjOJEzpaQonI="/>
         </table:table>
     </page:list>
 </div>

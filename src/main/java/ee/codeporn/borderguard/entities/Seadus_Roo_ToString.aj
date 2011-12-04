@@ -9,12 +9,14 @@ privileged aspect Seadus_Roo_ToString {
     
     public String Seadus.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("KehtivAlates: ").append(getKehtivAlates() == null ? "null" : getKehtivAlates().getTime()).append(", ");
         sb.append("KehtivKuni: ").append(getKehtivKuni() == null ? "null" : getKehtivKuni().getTime()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size());
+        sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
+        sb.append("Version: ").append(getVersion());
         return sb.toString();
     }
     

@@ -3,16 +3,64 @@
 
 package ee.codeporn.borderguard.web;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
+import ee.codeporn.borderguard.entities.Piiririkkuja;
+import ee.codeporn.borderguard.entities.Riik;
 import java.io.UnsupportedEncodingException;
+import java.lang.Integer;
+import java.lang.Long;
 import java.lang.String;
+import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect KodakondsusController_Roo_Controller {
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String KodakondsusController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
+        uiModel.addAttribute("itemId", id);
+        return "kodakondsused/show";
+    }
+    
+    @RequestMapping(method = RequestMethod.GET)
+    public String KodakondsusController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            uiModel.addAttribute("kodakondsused", Kodakondsus.findKodakondsusEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+            float nrOfPages = (float) Kodakondsus.countKodakondsused() / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("kodakondsused", Kodakondsus.findAllKodakondsused());
+        }
+        addDateTimeFormatPatterns(uiModel);
+        return "kodakondsused/list";
+    }
+    
+    @ModelAttribute("kodakondsused")
+    public Collection<Kodakondsus> KodakondsusController.populateKodakondsused() {
+        return Kodakondsus.findAllKodakondsused();
+    }
+    
+    @ModelAttribute("piiririkkujad")
+    public Collection<Piiririkkuja> KodakondsusController.populatePiiririkkujad() {
+        return Piiririkkuja.findAllPiiririkkujad();
+    }
+    
+    @ModelAttribute("riigid")
+    public Collection<Riik> KodakondsusController.populateRiigid() {
+        return Riik.findAllRiigid();
+    }
     
     void KodakondsusController.addDateTimeFormatPatterns(Model uiModel) {
         uiModel.addAttribute("kodakondsus_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));

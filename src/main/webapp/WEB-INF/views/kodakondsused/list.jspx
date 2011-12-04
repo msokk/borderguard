@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_codeporn_borderguard_entities_Kodakondsus" items="${kodakondsused}" z="b3vjMS3LUVPFEbvBiCVEUhjUfFo=">
+        <table:table data="${kodakondsused}" id="l_ee_codeporn_borderguard_entities_Kodakondsus" path="/kodakondsused" z="c0+HOzrFyiG8S2Qo/qto4HmUSCs=">
+            <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" property="kommentaar" z="mM37PiMeLpgMvyQ5oZikdto09xU="/>
+            <table:column calendar="true" dateTimePattern="${kodakondsus_alates_date_format}" id="c_ee_codeporn_borderguard_entities_Kodakondsus_alates" property="alates" z="3CS49y8Vd7oM0Ms7YmLUj4MP/QI="/>
+            <table:column calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" id="c_ee_codeporn_borderguard_entities_Kodakondsus_kuni" property="kuni" z="pwHZ3RE3ahE+arp2Vwa2j/XaQDY="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" property="isikukood" z="fVtTjyvsWcb+vBLOOJeok4gK87g="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" property="piiririkkuja" z="Qi6CEau5rCtqTg5T1w+3uju8IBk="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Kodakondsus_riik" property="riik" z="ypBBDEgUMNAdO5ZVt6oiaShchrY="/>
+        </table:table>
+    </page:list>
+</div>

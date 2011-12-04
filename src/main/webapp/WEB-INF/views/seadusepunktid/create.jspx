@@ -7,7 +7,7 @@
             <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
             <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
             <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
-            <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
+            <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="user-managed"/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
             <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemLabel="pais" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="user-managed"/>
@@ -18,7 +18,7 @@
             <spring:message code="can_add_subpoint_when_law_point_saved"/>
         </div>
         <div class="clear"/>
-        <field:select field="seadus" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" itemValue="id" itemLabel="nimetus" items="${seadused}" path="/seadused" z="2XUHQoc3DGD6uJx/CNK7ANAih2E="/>
+        <field:select field="seadus" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" itemLabel="nimetus" itemValue="id" items="${seadused}" path="/seadused" z="user-managed"/>
         <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_SeadusePunkt" render="${not empty dependencies}" z="q+z3e//IZ1kj7X6oUvE1yEN7cDY="/>

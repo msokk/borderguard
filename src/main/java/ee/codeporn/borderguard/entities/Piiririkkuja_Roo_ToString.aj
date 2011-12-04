@@ -10,12 +10,14 @@ privileged aspect Piiririkkuja_Roo_ToString {
     public String Piiririkkuja.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Eesnimi: ").append(getEesnimi()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kodakondsused: ").append(getKodakondsused() == null ? "null" : getKodakondsused().size()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Perenimi: ").append(getPerenimi()).append(", ");
         sb.append("Sugu: ").append(getSugu()).append(", ");
-        sb.append("Synniaeg: ").append(getSynniaeg() == null ? "null" : getSynniaeg().getTime());
+        sb.append("Synniaeg: ").append(getSynniaeg() == null ? "null" : getSynniaeg().getTime()).append(", ");
+        sb.append("Version: ").append(getVersion());
         return sb.toString();
     }
     
