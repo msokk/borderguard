@@ -70,7 +70,7 @@ public class Seadus extends Base {
     
     @SuppressWarnings("unchecked")
 	public List<SeadusePunkt> getSeadusePunktid() {
-    	Query query = entityManager().createQuery("FROM SeadusePunkt AS s WHERE s.seadus = ?1 AND s.sulgeja IS NULL", SeadusePunkt.class);
+    	Query query = entityManager().createQuery("FROM SeadusePunkt AS s WHERE s.seadus = ?1 AND s.seadusePunkt IS NULL AND s.sulgeja IS NULL", SeadusePunkt.class);
     	query.setParameter(1, this);
     	return query.getResultList();
     }
