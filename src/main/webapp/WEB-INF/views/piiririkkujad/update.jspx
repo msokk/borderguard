@@ -31,7 +31,7 @@
             <c:if test="${kodakondsused.size() == 0}">
                 <hr style="margin: 5px 0 5px 0;"/>
             </c:if>
-            <c:if test="${kodakondsused.size() &gt; 0}">
+            <c:if test="${kodakondsused.size() > 0}">
                 <table class="small-padding" id="borderViolatorNationalities" style="margin: 5px 0 5px 0;">
                     <tr>
                         <th>
@@ -40,7 +40,7 @@
                         <th>
                             <spring:message code="identity_code"/>
                         </th>
-                        <th colspan="2">
+                        <th colspan="2" style="text-align: center;">
                             <spring:message code="choices"/>
                         </th>
                     </tr>
@@ -52,12 +52,12 @@
                             <td>
                                 <c:out value="${kodakondsus.isikukood}"/>
                             </td>
-                            <td>
+                            <td style="text-align: center; width: 51px;">
                                 <a class="btn small-padding success" href="../kodakondsused/${kodakondsus.id}/${piiririkkuja.id}?form">
                                     <spring:message code="edit"/>
                                 </a>
                             </td>
-                            <td>
+                            <td style="text-align: center; width: 57px;">
                                 <script type="text/javascript">
 		                    		var nationality_id = "${kodakondsus.id}";
 		                        </script>
@@ -69,11 +69,10 @@
                     </c:forEach>
                 </table>
             </c:if>
-            <a class="btn small-padding primary" href="../kodakondsused/${piiririkkuja.id}?form" style="float: right;">
+            <a class="btn small-padding primary" href="../kodakondsused/${piiririkkuja.id}?form" style="float: right; margin-right: 5px;">
                 <spring:message code="add"/>
             </a>
         </div>
         <div class="clear"/>
-        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:update>
 </div>
