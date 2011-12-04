@@ -3,7 +3,15 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <div class="show">
-	    <page:show id="ps_ee_codeporn_borderguard_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujad" z="user-managed">
+    		<c:if test="${piiririkkuja.sulgeja != NULL}">
+		        <c:set value="false" var="enableUpdate"/>
+    			<c:set value="false" var="enableDelete"/>
+	        </c:if>
+	        <c:if test="${piiririkkuja.sulgeja == NULL}">
+	        	<c:set value="true" var="enableUpdate"/>
+    			<c:set value="true" var="enableDelete"/>
+	        </c:if>
+	    <page:show id="ps_ee_codeporn_borderguard_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujad" z="user-managed" update="${enableUpdate}" delete="${enableDelete}">
 	        <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" object="${piiririkkuja}" z="a8ZTAIkrwBV/Ud6kjV4U1yyaUYo="/>
 	        <field:display field="eesnimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" object="${piiririkkuja}" z="fbmZIpeIUPD8gpQH8lofVsDZmDw="/>
 	        <field:display field="perenimi" id="s_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" object="${piiririkkuja}" z="KOgCvHrSTt/QlQE9E9qKEbwvgpo="/>
