@@ -16,7 +16,5 @@
             <spring:message code="can_add_point_when_law_saved"/>
         </div>
         <div class="clear"/>
-        <field:simple field="seadused" id="c_ee_codeporn_borderguard_entities_Seadus" messageCode="entity_reference_not_managed" messageCodeAttribute="Seadus" z="RWKAoDRaF21kHoyDHSdO9sM63tg="/>
     </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Seadus" render="${not empty dependencies}" z="oJy3C/F1FSsw39t775+uKxZyJKU="/>
 </div>

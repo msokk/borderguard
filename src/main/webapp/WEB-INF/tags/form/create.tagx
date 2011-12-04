@@ -49,7 +49,10 @@
         <div class="submit" id="${fn:escapeXml(id)}_submit">
           <spring:message code="button_save" var="save_button" htmlEscape="false" />
           <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>
-          <input id="proceed" class="btn primary" type="submit" value="${fn:escapeXml(save_button)}"/>
+          <spring:message code="button_cancel" var="cancel_button" htmlEscape="false" />
+          <a class="btn right" style="margin-left: 10px;" onclick="javascript:history.back()">${cancel_button}</a>
+          <input id="proceed" type="submit" class="btn primary right" value="${fn:escapeXml(save_button)}" />
+          <div class="clear"></div>
         </div>
       </form:form>
     </util:panel>
