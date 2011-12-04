@@ -23,7 +23,9 @@
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_nationality_when_border_violator_saved"/>
         </div>
-        <div class="clear"/>
+        <div class="clear">
+            <jsp:text/>
+        </div>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Piiririkkuja" render="${not empty dependencies}" z="7XR2AnOFAwsKEL9tVcmqGDE0UMA="/>
 </div>

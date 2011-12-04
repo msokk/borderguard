@@ -95,6 +95,7 @@ body {
 #filterBar td {
 	padding: 0;
 	border-top: 0;
+	vertical-align: top;
 }
 
 #filterBar .dijitTextBox {
@@ -181,13 +182,7 @@ button.mini, a.btn.mini {
 }
 
 #footer {
-	margin: 7px 0 7px 0;
-	border-top: 1px dotted #AAA;
-}
-
-tr.footer a {
-	position: relative;
-	top: -3px;
+	margin-top: 5px;	
 }
 
 #footer .new {
@@ -209,6 +204,10 @@ tr.footer a {
 
 table.navigation {
 	border: 0px;
+}
+
+form {
+	margin-bottom: 0;
 }
 
 label {
