@@ -4,9 +4,11 @@
 
   <spring:url var="banner" value="" />
   <spring:url var="home" value="/" />
+  <spring:url var="logo" value="/resources/images/logo.png" />
   <spring:message code="button_home" var="home_label" htmlEscape="false" />
   <a href="${home}" name="${fn:escapeXml(home_label)}" title="${fn:escapeXml(home_label)}">
     <div id="banner">
+    	<img src="${logo}" alt="" />
     	<h1><spring:message code="application_name" /></h1>
     </div>
   </a>

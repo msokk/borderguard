@@ -28,17 +28,24 @@ body {
 }
 
 #banner h1 {
-	padding: 7px 0 0 10px !important;
+	padding: 7px 0 0 0px !important;
 	color: white;
 	text-shadow: 1px 1px 1px #0064CD;
 	-webkit-transition: color 1s linear;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 2px;
+}
+
+#banner img {
+	padding: 3px;
 }
 
 #banner h1:hover {
 	color: #EEE;
 }
 
-#banner h1:active {
+#banner h1:active, img:active {
 	position: relative;
 	top: 2px;
 }
@@ -336,10 +343,12 @@ fieldset th {
 }
 
 .dijitTextArea{
-	min-height:5.5em !important;
+	min-height:6em !important;
 	max-height:22em !important;
 	overflow-y: auto !important;
-	max-width: 175px;
+	min-width: 176px;
+	max-width: 250px;
+	border-radius: 0;
 }
 
 .RichTextEditable{

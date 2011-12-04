@@ -9,7 +9,6 @@ privileged aspect SeadusePunkt_Roo_ToString {
     
     public String SeadusePunkt.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("KehtivAlates: ").append(getKehtivAlates() == null ? "null" : getKehtivAlates().getTime()).append(", ");
         sb.append("KehtivKuni: ").append(getKehtivKuni() == null ? "null" : getKehtivKuni().getTime()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
@@ -17,8 +16,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         sb.append("Paragrahv: ").append(getParagrahv()).append(", ");
         sb.append("Seadus: ").append(getSeadus()).append(", ");
         sb.append("SeadusePunktid: ").append(getSeadusePunktid() == null ? "null" : getSeadusePunktid().size()).append(", ");
-        sb.append("Tekst: ").append(getTekst()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("Tekst: ").append(getTekst());
         return sb.toString();
     }
     
