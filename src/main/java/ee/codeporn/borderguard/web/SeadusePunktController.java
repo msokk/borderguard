@@ -41,7 +41,7 @@ public class SeadusePunktController {
     @RequestMapping(value = "/{id}/{seadusId}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, @PathVariable("seadusId") Long seadusId, Model uiModel) {
         uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(id));
-        uiModel.addAttribute("seadus", Seadus.findSeadus(seadusId));
+        uiModel.addAttribute("seadusId", seadusId);
         
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunktid/update";
@@ -51,7 +51,7 @@ public class SeadusePunktController {
     public String createForm(@PathVariable("seadusId") Long seadusId, Model uiModel) {
 
         uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
-        uiModel.addAttribute("seadus", Seadus.findSeadus(seadusId));
+        uiModel.addAttribute("seadusId", seadusId);
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunktid/create";
     }
@@ -59,6 +59,7 @@ public class SeadusePunktController {
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
+        	System.out.println(bindingResult.getAllErrors().toString());
             uiModel.addAttribute("seadusePunkt", seadusePunkt);
             addDateTimeFormatPatterns(uiModel);
             return "seadusepunktid/create";

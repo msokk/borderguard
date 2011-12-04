@@ -41,7 +41,7 @@
                                 </a>
                             </td>
                             <td style="text-align: center; width: 51px;">
-                                <a class="btn small-padding success" href="../seadusepunktid/${seadus.id}/${seadusepunkt.id}?form">
+                                <a class="btn small-padding success" href="../seadusepunktid/${seadusepunkt.id}/${seadus.id}?form">
                                     <spring:message code="edit"/>
                                 </a>
                             </td>
