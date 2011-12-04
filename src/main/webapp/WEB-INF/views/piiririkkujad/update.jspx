@@ -47,8 +47,8 @@
                     <c:forEach items="${kodakondsused}" var="kodakondsus">
                         <tr>
                             <td>
-                            	<a href="../kodakondsused/${kodakondsus.id}">
-                                	<c:out value="${kodakondsus.riik.kommentaar}"/>
+                                <a href="../kodakondsused/${kodakondsus.id}">
+                                    <c:out value="${kodakondsus.riik.kommentaar}"/>
                                 </a>
                             </td>
                             <td>
@@ -77,6 +77,8 @@
                 <spring:message code="add"/>
             </a>
         </div>
-        <div class="clear"/>
+        <div class="clear">
+            <jsp:text/>
+        </div>
     </form:update>
 </div>

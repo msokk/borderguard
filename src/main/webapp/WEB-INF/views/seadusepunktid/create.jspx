@@ -17,6 +17,8 @@
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_subpoint_when_law_point_saved"/>
         </div>
-        <div class="clear" ><jsp:text/></div>
+        <div class="clear">
+            <jsp:text/>
+        </div>
     </form:create>
 </div>
