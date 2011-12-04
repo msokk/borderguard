@@ -17,7 +17,6 @@
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_subpoint_when_law_point_saved"/>
         </div>
-        <div class="clear"/>
-        <field:select field="seadus" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" itemLabel="nimetus" itemValue="id" items="${seadused}" path="/seadused" z="user-managed"/>
+        <div class="clear" ><jsp:text/></div>
     </form:create>
 </div>

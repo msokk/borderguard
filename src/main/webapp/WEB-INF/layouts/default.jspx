@@ -6,7 +6,7 @@
 	<jsp:directive.page pageEncoding="UTF-8" /> 
 			
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />			
+		<meta charset="utf-8" />			
 		<util:load-scripts />	
 		<spring:message code="application_name" var="app_name" htmlEscape="false"/>
 		<title><spring:message code="application_name" arguments="${app_name}" /></title>
