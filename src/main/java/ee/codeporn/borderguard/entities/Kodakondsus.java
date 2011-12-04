@@ -37,4 +37,14 @@ public class Kodakondsus extends Base {
 
     @ManyToOne
     private Riik riik;
+
+	public static Kodakondsus build(String comment, Riik findRiik, String ID, Piiririkkuja findPiiririkkuja) {
+		Kodakondsus tmp = new Kodakondsus();
+		tmp.kommentaar = comment;
+		tmp.isikukood = ID;
+		tmp.riik = findRiik;
+		tmp.piiririkkuja = findPiiririkkuja;
+		
+		return tmp;
+	}
 }
