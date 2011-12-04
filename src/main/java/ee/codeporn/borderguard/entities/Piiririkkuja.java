@@ -46,7 +46,7 @@ public class Piiririkkuja extends Base {
     private Set<Kodakondsus> kodakondsused = new HashSet<Kodakondsus>();
     
     @SuppressWarnings("unchecked")
-	public List<SeadusePunkt> getKodakondsused() {
+	public List<Kodakondsus> getKodakondsused() {
     	Query query = entityManager().createQuery("FROM Kodakondsus AS k WHERE k.piiririkkuja = ?1 AND k.sulgeja IS NULL", Kodakondsus.class);
     	query.setParameter(1, this);
     	return query.getResultList();
