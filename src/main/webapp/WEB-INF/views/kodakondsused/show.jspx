@@ -12,12 +12,20 @@
 	        		<c:out value="${kodakondsus.piiririkkuja.eesnimi} "></c:out>
 	        		<c:out value="${kodakondsus.piiririkkuja.perenimi}"></c:out>
 	        	</div>
-	        	
 	        </div>
 	        <br />
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="s_ee_codeporn_borderguard_entities_Kodakondsus_alates" object="${kodakondsus}" z="tqT127mURqlfIWQGc+h5Tx7XGbc="/>
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kuni" object="${kodakondsus}" z="GMuTHUnpQIfq9EBRwjA1Ec1mslU="/>
-	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>	
+	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>
+	        
+	        <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avaja" object="${kodakondsus}" z="QHR7ve8bZYPjxuXPPQJttLZ3Kxg="/>
+	        <field:display calendar="true" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avatud" object="${kodakondsus}" z="9ww6uzjyby4+/UEbZBy+RoiI2gw="/>
+	        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muutja" object="${kodakondsus}" z="QdYyxs1UjMZiNWXCuFhZiThJMb0="/>
+	        <field:display calendar="true" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" object="${kodakondsus}" z="/LnLpSFwT+cMlJXNt3+RIdTOlVc="/>
+	        <c:if test="${kodakondsuls.sulgeja != NULL}">
+	        	<field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" object="${kodakondsus}" z="hu7g5ZyMHDw7N1DOgOkVBNudN4A="/>
+	        	<field:display calendar="true" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_suletud" object="${kodakondsus}" z="8F9jyIuxxkrUByhSrZsC0ZL1dZs="/>
+	        </c:if>	
 	        <hr style="margin: -10px 0 10px 0;"/>
 	        <a class="btn small-padding" onclick="javascript:history.back()"><spring:message code="go_back"/></a>
 	    </page:show>
