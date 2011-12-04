@@ -18,7 +18,7 @@
                 </select>
             </div>
         </div>
-        <div class="right" style="width: 245px;">
+        <div class="right" style="width: 280px;">
             <spring:message code="nationalities"/>
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_nationality_when_border_violator_saved"/>

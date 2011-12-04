@@ -17,7 +17,7 @@
 	        <br />
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="s_ee_codeporn_borderguard_entities_Kodakondsus_alates" object="${kodakondsus}" z="tqT127mURqlfIWQGc+h5Tx7XGbc="/>
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kuni" object="${kodakondsus}" z="GMuTHUnpQIfq9EBRwjA1Ec1mslU="/>
-	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>
+	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>	
 	        <hr style="margin: -10px 0 10px 0;"/>
 	        <a class="btn small-padding" onclick="javascript:history.back()"><spring:message code="go_back"/></a>
 	    </page:show>
