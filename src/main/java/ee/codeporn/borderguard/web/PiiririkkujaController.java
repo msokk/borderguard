@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RooWebScaffold(path = "piiririkkujad", formBackingObject = Piiririkkuja.class)
 @RequestMapping("/piiririkkujad")
@@ -52,5 +53,14 @@ public class PiiririkkujaController {
         uiModel.asMap().clear();
         piiririkkuja.persist();
         return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest) + "?form";
+    }
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Piiririkkuja.findPiiririkkuja(id).close();
+        uiModel.asMap().clear();
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/piiririkkujad";
     }
 }

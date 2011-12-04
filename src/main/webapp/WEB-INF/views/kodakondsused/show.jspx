@@ -22,7 +22,7 @@
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avatud" object="${kodakondsus}" z="9ww6uzjyby4+/UEbZBy+RoiI2gw="/>
 	        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muutja" object="${kodakondsus}" z="QdYyxs1UjMZiNWXCuFhZiThJMb0="/>
 	        <field:display calendar="true" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" object="${kodakondsus}" z="/LnLpSFwT+cMlJXNt3+RIdTOlVc="/>
-	        <c:if test="${kodakondsuls.sulgeja != NULL}">
+	        <c:if test="${kodakondsusus.sulgeja != NULL}">
 	        	<field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" object="${kodakondsus}" z="hu7g5ZyMHDw7N1DOgOkVBNudN4A="/>
 	        	<field:display calendar="true" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_suletud" object="${kodakondsus}" z="8F9jyIuxxkrUByhSrZsC0ZL1dZs="/>
 	        </c:if>	

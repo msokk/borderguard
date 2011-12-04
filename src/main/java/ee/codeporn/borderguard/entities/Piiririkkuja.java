@@ -51,4 +51,17 @@ public class Piiririkkuja extends Base {
     	query.setParameter(1, this);
     	return query.getResultList();
     }
+    
+    public static long countPiiririkkujad() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o WHERE o.sulgeja IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<Piiririkkuja> findAllPiiririkkujad() {
+        return entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.sulgeja IS NULL", Piiririkkuja.class).getResultList();
+    }
+
+    
+    public static List<Piiririkkuja> findPiiririkkujaEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.sulgeja IS NULL", Piiririkkuja.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }
