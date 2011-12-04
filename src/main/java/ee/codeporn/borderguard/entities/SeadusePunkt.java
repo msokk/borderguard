@@ -51,7 +51,7 @@ public class SeadusePunkt extends Base {
     
     @SuppressWarnings({ "unchecked" })
     public static List<SeadusePunkt> getAllPunktid(Calendar alates, Calendar kuni) {
-    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2", SeadusePunkt.class);
+    	Query query = entityManager().createQuery("from SeadusePunkt as p where p.kehtivAlates > ?1 and p.kehtivKuni < ?2 and p.sulgeja IS NULL", SeadusePunkt.class);
     	query.setParameter(1, alates);
         query.setParameter(2, kuni);
 		return query.getResultList();
