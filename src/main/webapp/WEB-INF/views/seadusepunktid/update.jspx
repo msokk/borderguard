@@ -7,50 +7,83 @@
             <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
             <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
             <field:input field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
-            <input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seadusId}" z="user-managed"/>
+            <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
+        	<field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
             <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="FA4vhOGHLmWQbeACVhhSNEYhBto="/>
+            <input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seadusId}" z="user-managed"/>
+            
+            <c:choose>
+            	<c:when test="${seaduspunktId != null}">
+                	<input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seaduspunktId}" z="user-managed"/>
+                </c:when>
+				<c:otherwise>
+					<spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
+			        <label for="seadusePunkt">
+			           <c:out value="${masterpoint}"/>:</label>
+			        <form2:select path="seadusePunkt">
+			            <form2:option label="" value="0"/>
+			            <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
+			        </form2:select>
+				</c:otherwise>
+            </c:choose>
         </div>
-        <div class="right" style="width: 245px;">
-            <table class="small-padding">
-                <tr>
-                    <td>
-                        <spring:message code="paragraph"/>
-                    </td>
-                    <td>
-                        <spring:message code="header"/>
-                    </td>
-                    <td colspan="2"/>
-                </tr>
-                <tr>
-                    <td>85</td>
-                    <td>Proov</td>
-                    <td>
-                        <button class="btn small-padding success">
-                            <spring:message code="edit"/>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn small-padding danger">
-                            <spring:message code="delete"/>
-                        </button>
-                    </td>
-                </tr>
-            </table>
-            <button class="btn small-padding primary" id="borderViolatorAddNationality" style="float: right;">
-                <spring:message code="add"/>
-            </button>
-        </div>
-        <div class="clear">
+		<c:if test="${seaduspunktId == null}">
+	        <div class="right" style="width: 280px;">
+	            <span style="font-weight: bold;">
+		        	<spring:message code="subpoints"/>
+				</span>
+	            <c:if test="${seadusepunktid.size() == 0}">
+	                <hr style="margin: 5px 0 5px 0;"/>
+	            </c:if>
+	            <c:if test="${seadusepunktid.size() > 0}">
+	            	<table class="small-padding" id="lawSections" style="margin: 5px 0 5px 0;">
+	                    <tr>
+	                        <th>
+	                            <spring:message code="paragraph"/>
+	                        </th>
+	                        <th>
+	                            <spring:message code="header"/>
+	                        </th>
+	                        <th colspan="2" style="text-align: center;">
+	                            <spring:message code="choices"/>
+	                        </th>
+	                    </tr>
+	                    <c:forEach items="${seadusepunktid}" var="seadusepunkt">
+	                        <tr>
+	                            <td>
+	                                <c:out value="${seadusepunkt.paragrahv}"/>
+	                            </td>
+	                            <td>
+	                            	<a href="../seadusepunktid/${seadusepunkt.id}">
+	                                    <c:out value="${seadusepunkt.pais}"/>
+	                                </a>
+	                            </td>
+	                            <td style="text-align: center; width: 51px;">
+	                                <a class="btn small-padding success" href="../seadusepunktid/${seadusepunkt.id}/${seadus.id}?form">
+	                                    <spring:message code="edit"/>
+	                                </a>
+	                            </td>
+	                            <td style="text-align: center; width: 57px;">
+	                                <script type="text/javascript">
+			                    		var sectionId = '${seadusepunkt.id}';
+			                    		var uSure = '<spring:message code="entity_delete_confirm"/>';
+			                    		var deletingFailed = '<spring:message code="deleting_failed"/>';
+			                        </script>
+	                                <button class="btn small-padding danger" id="deleteSection">
+	                                    <spring:message code="delete"/>
+	                                </button>
+	                            </td>
+	                        </tr>
+	                    </c:forEach>
+	                </table>
+	            </c:if>
+	            <a class="btn small-padding primary" href="../seadusepunktid/${seadus.id}?form" style="float: right; margin-right: 5px;">
+	                <spring:message code="add"/>
+	            </a>
+	        </div>
+	    </c:if>
+        <div class="clear" style="padding-top: 10px;">
             <jsp:text/>
         </div>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
-    	<spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
-            <label for="seadusePunkt">
-               <c:out value="${masterpoint}"/>:</label>
-            <form2:select path="seadusePunkt">
-                <form2:option label="" value="0"/>
-                <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
-            </form2:select>
     </form:update>
 </div>
