@@ -60,15 +60,6 @@ privileged aspect SeadusController_Roo_Controller {
         return "redirect:/seadused/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String SeadusController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Seadus.findSeadus(id).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/seadused";
-    }
-    
     @ModelAttribute("seadused")
     public Collection<Seadus> SeadusController.populateSeadused() {
         return Seadus.findAllSeadused();

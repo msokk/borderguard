@@ -8,5 +8,11 @@
         <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Seadus_kommentaar" object="${seadus}" z="jSnKdawkrmLFxPXyr61vmQhz8SA="/>
         <field:display calendar="true" dateTimePattern="${seadus_kehtivalates_date_format}" field="kehtivAlates" id="s_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" object="${seadus}" z="FtUAtmbgp3tYsBdIXyKSyMo9peY="/>
         <field:display calendar="true" dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="s_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" object="${seadus}" z="69NTEKXNeeTSDEnOl2ogdx9QYo8="/>
+        <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Seadus_avaja" object="${seadus}" z="0WZ7O85tWbJKY3UwQkj4ZO7Pk5U="/>
+        <field:display calendar="true" dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Seadus_avatud" object="${seadus}" z="XKZYWzGeERa0cO0EBPazHTr/YIg="/>
+        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Seadus_muutja" object="${seadus}" z="vJeh9izY+kBnFpikHmquqf7rckY="/>
+        <field:display calendar="true" dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Seadus_muudetud" object="${seadus}" z="cFOsrK0ChpLCzknwvTssPBmuOrA="/>
+        <field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Seadus_sulgeja" object="${seadus}" z="w9OPrh0vmyNGNCQ3b+qnXrGUVVM="/>
+        <field:display calendar="true" dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Seadus_suletud" object="${seadus}" z="kSy7aQKibv/FZOMa/RQy/poujBM="/>
     </page:show>
 </div>
