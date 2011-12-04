@@ -6,7 +6,7 @@
     	<div class="left">
     	<field:input field="kood" id="c_ee_codeporn_borderguard_entities_Seadus_kood" max="20" required="true" z="RAqmY6/oTsTya1uD6Ot9Y7Yle34="/>
 	        <field:input field="nimetus" id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" max="20" required="true" z="IP3SV56RJQ6Suhg8WHUHvyMbTKo="/>
-	        <field:input field="kommentaar" id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" z="w4D1PAhXvGOOxxKN3b80UDjkrWE="/>
+	        <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" z="w4D1PAhXvGOOxxKN3b80UDjkrWE="/>
 	        <field:datetime dateTimePattern="${seadus_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" z="lZRY1K0XURXaAZt/mq+GDqxEdqY="/>
 	        <field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/>
     	</div>
