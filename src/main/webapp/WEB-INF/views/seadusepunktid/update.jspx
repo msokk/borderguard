@@ -14,7 +14,7 @@
             
             <c:choose>
             	<c:when test="${seaduspunktId != null}">
-                	<input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seaduspunktId}" z="user-managed"/>
+                	<input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" name="seadusePunkt" type="hidden" value="${seaduspunktId}" z="user-managed"/>
                 
 					<spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
 			        <label for="seadusePunkt">
@@ -76,9 +76,19 @@
 	                    </c:forEach>
 	                </table>
 	            </c:if>
-	            <a class="btn small-padding primary" href="../seadusepunktid/${seadus.id}?form" style="float: right; margin-right: 5px;">
-	                <spring:message code="add"/>
-	            </a>
+	            <c:choose>
+            		<c:when test="${seaduspunktId != null}">
+	            		<a class="btn small-padding primary" href="../../seadusepunktid/${seaduspunktId}/${seadusId}/form" style="float: right; margin-right: 5px;">
+			                <spring:message code="add"/>
+			            </a>
+            		</c:when>
+            		<c:otherwise>
+	            		<a class="btn small-padding primary" href="../../seadusepunktid/${seadusePunkt.id}/${seadusId}/form" style="float: right; margin-right: 5px;">
+		                	<spring:message code="add"/>
+		            	</a>
+            		</c:otherwise>
+            	</c:choose>
+	            
 	        </div>
 	    </c:if>
         <div class="clear" style="padding-top: 10px;">
