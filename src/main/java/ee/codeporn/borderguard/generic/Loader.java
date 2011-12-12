@@ -39,6 +39,14 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         			rikkuja.setPerenimi("Kõikvõimas");
         			rikkuja.setSugu("M");
         			rikkuja.persist();
+        			
+        			Piiririkkuja rikkuja2 = new Piiririkkuja();
+        			rikkuja2.setIsikukood("48901011234");
+        			rikkuja2.setKommentaar("Üksiküritaja");
+        			rikkuja2.setEesnimi("Mari");
+        			rikkuja2.setPerenimi("Juurikas");
+        			rikkuja2.setSugu("N");
+        			rikkuja2.persist();
         		}
         	}
         }

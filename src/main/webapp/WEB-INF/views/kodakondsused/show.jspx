@@ -3,31 +3,35 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <div class="show">
-	    <page:show id="ps_ee_codeporn_borderguard_entities_Kodakondsus" object="${kodakondsus}" path="/kodakondsused" z="user-managed" list="false" create="false" update="false" delete="false">
-	        <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" object="${kodakondsus}" z="tUlMpJbGYSzRJobvEbPsLpf26JA="/>
-	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_riik" object="${kodakondsus.riik}" z="user-managed"/>
-	        <div>
-	        	<label for="_isikukood_id"><spring:message code="label_ee_codeporn_borderguard_entities_kodakondsus_piiririkkuja"/></label>
-	        	<div id="_s_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja_isikukood_id" class="box">
-	        		<c:out value="${kodakondsus.piiririkkuja.eesnimi} "></c:out>
-	        		<c:out value="${kodakondsus.piiririkkuja.perenimi}"></c:out>
-	        	</div>
-	        </div>
-	        <br />
-	        <field:display calendar="true" dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="s_ee_codeporn_borderguard_entities_Kodakondsus_alates" object="${kodakondsus}" z="tqT127mURqlfIWQGc+h5Tx7XGbc="/>
-	        <field:display calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kuni" object="${kodakondsus}" z="GMuTHUnpQIfq9EBRwjA1Ec1mslU="/>
-	        <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>
-	        
-	        <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avaja" object="${kodakondsus}" z="QHR7ve8bZYPjxuXPPQJttLZ3Kxg="/>
-	        <field:display calendar="true" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avatud" object="${kodakondsus}" z="9ww6uzjyby4+/UEbZBy+RoiI2gw="/>
-	        <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muutja" object="${kodakondsus}" z="QdYyxs1UjMZiNWXCuFhZiThJMb0="/>
-	        <field:display calendar="true" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" object="${kodakondsus}" z="/LnLpSFwT+cMlJXNt3+RIdTOlVc="/>
-	        <c:if test="${kodakondsus.sulgeja != NULL}">
-	        	<field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" object="${kodakondsus}" z="hu7g5ZyMHDw7N1DOgOkVBNudN4A="/>
-	        	<field:display calendar="true" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_suletud" object="${kodakondsus}" z="8F9jyIuxxkrUByhSrZsC0ZL1dZs="/>
-	        </c:if>	
-	        <hr style="margin: -10px 0 10px 0;"/>
-	        <a class="btn small-padding" onclick="javascript:history.back()"><spring:message code="go_back"/></a>
-	    </page:show>
+        <page:show create="false" delete="false" id="ps_ee_codeporn_borderguard_entities_Kodakondsus" list="false" object="${kodakondsus}" path="/kodakondsused" update="false" z="user-managed">
+            <field:display field="isikukood" id="s_ee_codeporn_borderguard_entities_Kodakondsus_isikukood" object="${kodakondsus}" z="tUlMpJbGYSzRJobvEbPsLpf26JA="/>
+            <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_riik" object="${kodakondsus.riik}" z="user-managed"/>
+            <div>
+                <label for="_isikukood_id">
+                    <spring:message code="label_ee_codeporn_borderguard_entities_kodakondsus_piiririkkuja"/>
+                </label>
+                <div class="box" id="_s_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja_isikukood_id">
+                    <c:out value="${kodakondsus.piiririkkuja.eesnimi} "/>
+                    <c:out value="${kodakondsus.piiririkkuja.perenimi}"/>
+                </div>
+            </div>
+            <br/>
+            <field:display calendar="true" dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="s_ee_codeporn_borderguard_entities_Kodakondsus_alates" object="${kodakondsus}" z="tqT127mURqlfIWQGc+h5Tx7XGbc="/>
+            <field:display calendar="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kuni" object="${kodakondsus}" z="GMuTHUnpQIfq9EBRwjA1Ec1mslU="/>
+            <field:display field="kommentaar" id="s_ee_codeporn_borderguard_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="ndyQLRMV6mfxGNV/zY2OQSx3sVw="/>
+            <field:display field="avaja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avaja" object="${kodakondsus}" z="QHR7ve8bZYPjxuXPPQJttLZ3Kxg="/>
+            <field:display calendar="true" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_avatud" object="${kodakondsus}" z="9ww6uzjyby4+/UEbZBy+RoiI2gw="/>
+            <field:display field="muutja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muutja" object="${kodakondsus}" z="QdYyxs1UjMZiNWXCuFhZiThJMb0="/>
+            <field:display calendar="true" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_muudetud" object="${kodakondsus}" z="/LnLpSFwT+cMlJXNt3+RIdTOlVc="/>
+            <c:if test="${kodakondsus.sulgeja != NULL}">
+                <field:display field="sulgeja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_sulgeja" object="${kodakondsus}" z="hu7g5ZyMHDw7N1DOgOkVBNudN4A="/>
+                <field:display calendar="true" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="s_ee_codeporn_borderguard_entities_Kodakondsus_suletud" object="${kodakondsus}" z="8F9jyIuxxkrUByhSrZsC0ZL1dZs="/>
+            </c:if>
+            <hr style="margin: -10px 0 10px 0;"/>
+            <a class="btn small-padding" onclick="javascript:history.back()">
+                <spring:message code="go_back"/>
+            </a>
+            <field:display field="piiririkkuja" id="s_ee_codeporn_borderguard_entities_Kodakondsus_piiririkkuja" object="${kodakondsus}" z="KoAvxvehSHINCmGkpd4ZiioA3Lk="/>
+        </page:show>
     </div>
 </div>

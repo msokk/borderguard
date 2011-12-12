@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_codeporn_borderguard_entities_SeadusePunkt" items="${seadusepunktid}" z="user-managed">
         <table:table data="${seadusepunktid}" id="l_ee_codeporn_borderguard_entities_SeadusePunkt" path="/seadusepunktid" z="user-managed">
-            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" property="paragrahv" z="X47c6b4jAgOZZ5YnuTTvfukQLZc="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" property="pais" z="ChdoXRj5sR+M7DrEPY7vdDVhHoM="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" property="tekst" z="aE2zZQFaY6EF+hhlHqlz8lFWo0o="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" property="kommentaar" z="iU4hRrWkjX5dWA70H77DtIEYaiU="/>
-            <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" property="kehtivKuni" z="wR9ZXB+hyoZldzMaEFaCllZwk5U="/>
-            <table:column calendar="true" dateTimePattern="${seadusePunkt_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="4xASrv3XRkyeJmZFdEquMfCLJ/w="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" property="avaja" z="tgaCDWBTOrttwmxA1wM54iZX8zo="/>
+            <table:column calendar="true" dateTimePattern="${seadusePunkt_avatud_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" property="avatud" z="Uhg3sOc6aAi84g4wK4AS3PR+Uv0="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" property="muutja" z="mHPaAGklPLW49V7HKQw2FEYBZY4="/>
+            <table:column calendar="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" property="muudetud" z="PUoWn0w9c+k71gW09t8otBbrRSk="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_SeadusePunkt_sulgeja" property="sulgeja" z="xscYMSPmMfg38PnhNLfxMpDqfwA="/>
+            <table:column calendar="true" dateTimePattern="${seadusePunkt_suletud_date_format}" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" property="suletud" z="xBE5BMU7E18fJ1F9SoTPK+OmAGc="/>
         </table:table>
     </page:list>
 </div>
