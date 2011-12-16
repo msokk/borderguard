@@ -31,7 +31,7 @@ public class Loader implements ApplicationListener<ContextRefreshedEvent>{
         			Riik.build("LTU", "440", "Leedu").persist();
         		}
         		
-        		if (Piiririkkuja.countPiiririkkujad() == 0){
+        		if (Piiririkkuja.countPiiririkkujad() == 1) {
         			Piiririkkuja rikkuja = new Piiririkkuja();
         			rikkuja.setIsikukood("38943456789");
         			rikkuja.setKommentaar("Üritas ületada piiri vale kodakondsusega");
