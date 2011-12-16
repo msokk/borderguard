@@ -86,6 +86,13 @@ public class SeadusController {
         return "seadused/history";
     }
     
+    @RequestMapping(method = RequestMethod.GET)
+    public String all(Model uiModel) {
+    	uiModel.addAttribute("seadused", Seadus.findAllSeadused());
+        addDateTimeFormatPatterns(uiModel);
+        return "seadused/history";
+    }
+    
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Seadus seadus = Seadus.findSeadus(id);

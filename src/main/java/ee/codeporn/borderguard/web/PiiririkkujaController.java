@@ -35,12 +35,13 @@ public class PiiririkkujaController {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
             addDateTimeFormatPatterns(uiModel);
-            System.out.println(bindingResult.getAllErrors().toString());
+//            System.out.println(bindingResult.getAllErrors().toString());
+//            sysout is not good in production code :)
             return "piiririkkujad/update";
         }
         uiModel.asMap().clear();
         piiririkkuja.merge();
-        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest) + "?form";
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
     }
 	
 	@RequestMapping(method = RequestMethod.POST)

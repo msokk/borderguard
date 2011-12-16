@@ -45,13 +45,20 @@ public class KodakondsusController {
         }
         uiModel.asMap().clear();
         kodakondsus.merge();
-        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest) + "?form";
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{piiririkkujaId}", params = "form", method = RequestMethod.GET)
     public String createForm(@PathVariable("piiririkkujaId") Long piiririkkujaId, Model uiModel) {
         uiModel.addAttribute("kodakondsus", new Kodakondsus());
         uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkujaId));
+        addDateTimeFormatPatterns(uiModel);
+        return "kodakondsused/create";
+    }
+    
+    @RequestMapping(params = "form", method = RequestMethod.GET)
+    public String createForm(Model uiModel) {
+        uiModel.addAttribute("kodakondsus", new Kodakondsus());;
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsused/create";
     }
@@ -65,7 +72,7 @@ public class KodakondsusController {
         }
         uiModel.asMap().clear();
         kodakondsus.persist();
-        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest) + "?form";
+        return "redirect:/piiririkkujad/" + encodeUrlPathSegment(kodakondsus.getPiiririkkuja().getId().toString(), httpServletRequest);
     }
 	
 }

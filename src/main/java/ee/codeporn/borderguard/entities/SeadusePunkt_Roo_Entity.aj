@@ -5,7 +5,6 @@ package ee.codeporn.borderguard.entities;
 
 import ee.codeporn.borderguard.entities.SeadusePunkt;
 import java.lang.Long;
-import java.util.List;
 import javax.persistence.Entity;
 
 privileged aspect SeadusePunkt_Roo_Entity {
