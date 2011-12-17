@@ -12,7 +12,7 @@
 		<title><spring:message code="application_name" arguments="${app_name}" /></title>
 	</head>
 	
-  	<body class="claro spring">
+  	<body class="claro spring" onLoad="javascript:document.getElementById('j_username').focus()" >
    		<div id="wrapper">
 		    <tiles:insertAttribute name="header" ignore="true" />
 		    <tiles:insertAttribute name="menu" ignore="true" />   
