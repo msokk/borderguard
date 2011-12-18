@@ -6,7 +6,6 @@ package ee.codeporn.borderguard.web;
 import ee.codeporn.borderguard.entities.Seadus;
 import ee.codeporn.borderguard.entities.SeadusePunkt;
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
@@ -71,6 +70,9 @@ privileged aspect SeadusController_Roo_Controller {
     }
     
     void SeadusController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("seadus_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("seadus_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("seadus_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("seadus_kehtivalates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("seadus_kehtivkuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }

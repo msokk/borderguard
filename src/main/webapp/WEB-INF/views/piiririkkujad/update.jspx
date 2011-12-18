@@ -5,7 +5,7 @@
     <form:update id="fu_ee_codeporn_borderguard_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujad" versionField="Version" z="user-managed">
         <div class="left">
             <field:input field="isikukood" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_isikukood" max="20" z="jD5+xmuO6zqn8zkph/J1wdYl4x4="/>
-            <field:input field="eesnimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" max="25" z="yuRhlYyV6PNzSru7e2dq0D1ZNsc="/>
+            <field:input field="eesnimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_eesnimi" max="25" required="true" z="/J2k/FxXNAhPPFngNIU4A4HmCrA="/>
             <field:input field="perenimi" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_perenimi" max="25" z="user-managed"/>
             <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_synniaeg" z="XL8lgMtyUskc9Gci6+Ly1JN4buw="/>
             <div style="margin-bottom: 40px;">
@@ -31,7 +31,7 @@
             <c:if test="${kodakondsused.size() == 0}">
                 <hr style="margin: 5px 0 5px 0;"/>
             </c:if>
-            <c:if test="${kodakondsused.size() > 0}">
+            <c:if test="${kodakondsused.size() &gt; 0}">
                 <table class="small-padding" id="borderViolatorNationalities" style="margin: 5px 0 5px 0;">
                     <tr>
                         <th>
@@ -80,5 +80,12 @@
         <div class="clear">
             <jsp:text/>
         </div>
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avaja" z="2s/ti4iFoNABPHyaTDN8yYrtJtQ="/>
+        <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_avatud" z="PLJ8GjCalMVlRDwZ52DqVFLM0f8="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muutja" z="foHq+awTA0wOkTnp1AAoY7lDIUM="/>
+        <field:datetime dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_muudetud" z="KTSD2zlEXqF+m//0e8RBdt/HlTM="/>
+        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_sulgeja" z="wc7QXCii16U2NlJjwiRyE34eqOU="/>
+        <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_suletud" z="SeDeE0T/f/q3Kxu2a9FrLLTZHh8="/>
+        <field:simple field="kodakondsused" id="c_ee_codeporn_borderguard_entities_Piiririkkuja_kodakondsused" messageCode="entity_reference_not_managed" messageCodeAttribute="Kodakondsus" z="mNSUh6KvoKN0zYvIzEsKEO9M9JY="/>
     </form:update>
 </div>

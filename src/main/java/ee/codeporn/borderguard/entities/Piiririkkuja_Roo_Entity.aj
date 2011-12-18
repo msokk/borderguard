@@ -5,7 +5,6 @@ package ee.codeporn.borderguard.entities;
 
 import ee.codeporn.borderguard.entities.Piiririkkuja;
 import java.lang.Long;
-import java.util.List;
 import javax.persistence.Entity;
 
 privileged aspect Piiririkkuja_Roo_Entity {

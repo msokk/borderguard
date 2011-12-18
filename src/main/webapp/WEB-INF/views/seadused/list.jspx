@@ -4,11 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_codeporn_borderguard_entities_Seadus" items="${seadused}" z="user-managed">
         <table:table create="false" data="${seadused}" id="l_ee_codeporn_borderguard_entities_Seadus" path="/seadused" z="user-managed">
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kood" property="kood" z="Z7h8P1TC1OeVsKUPB/KzniNqB+M="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_nimetus" property="nimetus" z="SAomfxAiHSayyubpPybHs7SG30c="/>
-            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_kommentaar" property="kommentaar" z="V1/DSzPJNM9vKYkFfKLq2RteFyg="/>
-            <table:column calendar="true" dateTimePattern="${seadus_kehtivalates_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivAlates" property="kehtivAlates" z="d7CKEbRVD26lnQfRQyKG9uuijZo="/>
-            <table:column calendar="true" dateTimePattern="${seadus_kehtivkuni_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" property="kehtivKuni" z="HhB/VN47mg1FIXasAthcNuxE7j0="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_avaja" property="avaja" z="9gM9Lt0uC7ch9rIWhE4cp4HJSL8="/>
+            <table:column calendar="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_avatud" property="avatud" z="YeMudUXVpjWKYRElwOl/UmBP+gU="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_muutja" property="muutja" z="Xxaxvy6iV5yFOW0PcdGf7f5lcdk="/>
+            <table:column calendar="true" dateTimePattern="${seadus_muudetud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_muudetud" property="muudetud" z="4NFeA/4y8OwL017rfKaenc0CSGs="/>
+            <table:column id="c_ee_codeporn_borderguard_entities_Seadus_sulgeja" property="sulgeja" z="iUNw+pXZwL5NWWqpxyxTTEULNzI="/>
+            <table:column calendar="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_codeporn_borderguard_entities_Seadus_suletud" property="suletud" z="ZaTfsTpdykd6zrGEVTRl7B7xbXk="/>
         </table:table>
     </page:list>
 </div>
