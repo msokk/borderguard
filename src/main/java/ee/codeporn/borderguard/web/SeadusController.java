@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import ee.codeporn.borderguard.entities.Kodakondsus;
 import ee.codeporn.borderguard.entities.Seadus;
 import ee.codeporn.borderguard.entities.SeadusePunkt;
 import ee.codeporn.borderguard.generic.SeadusePunktFilter;
@@ -28,6 +29,20 @@ public class SeadusController {
     public SeadusePunktFilter getFilter() {
     	return new SeadusePunktFilter();
     }
+	
+	  @RequestMapping(method = RequestMethod.GET)
+	    public String listSeadused(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+	        if (page != null || size != null) {
+	            int sizeNo = size == null ? 10 : size.intValue();
+	            uiModel.addAttribute("seadused", Seadus.findSeadusEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
+	            float nrOfPages = (float) Seadus.countSeadused() / sizeNo;
+	            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+	        } else {
+	            uiModel.addAttribute("seadused", Seadus.findAllSeadused());
+	        }
+	        addDateTimeFormatPatterns(uiModel);
+	        return "seadused/list";
+	    }
 	
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model uiModel) {
