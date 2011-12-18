@@ -11,12 +11,22 @@
             <field:datetime dateTimePattern="${seadus_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_Seadus_kehtivKuni" z="WPf9sbs3m1tFwcLAfTxg8/Mo6Ss="/>
         </div>
         <div class="right" style="width: 280px;">
-            <span style="font-weight: bold;"><spring:message code="subpoints"/></span>
+            <span style="font-weight: bold;">
+                <spring:message code="subpoints"/>
+            </span>
             <hr style="margin: 5px 0 5px 0;"/>
             <spring:message code="can_add_point_when_law_saved"/>
         </div>
         <div class="clear">
             <jsp:text/>
         </div>
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_Seadus_avaja" z="IeRlt60uG5FKhKfFqNzGhY2P0g0="/>
+        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_Seadus_avatud" z="7mNlDAWm/oVrU7GR5NOhFVPNNHM="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_Seadus_muutja" z="6mZj7Llem2v1igjz/w6bKa+6aEY="/>
+        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_Seadus_muudetud" z="+m2hcLmrYQbhoXnr4I35DBBCRsc="/>
+        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_Seadus_sulgeja" z="tr5rcSqscjQtV+aanZWBtWCq+f4="/>
+        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_Seadus_suletud" z="nTTdeGqIRZkYWd5I8Eq2yd2QG6c="/>
+        <field:simple field="seadusePunktid" id="c_ee_codeporn_borderguard_entities_Seadus_seadusePunktid" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse Punkt" z="tw3v9Gj8nxrz0jDeb4xru/P1V5I="/>
     </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_Seadus" render="${not empty dependencies}" z="oJy3C/F1FSsw39t775+uKxZyJKU="/>
 </div>

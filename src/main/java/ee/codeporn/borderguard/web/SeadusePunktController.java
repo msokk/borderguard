@@ -3,8 +3,6 @@ package ee.codeporn.borderguard.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import ee.codeporn.borderguard.entities.Seadus;
-import ee.codeporn.borderguard.entities.SeadusePunkt;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import ee.codeporn.borderguard.entities.SeadusePunkt;
 
 @RooWebScaffold(path = "seadusepunktid", formBackingObject = SeadusePunkt.class)
 @RequestMapping("/seadusepunktid")
@@ -69,6 +69,13 @@ public class SeadusePunktController {
         return "seadusepunktid/create";
     }
     
+    @RequestMapping(params = "form", method = RequestMethod.GET)
+    public String createForm(Model uiModel) {
+        uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
+        addDateTimeFormatPatterns(uiModel);
+        return "seadusepunktid/create";
+    }
+    
     @RequestMapping(value = "/{id}/{seadusId}/form", method = RequestMethod.GET)
     public String createFormWithMasterSection(@PathVariable("id") Long id, @PathVariable("seadusId") Long seadusId, Model uiModel) {
     	uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
@@ -81,13 +88,12 @@ public class SeadusePunktController {
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
-        	System.out.println(bindingResult.getAllErrors().toString());
             uiModel.addAttribute("seadusePunkt", seadusePunkt);
             addDateTimeFormatPatterns(uiModel);
             return "seadusepunktid/create";
         }
         uiModel.asMap().clear();
         seadusePunkt.persist();
-        return "redirect:/seadused/" + encodeUrlPathSegment(seadusePunkt.getSeadus().getId().toString(), httpServletRequest) + "?form";
+        return "redirect:/seadusepunktid/" + encodeUrlPathSegment(seadusePunkt.getSeadus().getId().toString(), httpServletRequest);
     }
 }

@@ -6,14 +6,14 @@
         <div class="left">
             <field:input field="paragrahv" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_paragrahv" z="Q5WSMwCpJjJE7Rut7OwTGYikrW0="/>
             <field:input field="pais" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_pais" z="zZLWrLiZW9IqA7vVo/6dNK/Pu9A="/>
-            <field:textarea field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="bW/nhjOUoacu0VY+1e2Ww+e91Go="/>
+            <field:textarea field="tekst" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_tekst" z="user-managed"/>
             <input id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadus" name="seadus" type="hidden" value="${seadusId}" z="user-managed"/>
             <field:textarea field="kommentaar" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kommentaar" z="user-managed"/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivalates_date_format}" field="kehtivAlates" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivAlates" z="h3Pfl6L5IdLvX7E9OcWdw5stlWU="/>
             <field:datetime dateTimePattern="${seadusePunkt_kehtivkuni_date_format}" field="kehtivKuni" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_kehtivKuni" z="0qAJvwXjROSZl56XA8ce2/I5eK8="/>
             <spring:message code="masterpoint" htmlEscape="false" var="masterpoint"/>
             <label for="seadusePunkt">
-               <c:out value="${masterpoint}"/>:</label>
+                <c:out value="${masterpoint}"/>:</label>
             <form2:select path="seadusePunkt">
                 <form2:option label="" value="0"/>
                 <form2:options itemLabel="pais" itemValue="id" items="${seadusepunktid}"/>
@@ -27,5 +27,13 @@
         <div class="clear">
             <jsp:text/>
         </div>
+        <field:textarea field="avaja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avaja" z="smHyGrdemXJn+nOVjIoYgqRg9ho="/>
+        <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_avatud" z="oFwEgvdfkHgFJUHNAXAEx8twX3k="/>
+        <field:textarea field="muutja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muutja" z="HYDKhD3MwP6MqIOjWEqy9l6OK68="/>
+        <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_muudetud" z="TYFase10JT2v945/sNVLxYOVuok="/>
+        <field:textarea field="sulgeja" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_sulgeja" z="5XQqo5SCPyqlFu2JjIA0g2ZwkjU="/>
+        <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_suletud" z="Vbdxyt+bT8J0js0VDFReO5BOINs="/>
+        <field:select field="seadusePunkt" id="c_ee_codeporn_borderguard_entities_SeadusePunkt_seadusePunkt" itemValue="id" items="${seadusepunktid}" path="/seadusepunktid" z="8Lpzww7bw35/D+2uomGPXETjo/o="/>
     </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ee_codeporn_borderguard_entities_SeadusePunkt" render="${not empty dependencies}" z="q+z3e//IZ1kj7X6oUvE1yEN7cDY="/>
 </div>
